@@ -1,0 +1,203 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>pillow图像格式转化和缩放操作 | 漂亮鬼</title><meta name="keywords" content="python"><meta name="author" content="漂亮鬼"><meta name="copyright" content="漂亮鬼"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Pillow图片格式转换图片格式之间的转换主要有以下两种方法： save() 方法用于保存图像，当不指定文件格式时，它会以默认的图片格式来存储；如果指定图片格式，则会以指定的格式存储图片。 save() 的语法格式如下： Image.save(fp, format&#x3D;None) fp：图片的存储路径，要声明图片的名字和格式；format：可选参数，可以指定图片的格式。 123from PI">
+<meta property="og:type" content="article">
+<meta property="og:title" content="pillow图像格式转化和缩放操作">
+<meta property="og:url" content="http://1yzf2zstgiyhub.io/post/1e6c0b4.html">
+<meta property="og:site_name" content="漂亮鬼">
+<meta property="og:description" content="Pillow图片格式转换图片格式之间的转换主要有以下两种方法： save() 方法用于保存图像，当不指定文件格式时，它会以默认的图片格式来存储；如果指定图片格式，则会以指定的格式存储图片。 save() 的语法格式如下： Image.save(fp, format&#x3D;None) fp：图片的存储路径，要声明图片的名字和格式；format：可选参数，可以指定图片的格式。 123from PI">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://pic2.zhimg.com/80/v2-dd55abd19779b60abba7e0c6d2b26689_720w.jpg">
+<meta property="article:published_time" content="2022-08-03T09:02:43.000Z">
+<meta property="article:modified_time" content="2022-08-03T09:21:15.494Z">
+<meta property="article:author" content="漂亮鬼">
+<meta property="article:tag" content="python">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://pic2.zhimg.com/80/v2-dd55abd19779b60abba7e0c6d2b26689_720w.jpg"><link rel="shortcut icon" href="https://pic2.zhimg.com/v2-9359c735aa38fa08bc161d8d6c0df38e_r.jpg?source=3af55fa1"><link rel="canonical" href="http://1yzf2zstgiyhub.io/post/1e6c0b4"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin=""/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?fa627d7767ce07eaecb96088287b512d";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: 漂亮鬼","link":"链接: ","source":"来源: 漂亮鬼","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'pillow图像格式转化和缩放操作',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: true,
+  isToc: true,
+  postUpdate: '2022-08-03 17:21:15'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/mouse.css"><style>#article-container.post-content h1:before, h2:before, h3:before, h4:before, h5:before, h6:before { -webkit-animation: avatar_turn_around 1s linear infinite; -moz-animation: avatar_turn_around 1s linear infinite; -o-animation: avatar_turn_around 1s linear infinite; -ms-animation: avatar_turn_around 1s linear infinite; animation: avatar_turn_around 1s linear infinite; }</style><meta name="generator" content="Hexo 6.2.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://picx.zhimg.com/v2-6576f8c64444c40baa4602979c75d1e3_r.jpg?source=3af55fa1" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">11</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">10</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 目录</span></a></div><div class="menus_item"><a class="site-page" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> images</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://pic2.zhimg.com/80/v2-dd55abd19779b60abba7e0c6d2b26689_720w.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">漂亮鬼</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 目录</span></a></div><div class="menus_item"><a class="site-page" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> images</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">pillow图像格式转化和缩放操作</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-08-03T09:02:43.000Z" title="发表于 2022-08-03 17:02:43">2022-08-03</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-08-03T09:21:15.494Z" title="更新于 2022-08-03 17:21:15">2022-08-03</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/python-Pillow/">python--Pillow</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.3k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>4分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="pillow图像格式转化和缩放操作"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h4 id="Pillow图片格式转换"><a href="#Pillow图片格式转换" class="headerlink" title="Pillow图片格式转换"></a>Pillow图片格式转换</h4><p>图片格式之间的转换主要有以下两种方法：</p>
+<p>save() 方法用于保存图像，当不指定文件格式时，它会以默认的图片格式来存储；如果指定图片格式，则会以指定的格式存储图片。</p>
+<p>save() 的语法格式如下：</p>
+<p>Image.save(fp, format&#x3D;None)</p>
+<p>fp：图片的存储路径，要声明图片的名字和格式；<br>format：可选参数，可以指定图片的格式。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">from PIL import Image</span><br><span class="line">img = Image.open(&quot;D:\\File\\All\\web\\python\\blog\\947849.jpg&quot;)</span><br><span class="line">img.save(&quot;D:\\File\\All\\web\\python\\blog\\949.jpg&quot;)</span><br></pre></td></tr></table></figure>
+
+<p>convert()+save()注意，<strong>并非所有的图片格式都可以用 save() 方法转换完成，</strong><br>比如将 PNG 格式的图片保存为 JPG 格式，如果直接使用 save() 方法就会出现以下错误：</p>
+<p>引发错误的原因是由于 PNG 和 JPG 图像模式不一致导致的。<br>其中 PNG 是四通道 RGBA 模式，即红色、绿色、蓝色、Alpha 透明色；<br>JPG 是三通道 RGB 模式。因此要想实现图片格式的转换，就要将 PNG 转变为三通道 RGB 模式。<br>Image 类提供的 convert() 方法可以实现图像模式的转换。该函数提供了多个参数，比如 mode、matrix、dither 等，其中最关键的参数是 mode，其余参数无须关心。语法格式如下：<br>convert(mode)<br>mode：指的是要转换成的<strong>图像模式</strong><br>params：其他可选参数。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">from PIL import Image</span><br><span class="line">img = Image.open(&quot;D:\\File\\All\\web\\python\\blog\\947849.jpg&quot;)</span><br><span class="line">im= img.convert(&quot;RGBA&quot;)</span><br><span class="line">im.save(&quot;D:\\File\\All\\web\\python\\blog\\99.png&quot;)</span><br></pre></td></tr></table></figure>
+<p><strong>covert() 会返回一个新的 image 对象</strong></p>
+<h5 id="Pillow图像缩放操作"><a href="#Pillow图像缩放操作" class="headerlink" title="Pillow图像缩放操作"></a>Pillow图像缩放操作</h5><p>Image 类提供的 resize() 方法能够实现任意缩小和放大图像。<br>resize() 函数的语法格式如下：</p>
+<p>resize(size, resample&#x3D;image.BICUBIC, box&#x3D;None,<br>reducing_gap&#x3D;None) 一般使用就用第一个参数比较常见</p>
+<p>size：<strong>元组参数</strong> (width,height)，图片缩放后的尺寸；一般表示大小的基本上都是元组参数</p>
+<p>resample：可选参数，指图像重采样滤波器，与 thumbnail() 的 resample 参数类似，默认为 Image.BICUBIC；</p>
+<p>box：对指定图片区域进行缩放，box 的参数值是长度为 4 的像素坐标元组，即 (左,上,右,下)。<br>注意，被指定的区域必须在原图的范围内，如果超出范围就会报错。当不传该参数时，默认对整个原图进行缩放；</p>
+<p>reducing_gap：可选参数，浮点参数值，用于优化图片的缩放效果，常用参数值有 3.0 和 5.0。</p>
+<p>注意，<strong>resize() 会返回一个新的 image 对象</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">from PIL import Image</span><br><span class="line">img = Image.open(&quot;D:\\File\\All\\web\\python\\blog\\947849.jpg&quot;)</span><br><span class="line">im=img.resize((900,900))</span><br><span class="line"># im.save(&quot;D:\\File\\All\\web\\python\\blog\\49.jpg&quot;)</span><br><span class="line">im.show()</span><br></pre></td></tr></table></figure>
+
+<p>对图片的局部位置进行放大，示例如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">from PIL import Image</span><br><span class="line">img = Image.open(&quot;D:\\File\\All\\web\\python\\blog\\947849.jpg&quot;)</span><br><span class="line">im=img.resize((100,100),box=(0,0,120,120))</span><br><span class="line"># im.save(&quot;D:\\File\\All\\web\\python\\blog\\49.jpg&quot;)</span><br><span class="line">im.show()</span><br></pre></td></tr></table></figure>
+
+<p>​    实际使用时局部放大用的非常少</p>
+<h5 id="创建缩略图缩略图"><a href="#创建缩略图缩略图" class="headerlink" title="创建缩略图缩略图"></a>创建缩略图缩略图</h5><p>（thumbnail image）指的是将原图缩小至一个指定大小（size）的图像。通过创建缩略图可以使图像更易于展示和浏览。Image 对象提供了一个 thumbnail() 方法用来生图像的缩略图，该函数的语法格式如下：</p>
+<p>thumbnail(size,resample)</p>
+<p>size：元组参数，指的是<strong>缩小后</strong>的图像大小；</p>
+<p>resample：可选参数，指图像重采样滤波器，有四种过滤方式，分别是 Image.BICUBIC（双立方插值法）、PIL.Image.NEAREST（最近邻插值法）、PIL.Image.BILINEAR（双线性插值法）、PIL.Image.LANCZOS（下采样过滤插值法），默认为 Image.BICUBIC。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">from PIL import Image</span><br><span class="line">im = Image.open(&quot;D:\\File\\All\\web\\python\\blog\\947849.jpg&quot;)</span><br><span class="line">im.thumbnail((150,50))</span><br><span class="line"># im.save(&quot;D:\\File\\All\\web\\python\\blog\\49.jpg&quot;)</span><br><span class="line">im.show()</span><br></pre></td></tr></table></figure>
+
+<p><strong>注意，缩略图的尺寸可能与您指定的尺寸不一致，这是因为 Pillow 会对原图像的长、宽进行等比例缩小</strong>，当指定的尺寸不符合图像的尺寸规格时，缩略图就会创建失败， 比如指定的尺寸超出了原图像的尺寸规格</p>
+<h5 id="批量修改图片尺寸"><a href="#批量修改图片尺寸" class="headerlink" title="批量修改图片尺寸"></a>批量修改图片尺寸</h5><p>采用批量处理方法，比如批量转换格式，批量修改尺寸，批量添加水印，批量创建缩略图等，这是一种提升工作效率的有效途径，它避免了单一、重复的操作。通过 Pillow 提供的 Image.resize() 方法可以批量地修改图片尺寸，下面看一组简单的示例。首先找一些类型相同，但尺寸不一的图片，并把它们放入桌面的 image01 文件夹中</p>
+<p>批量修改图片尺寸</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">import os</span><br><span class="line">from PIL import Image</span><br><span class="line">#读取图片目录</span><br><span class="line">fileName = os.listdir(&#x27;C:/Users/Administrator/Desktop/image01/&#x27;)</span><br><span class="line">print(fileName)</span><br><span class="line">#设定尺寸</span><br><span class="line">width = 350</span><br><span class="line">height = 350</span><br><span class="line">#如果目录不存在，则创建目录</span><br><span class="line">if not os.path.exists(&#x27;C:/Users/Administrator/Desktop/NewImage/&#x27;):</span><br><span class="line">    os.mkdir(&#x27;C:/Users/Administrator/Desktop/NewImage/&#x27;)</span><br><span class="line">#循环读取每一张图片</span><br><span class="line">for img in fileName:</span><br><span class="line">    old_pic = Image.open(&#x27;C:/Users/Administrator/Desktop/image01/&#x27; + img)</span><br><span class="line">    new_image = old_pic.resize((width, height),Image.BILINEAR)</span><br><span class="line">    print (new_image)</span><br><span class="line">    new_image.save(&#x27;C:/Users/Administrator/Desktop/NewImage/&#x27;+img)</span><br><span class="line"> </span><br></pre></td></tr></table></figure>
+
+<p>这里原理其实非常简单 ，即使需要大家对文件的下官操作非常熟悉</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://1yzf2zstgiyhub.io">漂亮鬼</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://1yzf2zstgiyhub.io/post/1e6c0b4.html">http://1yzf2zstgiyhub.io/post/1e6c0b4.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://1yzf2zstgiyhub.io" target="_blank">漂亮鬼</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/python/">python</a></div><div class="post_share"><div class="addthis_inline_share_toolbox"></div><script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-62e385ce9ecac8a4" async="async"></script></div></div><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/post/5951139c.html" title="pillow创建对象和对象属性"><img class="cover" src="https://pic1.zhimg.com/v2-5c0fecc702d4d64f2b18bc7ea24a7e41_r.jpg?source=3af55fa1" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-08-03</div><div class="title">pillow创建对象和对象属性</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://picx.zhimg.com/v2-6576f8c64444c40baa4602979c75d1e3_r.jpg?source=3af55fa1" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">漂亮鬼</div><div class="author-info__description">做一个爱美食，的大胖子--嘿嘿</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">11</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">10</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/1yzf2zst/1yzf2zst.github.io"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/1yzf2zst" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:2562644984@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="xpand" style="height:200px;"><canvas class="illo" width="800" height="800" style="max-width: 200px; max-height: 200px; touch-action: none; width: 640px; height: 640px;"></canvas></div><script src="https://fastly.jsdelivr.net/gh/xiaopengand/blogCdn@latest/xzxr/twopeople1.js"></script><script src="https://fastly.jsdelivr.net/gh/xiaopengand/blogCdn@latest/xzxr/zdog.dist.js"></script><script id="rendered-js" src="https://fastly.jsdelivr.net/gh/xiaopengand/blogCdn@latest/xzxr/twopeople.js"></script><style>.card-widget.card-announcement {
+margin: 0;
+align-items: center;
+justify-content: center;
+text-align: center;
+}
+canvas {
+display: block;
+margin: 0 auto;
+cursor: move;
+}
+</style><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎各位， 各位来到xiaoyang的blog qq 2562644984 wechat zst210621yzf</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#Pillow%E5%9B%BE%E7%89%87%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2"><span class="toc-number">1.</span> <span class="toc-text">Pillow图片格式转换</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Pillow%E5%9B%BE%E5%83%8F%E7%BC%A9%E6%94%BE%E6%93%8D%E4%BD%9C"><span class="toc-number">1.1.</span> <span class="toc-text">Pillow图像缩放操作</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E7%BC%A9%E7%95%A5%E5%9B%BE%E7%BC%A9%E7%95%A5%E5%9B%BE"><span class="toc-number">1.2.</span> <span class="toc-text">创建缩略图缩略图</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%89%B9%E9%87%8F%E4%BF%AE%E6%94%B9%E5%9B%BE%E7%89%87%E5%B0%BA%E5%AF%B8"><span class="toc-number">1.3.</span> <span class="toc-text">批量修改图片尺寸</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/post/6b688c36.html" title="Tkinter库---Label标签控件"><img src="https://pic1.zhimg.com/v2-5c0fecc702d4d64f2b18bc7ea24a7e41_r.jpg?source=3af55fa1" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Tkinter库---Label标签控件"/></a><div class="content"><a class="title" href="/post/6b688c36.html" title="Tkinter库---Label标签控件">Tkinter库---Label标签控件</a><time datetime="2022-08-03T10:08:27.000Z" title="发表于 2022-08-03 18:08:27">2022-08-03</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/a3cef9b3.html" title="Tkinter库的常用控件,方法和属性"><img src="https://pica.zhimg.com/v2-5bf0783a1e2225dc543301b252c53e63_r.jpg?source=3af55fa1" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Tkinter库的常用控件,方法和属性"/></a><div class="content"><a class="title" href="/post/a3cef9b3.html" title="Tkinter库的常用控件,方法和属性">Tkinter库的常用控件,方法和属性</a><time datetime="2022-08-03T09:35:38.000Z" title="发表于 2022-08-03 17:35:38">2022-08-03</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/1e6c0b4.html" title="pillow图像格式转化和缩放操作"><img src="https://pic2.zhimg.com/80/v2-dd55abd19779b60abba7e0c6d2b26689_720w.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="pillow图像格式转化和缩放操作"/></a><div class="content"><a class="title" href="/post/1e6c0b4.html" title="pillow图像格式转化和缩放操作">pillow图像格式转化和缩放操作</a><time datetime="2022-08-03T09:02:43.000Z" title="发表于 2022-08-03 17:02:43">2022-08-03</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/5951139c.html" title="pillow创建对象和对象属性"><img src="https://pic1.zhimg.com/v2-5c0fecc702d4d64f2b18bc7ea24a7e41_r.jpg?source=3af55fa1" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="pillow创建对象和对象属性"/></a><div class="content"><a class="title" href="/post/5951139c.html" title="pillow创建对象和对象属性">pillow创建对象和对象属性</a><time datetime="2022-08-03T08:16:29.000Z" title="发表于 2022-08-03 16:16:29">2022-08-03</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/cdb8b2bb.html" title="c语言编译链接和软件安装"><img src="https://pic2.zhimg.com/80/v2-dd55abd19779b60abba7e0c6d2b26689_720w.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="c语言编译链接和软件安装"/></a><div class="content"><a class="title" href="/post/cdb8b2bb.html" title="c语言编译链接和软件安装">c语言编译链接和软件安装</a><time datetime="2022-08-02T14:03:40.000Z" title="发表于 2022-08-02 22:03:40">2022-08-02</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://picx.zhimg.com/v2-d1098f823452d83e34ce0aa6b6c484ae_r.jpg?source=3af55fa1')"><div id="footer-wrap"><div class="copyright">&copy;2022 By 漂亮鬼</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Hello,  welcome  to   <a  target="_blank" rel="noopener" href="https://xiaoyangzst.vercel.app">小杨的blog</a>!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><div class="js-pjax"></div><script src="/js/snowflake.js"></script><script src="https://cdn.jsdelivr.net/gh/caicheng918/CDN@4.0/res/mouse_snow.js"></script><script src="/js/funny.js"></script><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/fireworks.min.js"></script><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="true"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"superSample":2,"width":200,"height":400,"position":"left","hOffset":-30,"vOffset":-20},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.2},"log":false});</script></body></html>
