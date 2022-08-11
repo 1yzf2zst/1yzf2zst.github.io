@@ -1,0 +1,223 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>python提升二 | 漂亮鬼</title><meta name="keywords" content="python提升"><meta name="author" content="漂亮鬼"><meta name="copyright" content="漂亮鬼"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Python self用法在定义类的过程中，无论是显式创建类的构造方法，还是向类中添加实例方法，都要求将 self 参数作为方法的第一个参数。 1234567class Person:    def __init__(self):        print(&quot;我使用了构造函数&quot;)    def say(self,name):        print(&quot;我名字是：&amp;q">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python提升二">
+<meta property="og:url" content="http://1yzf2zstgiyhub.io/post/cae65769.html">
+<meta property="og:site_name" content="漂亮鬼">
+<meta property="og:description" content="Python self用法在定义类的过程中，无论是显式创建类的构造方法，还是向类中添加实例方法，都要求将 self 参数作为方法的第一个参数。 1234567class Person:    def __init__(self):        print(&quot;我使用了构造函数&quot;)    def say(self,name):        print(&quot;我名字是：&amp;q">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://pica.zhimg.com/v2-1ca4168a38c1bb34542bdbe68fbd9515_r.jpg?source=3af55fa1">
+<meta property="article:published_time" content="2022-08-11T12:32:29.000Z">
+<meta property="article:modified_time" content="2022-08-11T12:39:06.329Z">
+<meta property="article:author" content="漂亮鬼">
+<meta property="article:tag" content="python提升">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://pica.zhimg.com/v2-1ca4168a38c1bb34542bdbe68fbd9515_r.jpg?source=3af55fa1"><link rel="shortcut icon" href="https://pic2.zhimg.com/v2-9359c735aa38fa08bc161d8d6c0df38e_r.jpg?source=3af55fa1"><link rel="canonical" href="http://1yzf2zstgiyhub.io/post/cae65769"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin=""/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?fa627d7767ce07eaecb96088287b512d";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: 漂亮鬼","link":"链接: ","source":"来源: 漂亮鬼","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'python提升二',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: true,
+  isToc: true,
+  postUpdate: '2022-08-11 20:39:06'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/mouse.css"><style>#article-container.post-content h1:before, h2:before, h3:before, h4:before, h5:before, h6:before { -webkit-animation: avatar_turn_around 1s linear infinite; -moz-animation: avatar_turn_around 1s linear infinite; -o-animation: avatar_turn_around 1s linear infinite; -ms-animation: avatar_turn_around 1s linear infinite; animation: avatar_turn_around 1s linear infinite; }</style><meta name="generator" content="Hexo 6.2.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://picx.zhimg.com/v2-6576f8c64444c40baa4602979c75d1e3_r.jpg?source=3af55fa1" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">32</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">15</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 目录</span></a></div><div class="menus_item"><a class="site-page" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> images</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://pica.zhimg.com/v2-1ca4168a38c1bb34542bdbe68fbd9515_r.jpg?source=3af55fa1')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">漂亮鬼</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 目录</span></a></div><div class="menus_item"><a class="site-page" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> images</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">python提升二</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-08-11T12:32:29.000Z" title="发表于 2022-08-11 20:32:29">2022-08-11</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-08-11T12:39:06.329Z" title="更新于 2022-08-11 20:39:06">2022-08-11</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/python/">python</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">3.4k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>11分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="python提升二"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h4 id="Python-self用法"><a href="#Python-self用法" class="headerlink" title="Python self用法"></a>Python self用法</h4><p>在定义类的过程中，无论是显式创建类的构造方法，还是向类中添加实例方法，都要求将 self 参数作为方法的第一个参数。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">class Person:</span><br><span class="line">    def __init__(self):</span><br><span class="line">        print(&quot;我使用了构造函数&quot;)</span><br><span class="line">    def say(self,name):</span><br><span class="line">        print(&quot;我名字是：&quot;,name)</span><br><span class="line">xiaoyang = Person()</span><br><span class="line">xiaoyang.say(&quot;xiaoyang&quot;)</span><br></pre></td></tr></table></figure>
+<p>Python 只是规定，<strong>无论是构造方法还是实例方法，最少要包含一个参数</strong>，并没有规定该参数的具体名称。之所以将其命名为 self，只是程序员之间约定俗成的一种习惯，遵守这个约定，可以使我们编写的代码具有更好的可读性（大家一看到 self，就知道它的作用）。</p>
+<p>self 参数的具体作用打个比方<br>如果把类比作造房子的图纸，那么类实例化后的对象是真正可以住的房子。根据一张图纸（类），我们可以设计出成千上万的房子（类对象），每个房子长相都是类似的（都有相同的类变量和类方法），但它们都有各自的主人，那么如何对它们进行区分呢？<br>当然是通过 self 参数，它就相当于每个房子的门钥匙，可以保证每个房子的主人仅能进入自己的房子（每个类对象只能调用自己的类变量和类方法）。如果你接触过其他面向对象的编程语言（例如 C++），<strong>其实 Python 类方法中的 self 参数就相当于 C++ 中的 this 指针</strong>。</p>
+<p>也就是说，同一个类可以产生多个对象，<strong>当某个对象调用类方法时，该对象会把自身的引用作为第一个参数自动传给该方法，换句话说，Python 会自动绑定类方法的第一个参数指向调用该方法的对象</strong>。如此，Python解释器就能知道到底要操作哪个对象的方法了。</p>
+<p>程序在调用实例方法和构造方法时，不需要手动为第一个参数传值</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">class Person:</span><br><span class="line">    def __init__(self):</span><br><span class="line">        print(&quot;正在执行构造方法&quot;)</span><br><span class="line">    def study(self):</span><br><span class="line">        print(self,&quot;正在学Python&quot;)</span><br><span class="line">zhangsan = Person()</span><br><span class="line">zhangsan.study()</span><br><span class="line">lisi = Person()</span><br><span class="line">lisi.study()</span><br></pre></td></tr></table></figure>
+
+<h4 id="Python类变量和实例变量"><a href="#Python类变量和实例变量" class="headerlink" title="Python类变量和实例变量"></a>Python类变量和实例变量</h4><p>无论是类属性还是类方法，都无法像普通变量或者函数那样，在类的外部直接使用它们。我们可以将类看做一个独立的空间，则类属性其实就是在类体中定义的变量，类方法是在类体中定义的函数。</p>
+<p>前面提到过，在类体中，根据变量定义的位置不同，以及定义的方式不同，类属性又可细分为以下 3 种类型：<br>1.类体中、所有函数之外：此范围定义的变量，称为类属性或类变量；<br>2.类体中，所有函数内部：以“<strong>self.变量名</strong>”的方式定义的变量，称为实例属性或实例变量；<br>3.类体中，所有函数内部：以“变量名&#x3D;变量值”的方式定义的变量，称为局部变量。</p>
+<h5 id="类变量（类属性）"><a href="#类变量（类属性）" class="headerlink" title="类变量（类属性）"></a>类变量（类属性）</h5><p>类变量指的是在类中，但在各个类方法外定义的变量</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">class CLanguage :</span><br><span class="line">    name = &quot;漂亮鬼&quot;</span><br><span class="line">    add = &quot;https://xiaoyangzst.vercel.app/&quot;</span><br><span class="line">    #下面定义了一个say实例方法</span><br><span class="line">    def say(self, content):</span><br><span class="line">        print(content)</span><br></pre></td></tr></table></figure>
+
+<p><strong>类变量的特点</strong>: 所有类的实例化对象都同时共享类变量，也就是说，类变量在所有实例化对象中是作为公用资源存在的。</p>
+<h5 id="类方法的调用方式有-2-种，"><a href="#类方法的调用方式有-2-种，" class="headerlink" title="类方法的调用方式有 2 种，"></a>类方法的调用方式有 2 种，</h5><p>既可以使用类名直接调用，也可以使用类的实例化对象调用。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">#使用类名直接调用</span><br><span class="line">print(CLanguage.name)</span><br><span class="line">print(CLanguage.add)</span><br><span class="line">#修改类变量的值</span><br><span class="line">CLanguage.name = &quot;Python&quot;</span><br><span class="line">CLanguage.add = &quot;http://python&quot;</span><br><span class="line">print(CLanguage.name)</span><br><span class="line">print(CLanguage.add)</span><br></pre></td></tr></table></figure>
+<p><strong>通过类名不仅可以调用类变量，也可以修改它的值</strong>。</p>
+<p>当然，也可以使用类对象来调用所属类中的类变量（此方式不推荐使用)</p>
+<p>clang &#x3D; CLanguage()<br>print(clang.name)<br>print(clang.add)</p>
+<p><strong>注意</strong>：因为类变量为所有实例化对象共有，通过类名修改类变量的值，会影响所有的实例化对象<br>通过类名修改类变量，会作用到所有的实例化对象</p>
+<h5 id="实例变量（实例属性）"><a href="#实例变量（实例属性）" class="headerlink" title="实例变量（实例属性）"></a>实例变量（实例属性）</h5><p>实例变量指的是在任意类方法内部，以“self.变量名”的方式定义的变量，其特点是只作用于调用方法的对象。<br>另外，<strong>实例变量只能通过对象名访问，无法通过类名访问</strong>。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">class CLanguage :</span><br><span class="line">    def __init__(self):</span><br><span class="line">        self.name = &quot;票连跪&quot;</span><br><span class="line">        self.add = &quot;https://xiaoyangzst.app.vercel&quot;</span><br><span class="line">    def say(self):</span><br><span class="line">        self.catalog = 78</span><br></pre></td></tr></table></figure>
+<p>此 CLanguage 类中，name、add 以及 catalog 都是实例变量。其中，由于 <strong>init</strong>() 函数在创建类对象时会自动调用，而 say() 方法需要类对象手动调用。因此，CLanguage 类的类对象都会包含 name 和 add 实例变量，而只有调用了 say() 方法的类对象，才包含 catalog 实例变量。</p>
+<h5 id="为什么不推荐使用类对象调用类变量"><a href="#为什么不推荐使用类对象调用类变量" class="headerlink" title="为什么不推荐使用类对象调用类变量"></a>为什么不推荐使用类对象调用类变量</h5><p>前面讲过，通过类对象可以访问类变量，但无法修改类变量的值。这是因为，通过类对象修改类变量的值，不是在给“类变量赋值”，而是定义新的<strong>实例变量</strong>。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">clang = CLanguage()</span><br><span class="line">print(clang.name)</span><br><span class="line">print(clang.add)</span><br><span class="line">clang.name = &quot;Python&quot;</span><br><span class="line">clang.add = &quot;http://python&quot;</span><br><span class="line">#clang实例变量的值</span><br><span class="line">print(clang.name)</span><br><span class="line">print(clang.add)</span><br><span class="line">#类变量的值</span><br><span class="line">print(CLanguage.name)</span><br><span class="line">print(CLanguage.add)</span><br></pre></td></tr></table></figure>
+<p>通过类对象是无法修改类变量的值的，本质其实是给 clang 对象新添加 name 和 add 这 2 个<strong>实例变量</strong></p>
+<p><strong>实例变量和类变量可以同名，但这种情况下使用类对象将无法调用类变量，它会首选实例变量</strong>，这也是不推荐“类变量使用对象名调用”的原因。<br>另外，和<strong>类变量不同，通过某个对象修改实例变量的值，不会影响类的其它实例化对象，更不会影响同名的类变量。</strong></p>
+<h5 id="局部变量"><a href="#局部变量" class="headerlink" title="局部变量"></a>局部变量</h5><p>除了实例变量，类方法中还可以定义局部变量。和前者不同，局部变量直接以“变量名&#x3D;值”的方式进行定义</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">class CLanguage :</span><br><span class="line">    def count(self,money):</span><br><span class="line">        sale = 0.8*money</span><br><span class="line">        print(&quot;优惠后的价格为：&quot;,sale)</span><br><span class="line">clang = CLanguage()</span><br><span class="line">clang.count(100)</span><br></pre></td></tr></table></figure>
+<p>通常情况下，定义局部变量是为了所在类方法功能的实现。需要注意的一点是，局部变量只能用于所在函数中，函数执行完成后，局部变量也会被销毁。</p>
+<h4 id="Python实例方法、静态方法和类方法"><a href="#Python实例方法、静态方法和类方法" class="headerlink" title="Python实例方法、静态方法和类方法"></a>Python实例方法、静态方法和类方法</h4><p>和类属性一样，类方法也可以进行更细致的划分，具体可分为类方法、实例方法和静态方法。<br>和类属性的分类不同，对于初学者来说，区分这 3 种类方法是非常简单的，采用 @classmethod 修饰的方法为类方法；<br>采用 @staticmethod 修饰的方法为静态方法；<br>不用任何修改的方法为实例方法。<br>其中 @classmethod 和 @staticmethod 都是函数装饰器</p>
+<h5 id="Python类实例方法"><a href="#Python类实例方法" class="headerlink" title="Python类实例方法"></a>Python类实例方法</h5><p>通常情况下，在类中定义的方法默认都是实例方法。前面，我们已经定义了不只一个实例方法。不仅如此，类的构造方法理论上也属于实例方法，只不过它比较特殊。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">class CLanguage:</span><br><span class="line">    #类构造方法，也属于实例方法</span><br><span class="line">    def __init__(self):</span><br><span class="line">        self.name = &quot;漂亮鬼&quot;</span><br><span class="line">        self.add = &quot;https:/xiaoyangzst.vercel.app&quot;</span><br><span class="line">    def say(self):</span><br><span class="line">        print(&quot;正在调用 say() 实例方法&quot;)</span><br></pre></td></tr></table></figure>
+<p>实例方法最大的特点就是，它最少也要包含一个 self 参数，用于绑定调用此方法的实例对象（Python 会自动完成绑定）。<strong>实例方法通常会用类对象直接调用</strong></p>
+<p>当然，<strong>Python 也支持使用类名调用实例方法，但此方式需要手动给 self 参数传值</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">clang = CLanguage()</span><br><span class="line">CLanguage.say(clang)</span><br><span class="line">class CLanguage:</span><br><span class="line">    def info(self):</span><br><span class="line">        print(self,&quot;正在学 Python&quot;)</span><br><span class="line">#通过类名直接调用实例方法</span><br><span class="line">CLanguage.info(&quot;zhangsan&quot;)</span><br></pre></td></tr></table></figure>
+
+<h5 id="Python-类方法"><a href="#Python-类方法" class="headerlink" title="Python 类方法"></a>Python 类方法</h5><p>Python 类方法和实例方法相似，它最少也要包含一个参数，只不过类方法中通常将其命名为 cls，<br>Python 会自动将类本身绑定给 cls 参数（注意，绑定的不是类对象）。<br>也就是说，我们在调用类方法时，无需显式为 cls 参数传参。和 self 一样，cls 参数的命名也不是规定的（可以随意命名），只是 Python 程序员约定俗称的习惯而已</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">class CLanguage:</span><br><span class="line">    def __init__(self):</span><br><span class="line">        self.name = &quot;漂亮鬼&quot;</span><br><span class="line">        self.add = &quot;https:/xiaoyangzst.vercel.app&quot;</span><br><span class="line">    #下面定义了一个类方法</span><br><span class="line">    @classmethod</span><br><span class="line">    def info(cls):</span><br><span class="line">        print(&quot;正在调用类方法&quot;,cls)</span><br></pre></td></tr></table></figure>
+<p>注意，如果没有 ＠classmethod，则 Python 解释器会将 fly() 方法认定为实例方法，而不是类方法。<br><strong>类方法推荐使用类名直接调用</strong>，当然也可以使用实例对象来调用（不推荐）</p>
+<h5 id="Python类静态方法"><a href="#Python类静态方法" class="headerlink" title="Python类静态方法"></a>Python类静态方法</h5><p>静态方法，其实就是我们学过的函数，和函数唯一的区别是，静态方法定义在类这个空间（类命名空间）中，而函数则定义在程序所在的空间（全局命名空间）中。<br>静态方法没有类似 self、cls 这样的特殊参数，因此 Python 解释器不会对它包含的参数做任何类或对象的绑定。也正因为如此，类的静态方法中无法调用任何类属性和类方法。<br>静态方法需要使用＠staticmethod修饰</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">class CLanguage:</span><br><span class="line">    @staticmethod</span><br><span class="line">    def info(name,add):</span><br><span class="line">        print(name,add)</span><br></pre></td></tr></table></figure>
+<p><strong>静态方法的调用，既可以使用类名，也可以使用类对象</strong></p>
+<p>在实际编程中，几乎不会用到类方法和静态方法，因为我们完全可以使用函数代替它们实现想要的功能</p>
+<h4 id="浅谈Python类命名空间"><a href="#浅谈Python类命名空间" class="headerlink" title="浅谈Python类命名空间"></a>浅谈Python类命名空间</h4><p>Python 类体中的代码位于独立的命名空间（称为类命名空间）中。换句话说，所有用 class 关键字修饰的代码块，都可以看做是位于独立的命名空间中。</p>
+<p>和类命名空间相对的是全局命名空间，即整个 Python 程序默认都位于全局命名空间中。而类体则独立位于类命名空间中。</p>
+<p>但需要注意的一点是，当使用类对象调用类方法时，在传参方面是和外界的函数有区别的，因为 Python 会自动会第一个参数绑定方法的调用者，而位于全局空间中的函数，则必须显式为第一个参数传递参数。</p>
+<h4 id="Python描述符"><a href="#Python描述符" class="headerlink" title="Python描述符"></a>Python描述符</h4><p>Python 中，通过使用描述符，可以让程序员在引用一个对象属性时自定义要完成的工作<br>本质上看，描述符就是一个类，只不过它定义了另一个类中属性的访问方式。换句话说，一个类可以将属性管理全权委托给描述符类。<br>描述符是 Python 中复杂属性访问的基础，它在内部被用于实现 property、方法、类方法、静态方法和 super 类型</p>
+<p>描述符类基于以下 3 个特殊方法，换句话说，这 3 个方法组成了描述符协议：<br><strong>set</strong>(self, obj, type&#x3D;None)：在设置属性时将调用这一方法（后续用 setter 表示）；<br><strong>get</strong>(self, obj, value)：在读取属性时将调用这一方法（后续用 getter 表示）；<br><strong>delete</strong>(self, obj)：对属性调用 del 时将调用这一方法。</p>
+<p>其中，实现了 setter 和 getter 方法的描述符类被称为数据描述符；<br>反之，如果只实现了 getter 方法，则称为非数据描述符。</p>
+<p>在每次查找属性时，描述符协议中的方法都由类对象的特殊方法 <strong>getattribute</strong>() 调用（注意不要和 <strong>getattr</strong>() 弄混）。也就是说，每次使用类对象.属性（或者 getattr(类对象，属性值)）的调用方式时，都会隐式地调用 <strong>getattribute</strong>()，它会按照下列顺序查找该属性：</p>
+<p>验证该属性是否为类实例对象的数据描述符；<br>如果不是，就查看该属性是否能在类实例对象的 <strong>dict</strong> 中找到；<br>最后，查看该属性是否为类实例对象的非数据描述符。</p>
+<p>1、位于搜索链上的顺序。搜索链（或者优先链）的顺序大概是这样的：<br>数据描述符＞实体属性（存储在实体的_dict_中）&gt;非数据描述符。<br>这个顺序初看起来挺晦涩。解释如下：<br>获取一个属性的时候：<br>首先，看这个属性是不是一个数据描述符，如果是，就直接执行描述符的_get_，并返回值。<br>其次，如果这个属性不是数据描述符，那就按常规去从_dict_里面取。<br>最后，如果_dict_里面还没有，但这是一个非数据描述符，则执行非数据描述符的_get_方法，并返回</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">class revealAccess:</span><br><span class="line">    def __init__(self, initval = None, name = &#x27;var&#x27;):</span><br><span class="line">        self.val = initval</span><br><span class="line">        self.name = name</span><br><span class="line"></span><br><span class="line">    def __get__(self, obj, objtype):</span><br><span class="line">        print(&quot;Retrieving&quot;,self.name)</span><br><span class="line">        return self.val</span><br><span class="line"></span><br><span class="line">    def __set__(self, obj, val):</span><br><span class="line">        print(&quot;updating&quot;,self.name)</span><br><span class="line">        self.val = val</span><br><span class="line">class myClass:</span><br><span class="line">    x = revealAccess(10,&#x27;var &quot;x&quot;&#x27;)</span><br><span class="line">    y = 5</span><br><span class="line">m = myClass()</span><br><span class="line">print(m.x)</span><br><span class="line">m.x = 20</span><br><span class="line">print(m.x)</span><br><span class="line">print(m.y)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>运行结果为：<br>Retrieving var “x”<br>10<br>updating var “x”<br>Retrieving var “x”<br>20<br>5</p>
+<p>可以看到，如果一个类的某个属性有数据描述符，那么每次查找这个属性时，都会调用描述符的 <strong>get</strong>() 方法，并返回它的值；同样，每次在对该属性赋值时，也会调用 <strong>set</strong>() 方法</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://1yzf2zstgiyhub.io">漂亮鬼</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://1yzf2zstgiyhub.io/post/cae65769.html">http://1yzf2zstgiyhub.io/post/cae65769.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://1yzf2zstgiyhub.io" target="_blank">漂亮鬼</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/python%E6%8F%90%E5%8D%87/">python提升</a></div><div class="post_share"><div class="addthis_inline_share_toolbox"></div><script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-62e385ce9ecac8a4" async="async"></script></div></div><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/post/f16679c0.html" title="python提升一"><img class="cover" src="https://pic2.zhimg.com/v2-7a3a5a5eafb5621fc4ae05c5327c0740_r.jpg?source=3af55fa1" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-08-10</div><div class="title">python提升一</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://picx.zhimg.com/v2-6576f8c64444c40baa4602979c75d1e3_r.jpg?source=3af55fa1" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">漂亮鬼</div><div class="author-info__description">做一个爱美食，的大胖子--嘿嘿</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">32</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">15</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/1yzf2zst/1yzf2zst.github.io"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/1yzf2zst" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:2562644984@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="xpand" style="height:200px;"><canvas class="illo" width="800" height="800" style="max-width: 200px; max-height: 200px; touch-action: none; width: 640px; height: 640px;"></canvas></div><script src="https://fastly.jsdelivr.net/gh/xiaopengand/blogCdn@latest/xzxr/twopeople1.js"></script><script src="https://fastly.jsdelivr.net/gh/xiaopengand/blogCdn@latest/xzxr/zdog.dist.js"></script><script id="rendered-js" src="https://fastly.jsdelivr.net/gh/xiaopengand/blogCdn@latest/xzxr/twopeople.js"></script><style>.card-widget.card-announcement {
+margin: 0;
+align-items: center;
+justify-content: center;
+text-align: center;
+}
+canvas {
+display: block;
+margin: 0 auto;
+cursor: move;
+}
+</style><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎各位， 各位来到xiaoyang的blog qq 2562644984 wechat zst210621yzf</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#Python-self%E7%94%A8%E6%B3%95"><span class="toc-number">1.</span> <span class="toc-text">Python self用法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Python%E7%B1%BB%E5%8F%98%E9%87%8F%E5%92%8C%E5%AE%9E%E4%BE%8B%E5%8F%98%E9%87%8F"><span class="toc-number">2.</span> <span class="toc-text">Python类变量和实例变量</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%B1%BB%E5%8F%98%E9%87%8F%EF%BC%88%E7%B1%BB%E5%B1%9E%E6%80%A7%EF%BC%89"><span class="toc-number">2.1.</span> <span class="toc-text">类变量（类属性）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%B1%BB%E6%96%B9%E6%B3%95%E7%9A%84%E8%B0%83%E7%94%A8%E6%96%B9%E5%BC%8F%E6%9C%89-2-%E7%A7%8D%EF%BC%8C"><span class="toc-number">2.2.</span> <span class="toc-text">类方法的调用方式有 2 种，</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B%E5%8F%98%E9%87%8F%EF%BC%88%E5%AE%9E%E4%BE%8B%E5%B1%9E%E6%80%A7%EF%BC%89"><span class="toc-number">2.3.</span> <span class="toc-text">实例变量（实例属性）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E6%8E%A8%E8%8D%90%E4%BD%BF%E7%94%A8%E7%B1%BB%E5%AF%B9%E8%B1%A1%E8%B0%83%E7%94%A8%E7%B1%BB%E5%8F%98%E9%87%8F"><span class="toc-number">2.4.</span> <span class="toc-text">为什么不推荐使用类对象调用类变量</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F"><span class="toc-number">2.5.</span> <span class="toc-text">局部变量</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Python%E5%AE%9E%E4%BE%8B%E6%96%B9%E6%B3%95%E3%80%81%E9%9D%99%E6%80%81%E6%96%B9%E6%B3%95%E5%92%8C%E7%B1%BB%E6%96%B9%E6%B3%95"><span class="toc-number">3.</span> <span class="toc-text">Python实例方法、静态方法和类方法</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Python%E7%B1%BB%E5%AE%9E%E4%BE%8B%E6%96%B9%E6%B3%95"><span class="toc-number">3.1.</span> <span class="toc-text">Python类实例方法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Python-%E7%B1%BB%E6%96%B9%E6%B3%95"><span class="toc-number">3.2.</span> <span class="toc-text">Python 类方法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Python%E7%B1%BB%E9%9D%99%E6%80%81%E6%96%B9%E6%B3%95"><span class="toc-number">3.3.</span> <span class="toc-text">Python类静态方法</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B5%85%E8%B0%88Python%E7%B1%BB%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4"><span class="toc-number">4.</span> <span class="toc-text">浅谈Python类命名空间</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Python%E6%8F%8F%E8%BF%B0%E7%AC%A6"><span class="toc-number">5.</span> <span class="toc-text">Python描述符</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/post/ff3fc45d.html" title="Tkinter-Scale控件"><img src="https://picx.zhimg.com/v2-6576f8c64444c40baa4602979c75d1e3_r.jpg?source=3af55fa1" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Tkinter-Scale控件"/></a><div class="content"><a class="title" href="/post/ff3fc45d.html" title="Tkinter-Scale控件">Tkinter-Scale控件</a><time datetime="2022-08-11T12:59:47.000Z" title="发表于 2022-08-11 20:59:47">2022-08-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/cae65769.html" title="python提升二"><img src="https://pica.zhimg.com/v2-1ca4168a38c1bb34542bdbe68fbd9515_r.jpg?source=3af55fa1" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="python提升二"/></a><div class="content"><a class="title" href="/post/cae65769.html" title="python提升二">python提升二</a><time datetime="2022-08-11T12:32:29.000Z" title="发表于 2022-08-11 20:32:29">2022-08-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/4f692c96.html" title="Tkinter--Checkbutton复选框控件"><img src="https://pic2.zhimg.com/80/v2-dd55abd19779b60abba7e0c6d2b26689_720w.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Tkinter--Checkbutton复选框控件"/></a><div class="content"><a class="title" href="/post/4f692c96.html" title="Tkinter--Checkbutton复选框控件">Tkinter--Checkbutton复选框控件</a><time datetime="2022-08-10T11:50:32.000Z" title="发表于 2022-08-10 19:50:32">2022-08-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/f16679c0.html" title="python提升一"><img src="https://pic2.zhimg.com/v2-7a3a5a5eafb5621fc4ae05c5327c0740_r.jpg?source=3af55fa1" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="python提升一"/></a><div class="content"><a class="title" href="/post/f16679c0.html" title="python提升一">python提升一</a><time datetime="2022-08-10T11:07:39.000Z" title="发表于 2022-08-10 19:07:39">2022-08-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/d6a06432.html" title="Tkinter单选框和多选框按钮"><img src="https://pica.zhimg.com/v2-1ca4168a38c1bb34542bdbe68fbd9515_r.jpg?source=3af55fa1" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Tkinter单选框和多选框按钮"/></a><div class="content"><a class="title" href="/post/d6a06432.html" title="Tkinter单选框和多选框按钮">Tkinter单选框和多选框按钮</a><time datetime="2022-08-09T13:35:40.000Z" title="发表于 2022-08-09 21:35:40">2022-08-09</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://picx.zhimg.com/v2-d1098f823452d83e34ce0aa6b6c484ae_r.jpg?source=3af55fa1')"><div id="footer-wrap"><div class="copyright">&copy;2022 By 漂亮鬼</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Hello,  welcome  to   <a  target="_blank" rel="noopener" href="https://xiaoyangzst.vercel.app">小杨的blog</a>!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><div class="js-pjax"></div><script src="/js/snowflake.js"></script><script src="https://cdn.jsdelivr.net/gh/caicheng918/CDN@4.0/res/mouse_snow.js"></script><script src="/js/funny.js"></script><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/fireworks.min.js"></script><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="true"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"superSample":2,"width":200,"height":400,"position":"left","hOffset":-30,"vOffset":-20},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.2},"log":false});</script></body></html>
