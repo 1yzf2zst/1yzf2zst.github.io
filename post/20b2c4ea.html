@@ -1,0 +1,354 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>Tkinter-Canvas画布控件 | 漂亮鬼</title><meta name="keywords" content="python"><meta name="author" content="漂亮鬼"><meta name="copyright" content="漂亮鬼"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Tkinter Canvas画布控件Canvas 控件具有两个功能，1.它可以用来绘制各种图形如,弧形、线条、椭圆形、多边形和矩形等，2.Canvas 控件还可以用来展示图片（包括位图），我们将这些绘制在画布控件上的图形，称之为“画布对象”。 每一个画布对象都有一个“唯一身份ID”，这是 Tkinter 自动为其创建的，从而方便控制和操作这些画布对象。 通过 Canvas 控件创建一个简单的图形编">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Tkinter-Canvas画布控件">
+<meta property="og:url" content="http://1yzf2zstgiyhub.io/post/20b2c4ea.html">
+<meta property="og:site_name" content="漂亮鬼">
+<meta property="og:description" content="Tkinter Canvas画布控件Canvas 控件具有两个功能，1.它可以用来绘制各种图形如,弧形、线条、椭圆形、多边形和矩形等，2.Canvas 控件还可以用来展示图片（包括位图），我们将这些绘制在画布控件上的图形，称之为“画布对象”。 每一个画布对象都有一个“唯一身份ID”，这是 Tkinter 自动为其创建的，从而方便控制和操作这些画布对象。 通过 Canvas 控件创建一个简单的图形编">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.staticaly.com/gh/1yzf2zst/images@main/20220806/wallhaven-4v1e78.3gf56hiwtpe0.webp">
+<meta property="article:published_time" content="2022-08-13T12:48:12.000Z">
+<meta property="article:modified_time" content="2022-08-13T12:49:22.668Z">
+<meta property="article:author" content="漂亮鬼">
+<meta property="article:tag" content="python">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.staticaly.com/gh/1yzf2zst/images@main/20220806/wallhaven-4v1e78.3gf56hiwtpe0.webp"><link rel="shortcut icon" href="https://pic2.zhimg.com/v2-9359c735aa38fa08bc161d8d6c0df38e_r.jpg?source=3af55fa1"><link rel="canonical" href="http://1yzf2zstgiyhub.io/post/20b2c4ea"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin=""/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?fa627d7767ce07eaecb96088287b512d";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: 漂亮鬼","link":"链接: ","source":"来源: 漂亮鬼","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Tkinter-Canvas画布控件',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: true,
+  isToc: true,
+  postUpdate: '2022-08-13 20:49:22'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/mouse.css"><style>#article-container.post-content h1:before, h2:before, h3:before, h4:before, h5:before, h6:before { -webkit-animation: avatar_turn_around 1s linear infinite; -moz-animation: avatar_turn_around 1s linear infinite; -o-animation: avatar_turn_around 1s linear infinite; -ms-animation: avatar_turn_around 1s linear infinite; animation: avatar_turn_around 1s linear infinite; }</style><meta name="generator" content="Hexo 6.2.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://picx.zhimg.com/v2-6576f8c64444c40baa4602979c75d1e3_r.jpg?source=3af55fa1" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">36</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">16</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 目录</span></a></div><div class="menus_item"><a class="site-page" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> images</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.staticaly.com/gh/1yzf2zst/images@main/20220806/wallhaven-4v1e78.3gf56hiwtpe0.webp')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">漂亮鬼</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 目录</span></a></div><div class="menus_item"><a class="site-page" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> images</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Tkinter-Canvas画布控件</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-08-13T12:48:12.000Z" title="发表于 2022-08-13 20:48:12">2022-08-13</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-08-13T12:49:22.668Z" title="更新于 2022-08-13 20:49:22">2022-08-13</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/python-tkinter/">python--tkinter</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">3.7k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>13分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Tkinter-Canvas画布控件"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h5 id="Tkinter-Canvas画布控件"><a href="#Tkinter-Canvas画布控件" class="headerlink" title="Tkinter Canvas画布控件"></a>Tkinter Canvas画布控件</h5><p>Canvas 控件具有两个功能，<br>1.<br>它可以用来绘制各种图形<br>如,弧形、线条、椭圆形、多边形和矩形等，<br>2.<br>Canvas 控件还可以用来展示图片（包括位图），我们将这些绘制在画布控件上的图形，称之为“画布对象”。</p>
+<p>每一个画布对象都有一个“唯一身份ID”，这是 Tkinter 自动为其创建的，从而方便控制和操作这些画布对象。</p>
+<p>通过 Canvas 控件创建一个简单的图形编辑器，让用户可以达到自定义图形的目的，就像使用画笔在画布上绘画一样，可以绘制各式各样的形状，从而有更好的人机交互体验。</p>
+<p>常用属性：</p>
+<p>background(bg)<br>指定 Canvas 控件的背景颜色</p>
+<p>borderwidth(bd)<br>指定 Canvas 控件的边框宽度</p>
+<p>closeenough</p>
+<ol>
+<li>指定一个距离，当鼠标与画布对象的距离小于该值时，认为鼠标位于画布对象上</li>
+<li>该选项是一个浮点类型的值</li>
+</ol>
+<p>confine<br>指定 Canvas 控件是否允许滚动超出 </p>
+<p>scrollregion<br>项设置的滚动范围，默认值为 True</p>
+<p>selectbackground<br>指定当画布对象（即在 Canvas 画布上绘制的图形）被选中时的背景色</p>
+<p>selectborderwidth<br>指定当画布对象被选中时的边框宽度（选中边框）</p>
+<p>selectforeground<br>指定当画布对象被选中时的前景色</p>
+<p>state<br>设置 Canvas 的状态：”normal” 或 “disabled”，默认值是 “normal”，注意，该值不会影响画布对象的状态</p>
+<p>takefocus<br>指定使用 Tab 键可以将焦点移动到输入框中，默认为开启，将该选项设置为 False 避免焦点在此输入框中</p>
+<p>width<br>指定 Canvas 的宽度，单位为像素</p>
+<p>xscrollcommand与 scrollbar（滚动条）控件<br>相关联（沿着 x 轴水平方向）</p>
+<p>xscrollincrement</p>
+<ol>
+<li>该选项指定 Canvas 水平滚动的“步长”</li>
+<li>例如 ‘3c’ 表示 3 厘米，还可以选择的单位有 ‘i’（英寸），’m’（毫米）和 ‘p’（DPI，大约是 ‘1i’ 等于 ‘72p’）</li>
+<li>默认为 0，表示可以水平滚动到任意位置</li>
+</ol>
+<p>yscrollcommand与 scrollbar 控件（滚动条）<br>相关联（沿着 y 轴垂直方向）</p>
+<p>yscrollincrement</p>
+<ol>
+<li>该选项指定 Canvas 垂直滚动的“步长”</li>
+<li>例如 ‘3c’ 表示 3 厘米，还可以选择的单位有 ‘i’（英寸），’m’（毫米）和 ‘p’（DPI，大约是 ‘1i’ 等于 ‘72p’）</li>
+<li>默认值是 0，表示可以垂直方向滚动到任意位置</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">import tkinter as tk</span><br><span class="line">window = tk.Tk()</span><br><span class="line">window.geometry(&#x27;400x200&#x27;)</span><br><span class="line"># 创库不允许改变</span><br><span class="line">window.resizable(0,0)</span><br><span class="line"># 创建画布</span><br><span class="line">canvas = tk.Canvas(window,</span><br><span class="line">                   bg=&#x27;#CDC9A5&#x27;,</span><br><span class="line">                   height=200,</span><br><span class="line">                   width=300)</span><br><span class="line">canvas.pack()</span><br><span class="line">window.mainloop()</span><br></pre></td></tr></table></figure>
+
+<p>常用方法：</p>
+<p>create_line(x0, y0, x1, y1, … , xn, yn, options)</p>
+<ol>
+<li><p>根据给定的坐标创建一条或者多条线段；</p>
+</li>
+<li><p>参数 x0,y0,x1,y1,…,xn,yn 定义线条的坐标；</p>
+</li>
+<li><p>参数 options 表示其他可选参数</p>
+</li>
+</ol>
+<p>create_oval(x0, y0, x1, y1, options)</p>
+<ol>
+<li><p>绘制一个圆形或椭圆形；</p>
+</li>
+<li><p>参数 x0 与 y0 定义绘图区域的左上角坐标；参数 x1 与 y1 定义绘图区域的右下角坐标；</p>
+</li>
+<li><p>参数 options 表示其他可选参数</p>
+</li>
+</ol>
+<p>create_polygon(x0, y0, x1, y1, … , xn, yn, options)</p>
+<ol>
+<li><p>绘制一个至少三个点的多边形；</p>
+</li>
+<li><p>参数 x0、y0、x1、y1、…、xn、yn 定义多边形的坐标；</p>
+</li>
+<li><p>参数 options 表示其他可选参数</p>
+</li>
+</ol>
+<p>create_rectangle(x0, y0, x1, y1, options)</p>
+<ol>
+<li><p>绘制一个矩形；</p>
+</li>
+<li><p>参数 x0 与 y0 定义矩形的左上角坐标；参数 x 与 y1 定义矩形的右下角坐标；</p>
+</li>
+<li><p>参数 options 表示其他可选参数</p>
+</li>
+</ol>
+<p>create_text(x0, y0, text, options)</p>
+<ol>
+<li><p>绘制一个文字字符串</p>
+</li>
+<li><p>参数 x0 与 y0 定义文字字符串的左上角坐标，参数 text 定义文字字符串的文字；</p>
+</li>
+<li><p>参数 options 表示其他可选参数</p>
+</li>
+</ol>
+<p> create_image(x, y, image)</p>
+<ol>
+<li><p>创建一个图片;</p>
+</li>
+<li><p>参数 x 与 y 定义图片的左上角坐标；</p>
+</li>
+<li><p>参数 image 定义图片的来源，必须是 tkinter 模块的 BitmapImage 类或 PhotoImage 类的实例变量。</p>
+</li>
+</ol>
+<p>create_bitmap(x, y, bitmap)</p>
+<ol>
+<li><p>创建一个位图；</p>
+</li>
+<li><p>参数 x 与 y 定义位图的左上角坐标；</p>
+</li>
+<li><p>参数 bitmap 定义位图的来源，参数值可以是<br> gray12、gray25、gray50、gray75、hourglass、error、questhead、info、warning 或 question，或者也可以直接使用 XBM（X Bitmap）类型的文件，此时需要在 XBM 文件名称前添加一个 @ 符号</p>
+</li>
+</ol>
+<p>例如 bitmap&#x3D;@hello.xbmcreate_arc(coord, start, extent, fill)</p>
+<ol>
+<li>绘制一个弧形；</li>
+<li>参数 coord 定义画弧形区块的左上角与右下角坐标；</li>
+<li>参数 start 定义画弧形区块的起始角度（逆时针方向）；</li>
+<li>参数 extent 定义画弧形区块的结束角度（逆时针方向）；</li>
+<li>参数 fill 定义填充弧形区块的颜色。</li>
+</ol>
+<p>注意：上述方法都会返回一个画布对象的唯一 ID。关于 options 参数，下面会通过一个示例对经常使用的参数做相关介绍</p>
+<p>从上述不难看出，Canvas 控件采用了坐标系的方式来确定画布中的每一点。</p>
+<p>一般情况下，默认主窗口的左上角为坐标原点，这种坐标系被称作为“窗口坐标系”，但也会存在另外一种情况，即画布的大小可能大于主窗口，当发生这种情况的时，可以采用带滚动条的 Canvas 控件，此时会以画布的左上角为坐标原点，我们将这种坐标系称为“画布坐标系”。</p>
+<ol>
+<li>绘制直线<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">from tkinter import *</span><br><span class="line">root = Tk()</span><br><span class="line">root.config(bg=&#x27;#87CEEB&#x27;)</span><br><span class="line">root.geometry(&#x27;450x350&#x27;)</span><br><span class="line">cv=Canvas(root,bg=&quot;white&quot;,width =300, height = 250)</span><br><span class="line">cv.pack()</span><br><span class="line"># 设置坐标点,此处可以元组的形式来设置坐标点</span><br><span class="line">point=[(10,20),(20,30),(30,40),(40,100),(80,120),(150,90)]</span><br><span class="line"># 创建画布，添加线条</span><br><span class="line"># fill 参数指定填充的颜色，如果为空字符串，则表示透明</span><br><span class="line"># dash 参数表示用来绘制虚线轮廓，元组参数，分别代表虚线中线段的长度和线段之间的间隔</span><br><span class="line"># arrow 设线段的箭头样式，默认不带箭头，参数值 first 表示添加箭头带线段开始位置，last表示到末尾占位置，both表示两端均添加</span><br><span class="line"># smooth 布尔值参数，表示是否以曲线的样式划线，默认为 False</span><br><span class="line"># width 控制线宽</span><br><span class="line">line1=cv.create_line(point,fill=&quot;purple&quot;,dash=(1,1),arrow=LAST,width=5)</span><br><span class="line"># print(&#x27;线段line1的画布id号:&#x27;,line1)</span><br><span class="line"># line2=cv.create_line(point,fill=&quot;red&quot;,arrow=BOTH,smooth=TRUE,width=5)</span><br><span class="line"># print(&#x27;线段line2的画布id号:&#x27;,line2)</span><br><span class="line"># 移动其中一条线段，只需要更改其坐标就可以,使用 coords()方法移动曲线</span><br><span class="line"># cv.coords(line2,50,30,25,35,35,40,50,120,60,170,10,180)</span><br><span class="line"># 显示窗口</span><br><span class="line">root.mainloop()</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>上述示例中涉及了一部分参数，比如 fill、dash、arrow 等，<br>对 create_line() 函数的相关参数做了简单介绍：</p>
+<p>activedash<br>当画布对象状态为 “active” 的时候，绘制虚线</p>
+<p>activefill<br>当画布对象状态为 “active” 的时候，填充颜色</p>
+<p>activestipple<br>当画布对象状态为 “active” 的时候，指定填充的位图</p>
+<p>activewidth<br>当画布对象状态为 “active” 的时候，指定边框的宽度</p>
+<p>arrow</p>
+<ol>
+<li>默认线段是不带箭头的，通过设置该选项添加箭头到线段中</li>
+<li>“first” 表示添加箭头到线段开始的位置</li>
+<li>“last” 表示添加箭头到线段结束的位置</li>
+<li>“both” 表示两端均添加箭头</li>
+</ol>
+<p>arrowshape<br>用一个三元组来指定箭头的形状，默认值是 (8, 10, 3)，元组中的数值分别代表箭头中三条边的长度</p>
+<p>capstyle</p>
+<ol>
+<li>指定线段两端的样式，默认值是 “butt”</li>
+<li>该选项的值可以是：<br>“butt”（线段的两段平切于起点和终点）<br>“projecting”（线段的两段在起点和终点的位置将 width 选项设置的长度分别延长一半）<br>“round”（线段的两段在起点和终点的位置将 width设置的长度分别延长一半，并以圆角进行绘制）</li>
+</ol>
+<p>dash<br>绘制虚线，该选项值是一个整数元组，元组中的元素分别代表短线的长度和间隔，比如 (3, 5) 代表 3 个像素的短线和 5 个像素的间隔</p>
+<p>dashoffset<br>指定虚线开始的偏移位置，比如 dash&#x3D;(5, 1, 2, 1)，dashoffset&#x3D;3，则从 2 开始画虚线</p>
+<p>disableddash<br>当画布对象状态为 “disabled” 的时候，绘制虚线</p>
+<p>disabledfill<br>画布对象状态为 “disabled” 的时候，填充颜色</p>
+<p>disabledstipple<br>当画布对象状态为 “disabled” 的时候，指定填充的位图</p>
+<p>disabledwidth<br>当画布对象状态为 “disabled” 的时候，指定边框的宽度</p>
+<p>fill<br>指定填充的颜色，空字符串表示透明</p>
+<p>joinstyle</p>
+<ol>
+<li><p>指定当绘制两个相邻线段之间时接口的样式，默认为 “round”</p>
+</li>
+<li><p>该选项的值可以是：<br>“round”（以连接点为圆心，1&#x2F;2 width 选项设置的长度为半径来绘制圆角）<br>“bevel”（在连接点处将两线段的夹角做平切操作）<br>“miter”（沿着两线段的夹角延伸至一个点）</p>
+</li>
+</ol>
+<p>offset<br>指定当点画模式时填充位图的偏移</p>
+<p>smooth<br>默认值为 False，若设置为 True，表示将以曲线的样式代替所绘线段</p>
+<p>splinesteps<br>当绘制曲线的时，该选项指定由多少条折线来构成曲线，默认值是 12，这里需要注意，只有当 smooth 选项为 True 时该选项才会生效。</p>
+<p>state<br>指定该画布对象的状态，默认值为 “normal”，参数值有 “normal”，”disabled”（不可用）和 “hidden”（隐藏）三种状态。</p>
+<p>stipple<br>指定一个位图进行填充，默认值为空字符串，表示实心</p>
+<p>tags<br>为创建的画布对象添加标签width指定边框的宽度</p>
+<p>对于扇形、矩形、三角形、圆形等，这些封闭式图形，它们由轮廓线和填充颜色两部分组成。在绘制这些图形时相关函数的可选参数与上述也存在略微差异</p>
+<p>下面以绘制扇形的 create_arc() 函数为例做简单的介绍：</p>
+<p>activedash<br>当画布对象状态为 “active” 的时候，绘制虚线</p>
+<p>activefill<br>当画布对象状态为 “active” 的时候，填充颜色</p>
+<p>activeoutline<br>当画布对象状态为 “active” 的时候，绘制轮廓线</p>
+<p>activeoutlinestipple<br>当画布对象状态为 “active” 的时候，指定填充轮廓的位图</p>
+<p>activestipple<br>当画布对象状态为 “active” 的时候，指定填充的位图</p>
+<p>activewidth<br>当画布对象状态为 “active” 的时候，指定边框的宽度</p>
+<p>dash<br>指定绘制虚线轮廓，与绘制线段的含义相同</p>
+<p>dashoffset<br>指定虚线轮廓开始的偏移位置</p>
+<p>disableddash<br>当画布对象状态为 “disabled” 的时候，绘制虚线</p>
+<p>disabledfill<br>当画布对象状态为 “disabled” 的时候，填充颜色</p>
+<p>disabledoutline<br>当画布对象状态为 “disabled” 的时候，绘制轮廓线</p>
+<p>disabledoutlinestipple<br>当画布对象状态为 “disabled” 的时候，指定填充轮廓的位图</p>
+<p>disabledstipple<br>当画布对象状态为 “disabled” 的时候，指定填充的位图</p>
+<p>disabledwidth<br>当画布对象状态为 “disabled” 的时候，指定边框的宽度</p>
+<p>extent<br>指定跨度（从 start 选项指定的位置开始到结束位置的角度）默认值是 90.0</p>
+<p>fill<br>与上述表格的含义相同，表示指定的填充颜色，若为空字符串则为透明色</p>
+<p>offset<br>指定当点画模式时填充位置的偏移，参数值为 “x,y”坐标偏移和位置偏移两种方式，比如 “ne”&#x2F;“e” 等outline指定轮廓的颜色</p>
+<p>outlineoffset<br>指定当点画模式绘制轮廓时位图的偏移</p>
+<p>outlinestipple<br>当 outline 选项被设置时，该选项用于指定一个位图来填充边框，默认值是空字符串，表示黑色</p>
+<p>start<br>指定起始位置的偏移角度</p>
+<p>style<br>默认创建的是扇形，指定该方法创建的是扇形（”pieslice”）、弓形（”chord”）还是弧形（”arc”）</p>
+<p>tags<br>为创建的画布对象添加标签width指定边框的宽度</p>
+<p>在实际的使用的过程中经常用到的参数有 dash、fill、outline、extend 和 start，但是这么多的参数我们也不可能都记住，这时查手册是一种很好的方法，官网文档地址：<a target="_blank" rel="noopener" href="https://docs.python.org/3.7/library/tkinter.html">点击前往</a>。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">from tkinter import *</span><br><span class="line">root = Tk()</span><br><span class="line">root.config(bg=&#x27;#8DB6CD&#x27;)</span><br><span class="line">root.geometry(&#x27;500x400&#x27;)</span><br><span class="line"># 将画布设置为白色</span><br><span class="line">canvas = Canvas(root,width = 400,height = 400,bg=&#x27;white&#x27;)</span><br><span class="line"># 设置基准坐标</span><br><span class="line">x0,y0,x1,y1 = 10,10,80,80</span><br><span class="line"># 绘制扇形,起始角度为 0 度，结束角度为 270, 扇形区域填充色为淡蓝色，轮廓线为蓝色，线宽为 2px</span><br><span class="line">arc = canvas.create_arc(x0, y0, x1, y1,start = 0, extent = 270, fill = &#x27;#B0E0E6&#x27;,outline =&#x27;blue&#x27;,width = 2)</span><br><span class="line"># 绘制圆形</span><br><span class="line">oval = canvas.create_oval(x0+150, y0, x1+150, y1,fill =&#x27;#CD950C&#x27;,outline = &#x27;blue&#x27;,width=2)</span><br><span class="line"># 绘制矩形,并将轮廓线设置为透明色，即不显示最外围的轮廓线，默认为黑色</span><br><span class="line">rect = canvas.create_rectangle(x0,y0+100,x1,y1+100,fill=&#x27;red&#x27;,outline = &#x27;&#x27;)</span><br><span class="line"># 绘制一个三角形，填充色为绿色</span><br><span class="line">trigon = canvas.create_polygon(80,80,150,80,200,200, outline=&quot;&quot;, fill=&quot;green&quot;,)</span><br><span class="line"># 绘制一个多边形，首先定义一系列的多边形上的坐标点</span><br><span class="line">poly_points=[(0,280),(140,200),(140,240),(270,240),(270,320),(140,320),(140,360)]</span><br><span class="line">polygon = canvas.create_polygon(poly_points,fill=&quot;#BF3EFF&quot;)</span><br><span class="line">canvas.pack()</span><br><span class="line"># 显示窗口</span><br><span class="line">root.mainloop()</span><br></pre></td></tr></table></figure>
+
+<p>注意：create_rectangle() 方法的前两个参数决定了矩形的左上角坐标，后两个参数决定了矩形的右下角坐标；另外 create_oval() 方法并不是只能绘制圆形，还能绘制椭圆形，这取决于传入的参数。</p>
+<p>Tkinter 展示图片、创建位图以及文本信息等</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">import tkinter as tk</span><br><span class="line">root= tk.Tk()</span><br><span class="line">w=root.winfo_screenwidth()</span><br><span class="line">h=root.winfo_screenheight()</span><br><span class="line">root.geometry(&quot;300x300+500+200&quot;)</span><br><span class="line">cv= tk.Canvas(root,bg=&quot;#AAAAFF&quot;)</span><br><span class="line">img= tk.PhotoImage(file=&quot;D:\\File\\All\\python\\blog\\img\\99.png&quot;)</span><br><span class="line">cv.create_image(10,10,image=img)</span><br><span class="line">cv.create_text(100,100,text=&#x27;漂亮鬼&#x27;,font =(&#x27;华文楷体&#x27;,15,&#x27;bold&#x27;))</span><br><span class="line">cv.pack()</span><br><span class="line">root.mainloop()</span><br></pre></td></tr></table></figure>
+
+<p>注意，添加到 Canvas 上的对象会一直保留直着。如果你希望修改它们，您可以使用 coords() 和 move() 方法来移动画布上的对象，当然您可以使用 delete() 来删除它们：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">import tkinter as tk</span><br><span class="line">root= tk.Tk()</span><br><span class="line">w=root.winfo_screenwidth()</span><br><span class="line">h=root.winfo_screenheight()</span><br><span class="line">root.geometry(&quot;300x300+500+200&quot;)</span><br><span class="line">cv= tk.Canvas(root,bg=&quot;#AAAAFF&quot;)</span><br><span class="line">img= tk.PhotoImage(file=&quot;D:\\File\\All\\python\\blog\\img\\99.png&quot;)</span><br><span class="line">cv.create_image(10,10,image=img)</span><br><span class="line">cv.create_text(100,100,text=&#x27;漂亮鬼&#x27;,font =(&#x27;华文楷体&#x27;,15,&#x27;bold&#x27;))</span><br><span class="line">def move_img():</span><br><span class="line">    # 定义移动坐标</span><br><span class="line">    cv.move(img,50,30)</span><br><span class="line">btn=tk.Button(cv,text=&quot;点击移动画布&quot;,bg=&quot;#8A8A8A&quot;,activebackground=&quot;#7CCD7C&quot;,command=move_img)</span><br><span class="line"># 在指定位置创建一个窗口控件，tags来添加标签</span><br><span class="line">cv.create_window(365,250,height=30,width=30,window=btn)</span><br><span class="line"># 调用delete() 删除画布对象,若传入ALL，则删除所有的画布对象</span><br><span class="line">#cv.delete(image1)</span><br><span class="line">cv.pack()</span><br><span class="line"># 显示窗口</span><br><span class="line">root.mainloop()</span><br></pre></td></tr></table></figure>
+<p>这里可能没有效果，大家可以换一张比窗口小的图放上面移动就能看到明显效果了</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://1yzf2zstgiyhub.io">漂亮鬼</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://1yzf2zstgiyhub.io/post/20b2c4ea.html">http://1yzf2zstgiyhub.io/post/20b2c4ea.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://1yzf2zstgiyhub.io" target="_blank">漂亮鬼</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/python/">python</a></div><div class="post_share"><div class="addthis_inline_share_toolbox"></div><script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-62e385ce9ecac8a4" async="async"></script></div></div><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/post/67fd3ea0.html" title="Pillow为图片添加水印"><img class="cover" src="https://cdn.staticaly.com/gh/1yzf2zst/images@main/20220810/wallhaven-g7wwoe.6cr1x4ir0n80.webp" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-08-05</div><div class="title">Pillow为图片添加水印</div></div></a></div><div><a href="/post/2d89a648.html" title="Pillow图像几何变换"><img class="cover" src="https://cdn.staticaly.com/gh/1yzf2zst/images@main/20220806/9350218e-1588690336.jllxs18eb74.webp" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-08-04</div><div class="title">Pillow图像几何变换</div></div></a></div><div><a href="/post/4c1116f9.html" title="Pillow图像降噪处理和颜色处理"><img class="cover" src="https://pic1.zhimg.com/v2-5c0fecc702d4d64f2b18bc7ea24a7e41_r.jpg?source=3af55fa1" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-08-05</div><div class="title">Pillow图像降噪处理和颜色处理</div></div></a></div><div><a href="/post/f6193f79.html" title="Pillow图像分离与合并"><img class="cover" src="https://cdn.staticaly.com/gh/1yzf2zst/images@main/20220803/guidao.1cgwaghxw5ts.webp" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-08-04</div><div class="title">Pillow图像分离与合并</div></div></a></div><div><a href="/post/fe65fb3c.html" title="Tkinter_Combobox控件"><img class="cover" src="https://cdn.staticaly.com/gh/1yzf2zst/images@main/20220802/13165206_e76d92106d.6wvjupjwkvc0.webp" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-08-09</div><div class="title">Tkinter_Combobox控件</div></div></a></div><div><a href="/post/4f692c96.html" title="Tkinter--Checkbutton复选框控件"><img class="cover" src="https://cdn.staticaly.com/gh/1yzf2zst/images@main/20220802/13165206_e76d92106d.6wvjupjwkvc0.webp" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-08-10</div><div class="title">Tkinter--Checkbutton复选框控件</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://picx.zhimg.com/v2-6576f8c64444c40baa4602979c75d1e3_r.jpg?source=3af55fa1" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">漂亮鬼</div><div class="author-info__description">爱干饭的程序员--嘿嘿</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">36</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">16</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/1yzf2zst/1yzf2zst.github.io"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/1yzf2zst" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:2562644984@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="xpand" style="height:200px;"><canvas class="illo" width="800" height="800" style="max-width: 200px; max-height: 200px; touch-action: none; width: 640px; height: 640px;"></canvas></div><script src="https://fastly.jsdelivr.net/gh/xiaopengand/blogCdn@latest/xzxr/twopeople1.js"></script><script src="https://fastly.jsdelivr.net/gh/xiaopengand/blogCdn@latest/xzxr/zdog.dist.js"></script><script id="rendered-js" src="https://fastly.jsdelivr.net/gh/xiaopengand/blogCdn@latest/xzxr/twopeople.js"></script><style>.card-widget.card-announcement {
+margin: 0;
+align-items: center;
+justify-content: center;
+text-align: center;
+}
+canvas {
+display: block;
+margin: 0 auto;
+cursor: move;
+}
+</style><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎各位， 各位来到xiaoyang的blog
+博主发布的博文都是博主学习笔记
+qq:2562644984 wechat:zst210621yzf</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#Tkinter-Canvas%E7%94%BB%E5%B8%83%E6%8E%A7%E4%BB%B6"><span class="toc-number">1.</span> <span class="toc-text">Tkinter Canvas画布控件</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/post/20b2c4ea.html" title="Tkinter-Canvas画布控件"><img src="https://cdn.staticaly.com/gh/1yzf2zst/images@main/20220806/wallhaven-4v1e78.3gf56hiwtpe0.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Tkinter-Canvas画布控件"/></a><div class="content"><a class="title" href="/post/20b2c4ea.html" title="Tkinter-Canvas画布控件">Tkinter-Canvas画布控件</a><time datetime="2022-08-13T12:48:12.000Z" title="发表于 2022-08-13 20:48:12">2022-08-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/d98acf3f.html" title="python提升五"><img src="https://cdn.staticaly.com/gh/1yzf2zst/images@main/20220806/wallhaven-4dw8lj.4pnfyaqxycg0.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="python提升五"/></a><div class="content"><a class="title" href="/post/d98acf3f.html" title="python提升五">python提升五</a><time datetime="2022-08-13T11:38:18.000Z" title="发表于 2022-08-13 19:38:18">2022-08-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/c468ad7a.html" title="python提升四"><img src="https://cdn.staticaly.com/gh/1yzf2zst/images@main/20220806/wallhaven-471z2v.6d6wm85oprg0.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="python提升四"/></a><div class="content"><a class="title" href="/post/c468ad7a.html" title="python提升四">python提升四</a><time datetime="2022-08-13T11:17:11.000Z" title="发表于 2022-08-13 19:17:11">2022-08-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/88bac164.html" title="python提升三"><img src="https://pic2.zhimg.com/v2-7a3a5a5eafb5621fc4ae05c5327c0740_r.jpg?source=3af55fa1" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="python提升三"/></a><div class="content"><a class="title" href="/post/88bac164.html" title="python提升三">python提升三</a><time datetime="2022-08-12T10:40:55.000Z" title="发表于 2022-08-12 18:40:55">2022-08-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/ff3fc45d.html" title="Tkinter-Scale控件"><img src="https://cdn.staticaly.com/gh/1yzf2zst/images@main/20220803/guidao.1cgwaghxw5ts.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Tkinter-Scale控件"/></a><div class="content"><a class="title" href="/post/ff3fc45d.html" title="Tkinter-Scale控件">Tkinter-Scale控件</a><time datetime="2022-08-11T12:59:47.000Z" title="发表于 2022-08-11 20:59:47">2022-08-11</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://picx.zhimg.com/v2-d1098f823452d83e34ce0aa6b6c484ae_r.jpg?source=3af55fa1')"><div id="footer-wrap"><div class="copyright">&copy;2022 By 漂亮鬼</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Hello,  welcome  to   <a  target="_blank" rel="noopener" href="https://xiaoyangzst.vercel.app">小杨的blog</a>!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><div class="js-pjax"></div><script src="/js/snowflake.js"></script><script src="https://cdn.jsdelivr.net/gh/caicheng918/CDN@4.0/res/mouse_snow.js"></script><script src="/js/funny.js"></script><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/fireworks.min.js"></script><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="true"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"superSample":2,"width":200,"height":400,"position":"left","hOffset":-30,"vOffset":-20},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.2},"log":false});</script></body></html>
