@@ -1,0 +1,250 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>python提升八 | 漂亮鬼</title><meta name="keywords" content="python提升"><meta name="author" content="漂亮鬼"><meta name="copyright" content="漂亮鬼"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="什么是异常处理，Python常见异常类型编写程序时遇到的错误可大致分为 2 类，分别为语法错误和运行时错误。 Python语法错误语法错误，也就是解析代码时出现的错误。当代码不符合 Python 语法规则时，Python解释器在解析时就会报出 SyntaxError 语法错误，与此同时还会明确指出最早探测到错误的语句。 Python运行时错误运行时错误，即程序在语法上都是正确的，但在运行时发生了错">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python提升八">
+<meta property="og:url" content="http://1yzf2zstgiyhub.io/post/36f0a209.html">
+<meta property="og:site_name" content="漂亮鬼">
+<meta property="og:description" content="什么是异常处理，Python常见异常类型编写程序时遇到的错误可大致分为 2 类，分别为语法错误和运行时错误。 Python语法错误语法错误，也就是解析代码时出现的错误。当代码不符合 Python 语法规则时，Python解释器在解析时就会报出 SyntaxError 语法错误，与此同时还会明确指出最早探测到错误的语句。 Python运行时错误运行时错误，即程序在语法上都是正确的，但在运行时发生了错">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.staticaly.com/gh/1yzf2zst/images@main/20220806/wallhaven-2ejm9x.4ciiqlcrsza0.webp">
+<meta property="article:published_time" content="2022-08-15T12:27:10.000Z">
+<meta property="article:modified_time" content="2022-08-17T13:34:49.055Z">
+<meta property="article:author" content="漂亮鬼">
+<meta property="article:tag" content="python提升">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.staticaly.com/gh/1yzf2zst/images@main/20220806/wallhaven-2ejm9x.4ciiqlcrsza0.webp"><link rel="shortcut icon" href="https://pic2.zhimg.com/v2-9359c735aa38fa08bc161d8d6c0df38e_r.jpg?source=3af55fa1"><link rel="canonical" href="http://1yzf2zstgiyhub.io/post/36f0a209"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin=""/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?fa627d7767ce07eaecb96088287b512d";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: 漂亮鬼","link":"链接: ","source":"来源: 漂亮鬼","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'python提升八',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: true,
+  isToc: true,
+  postUpdate: '2022-08-17 21:34:49'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/mouse.css"><style>#article-container.post-content h1:before, h2:before, h3:before, h4:before, h5:before, h6:before { -webkit-animation: avatar_turn_around 1s linear infinite; -moz-animation: avatar_turn_around 1s linear infinite; -o-animation: avatar_turn_around 1s linear infinite; -ms-animation: avatar_turn_around 1s linear infinite; animation: avatar_turn_around 1s linear infinite; }</style><meta name="generator" content="Hexo 6.2.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://picx.zhimg.com/v2-6576f8c64444c40baa4602979c75d1e3_r.jpg?source=3af55fa1" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">41</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">16</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 目录</span></a></div><div class="menus_item"><a class="site-page" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> images</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.staticaly.com/gh/1yzf2zst/images@main/20220806/wallhaven-2ejm9x.4ciiqlcrsza0.webp')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">漂亮鬼</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 目录</span></a></div><div class="menus_item"><a class="site-page" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> images</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">python提升八</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-08-15T12:27:10.000Z" title="发表于 2022-08-15 20:27:10">2022-08-15</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-08-17T13:34:49.055Z" title="更新于 2022-08-17 21:34:49">2022-08-17</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/python/">python</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">4k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>13分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="python提升八"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h5 id="什么是异常处理，Python常见异常类型"><a href="#什么是异常处理，Python常见异常类型" class="headerlink" title="什么是异常处理，Python常见异常类型"></a>什么是异常处理，Python常见异常类型</h5><p>编写程序时遇到的错误可大致分为 2 类，分别为语法错误和运行时错误。</p>
+<h6 id="Python语法错误"><a href="#Python语法错误" class="headerlink" title="Python语法错误"></a>Python语法错误</h6><p>语法错误，也就是解析代码时出现的错误。当代码不符合 Python 语法规则时，Python解释器在解析时就会报出 SyntaxError 语法错误，与此同时还会明确指出最早探测到错误的语句。</p>
+<h6 id="Python运行时错误"><a href="#Python运行时错误" class="headerlink" title="Python运行时错误"></a>Python运行时错误</h6><p>运行时错误，即程序在语法上都是正确的，但在运行时发生了错误。<br>在 Python 中，把这种运行时产生错误的情况叫做异常</p>
+<img src="/post/36f0a209/37.png" class title="This is an image">
+
+<h5 id="Python异常处理机制"><a href="#Python异常处理机制" class="headerlink" title="Python异常处理机制"></a>Python异常处理机制</h5><p>使用 Python 的异常处理机制就可以解决这个问题</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">try：</span><br><span class="line">    if(用户输入不合理)：</span><br><span class="line">        raise 异常</span><br><span class="line">except Exception：</span><br><span class="line">    alert 输入不合法</span><br><span class="line">    goto retry</span><br><span class="line">#正常的业务代码</span><br></pre></td></tr></table></figure>
+<p>此程序中，通过在 try 块中判断用户的输入数据是否合理，如果不合理，程序受 raise 的影响会进行到 except 代码块，对用户的错误输出进行处理，然后会继续执行正常的业务代码；反之，如果用户输入合理，那么程序将直接执行正常的业务代码。<br>try except 是 Python 实现异常处理机制的核心结构</p>
+<h5 id="Python-try-except异常处理详解"><a href="#Python-try-except异常处理详解" class="headerlink" title="Python try except异常处理详解"></a>Python try except异常处理详解</h5><p>Python 中，用try except语句块捕获并处理异常<br>语法结构：</p>
+<p>try:<br>    可能产生异常的代码块<br>except [ (Error1, Error2, … ) [as e] ]:<br>    处理异常的代码块1<br>except [ (Error3, Error4, … ) [as e] ]:<br>    处理异常的代码块2<br>except  [Exception]:<br>    处理其它异常</p>
+<p>该格式中，[] 括起来的部分可以使用，也可以省略。其中各部分的含义如下：<br>(Error1, Error2,…) 、(Error3, Error4,…)：其中，Error1、Error2、Error3 和 Error4 都是具体的异常类型。显然，一个 except 块可以同时处理多种异常。<br>[as e]：作为可选参数，表示给异常类型起一个别名 e，这样做的好处是方便在 except 块中调用异常类型<br>[Exception]：作为可选参数，可以代指程序可能发生的所有异常情况，其通常用在最后一个 except 块。</p>
+<p>try 块有且仅有一个，但 except 代码块可以有多个，且每个 except 块都可以同时处理多种异常</p>
+<p>try except 语句的执行流程如下：<br>首先执行 try 中的代码块，如果执行过程中出现异常，<strong>系统会自动生成一个异常类型</strong>，并将该异常提交给 Python 解释器，此过程称为捕获异常。<br>当 Python 解释器收到异常对象时，会寻找能处理该异常对象的 except 块，如果找到合适的 except 块，则把该异常对象交给该 except 块处理，这个过程被称为处理异常。</p>
+<p><strong>如果 Python 解释器找不到处理异常的 except 块，则程序运行终止，Python 解释器也将退出</strong>。</p>
+<p>事实上，不管程序代码块是否处于 try 块中，甚至包括 except 块中的代码，只要执行该代码块时出现了异常，系统都会自动生成对应类型的异常。<br>但是，如果此段程序没有用 try 包裹，又或者没有为该异常配置处理它的 except 块，则 Python 解释器将无法处理，程序就会停止运行；反之，如果程序发生的异常经 try 捕获并由 except 处理完成，则程序可以继续执行。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">try:</span><br><span class="line">    a = int(input(&quot;输入被除数：&quot;))</span><br><span class="line">    b = int(input(&quot;输入除数：&quot;))</span><br><span class="line">    c = a / b</span><br><span class="line">    print(&quot;您输入的两个数相除的结果是：&quot;, c )</span><br><span class="line">except (ValueError, ArithmeticError):</span><br><span class="line">    print(&quot;程序发生了数字格式异常、算术异常之一&quot;)</span><br><span class="line">except :</span><br><span class="line">    print(&quot;未知异常&quot;)</span><br><span class="line">print(&quot;程序继续运行&quot;)</span><br></pre></td></tr></table></figure>
+<p>上面程序中，使用了（ValueError, ArithmeticError）来指定所捕获的异常类型，这就表明该 except 块可以同时捕获这 2 种类型的异常；<br>只有 except 关键字，并未指定具体要捕获的异常类型，这种省略异常类的 except 语句也是合法的，它表示可捕获所有类型的异常，一般会作为异常捕获的最后一个 except 块。</p>
+<h6 id="获取特定异常的有关信息"><a href="#获取特定异常的有关信息" class="headerlink" title="获取特定异常的有关信息"></a>获取特定异常的有关信息</h6><p>其实，每种异常类型都提供了如下几个属性和方法，通过调用它们，就可以获取当前处理异常类型的相关信息：</p>
+<p>args：返回异常的错误编号和描述字符串；</p>
+<p>str(e)：返回异常信息，但不包括异常信息的类型；</p>
+<p>repr(e)：返回较全的异常信息，包括异常信息的类型。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">try:</span><br><span class="line">    1/0</span><br><span class="line">except Exception as e:</span><br><span class="line">    # 访问异常的错误编号和详细信息</span><br><span class="line">    print(e.args)</span><br><span class="line">    print(str(e))</span><br><span class="line">    print(repr(e))</span><br></pre></td></tr></table></figure>
+
+<p>除此之外，如果想要更加详细的异常信息，可以使用 traceback 模块</p>
+<p>从程序中可以看到，由于 except 可能接收多种异常，因此为了操作方便，可以直接给每一个进入到此 except 块的异常，起一个统一的别名 e。</p>
+<h5 id="Python异常处理机制的底层实现"><a href="#Python异常处理机制的底层实现" class="headerlink" title="Python异常处理机制的底层实现"></a>Python异常处理机制的底层实现</h5><p>try except异常处理的用法，简单来说，当位于 try 块中的程序执行出现异常时，会将该种异常捕获，同时找到对应的 except 块处理该异常，那么这里就有一个问题，它是如何找到对应的 except 块的呢？</p>
+<p>我们知道，一个 try 块也可以对应多个 except 块，一个 except 块可以同时处理多种异常。如果我们想使用一个 except 块处理所有异常，就可以这样写</p>
+<p>try:<br>    #…<br>except Exception:<br>    #…</p>
+<p>try 块中可能出现的任何异常，Python 解释器都会交给仅有的这个<br> except 块处理，因为它的参数是 Exception，表示可以接收任何类型的异常。<br>注意，对于可以接收任何异常的 except 来说，其后可以跟 Exception，也可以不跟任何参数，但表示的含义都是一样的。</p>
+<p>详细介绍一下 Exception。要知道，为了表示程序中可能出现的各种异常，Python 提供了大量的异常类，这些异常类之间有严格的继承关系，图显示了 Python 的常见异常类之间的继承关系。</p>
+<img src="/post/36f0a209/38.png" class title="This is an image">
+
+
+<p>BaseException 是 Python 中所有异常类的基类，但对于我们来说，最主要的是 Exception 类，因为程序中可能出现的各种异常，都继承自 Exception。</p>
+<p>如果用户要实现自定义异常，不应该继承 BaseException ，而应该继承 Exception 类。</p>
+<p>关于如何<strong>自定义一个异常类</strong></p>
+<p>当 try 块捕获到异常对象后，Python 解释器会拿这个异常类型依次和各个 except 块指定的异常类进行比较，如果捕获到的这个异常类，和某个 except 块后的异常类一样，又或者是该异常类的子类，那么 Python 解释器就会调用这个 except 块来处理异常；反之，Python 解释器会继续比较，直到和最后一个 except 比较完，如果没有比对成功，则证明该异常无法处理。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">try:</span><br><span class="line">    a = int(input(&quot;输入 a：&quot;))</span><br><span class="line">    b = int(input(&quot;输入 b：&quot;))</span><br><span class="line">    print( a/b )</span><br><span class="line">except ValueError:</span><br><span class="line">    print(&quot;数值错误：程序只能接收整数参数&quot;)</span><br><span class="line">except ArithmeticError:</span><br><span class="line">    print(&quot;算术错误&quot;)</span><br><span class="line">except Exception:</span><br><span class="line">    print(&quot;未知异常&quot;)</span><br></pre></td></tr></table></figure>
+<p>该程序中，根据用户输入 a 和 b 值的不同，可能会导致 ValueError、ArithmeticError 异常：</p>
+<p>如果用户输入的 a 或者 b 是其他字符，而不是数字，会发生 ValueError 异常，try 块会捕获到该类型异常，同时 Python 解释器会调用第一个 except 块处理异常；</p>
+<p>如果用户输入的 a 和 b 是数字，但 b 的值为 0，由于在进行除法运算时除数不能为 0，因此会发生 ArithmeticError 异常，try 块会捕获该异常，同时 Python 解释器会调用第二个 except 块处理异常；<br>当然，程序运行过程中，还可能由于其他因素出现异常，try 块都可以捕获，同时 Python 会调用最后一个 except 块来处理。<br>当一个 try 块配有多个 except 块时，这些 except 块应遵循这样一个排序规则，即可处理全部异常的 except 块（参数为 Exception，也可以什么都不写）要放到所有 except 块的后面，且所有父类异常的 except 块要放到子类异常的 except 块的后面。</p>
+<h5 id="Python-try-except-else"><a href="#Python-try-except-else" class="headerlink" title="Python try except else"></a>Python try except else</h5><p>在原本的try except结构的基础上，Python 异常处理机制还提供了一个 else 块，也就是<strong>原有 try except 语句的基础上再添加一个 else 块</strong>，即try except else结构。</p>
+<p>使用 else 包裹的代码，只有当 try 块没有捕获到任何异常时，才会得到执行；<br>反之，如果 try 块捕获到异常，即便调用对应的 except 处理完异常，else 块中的代码也不会得到执行。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">try:</span><br><span class="line">    result = 20 / int(input(&#x27;请输入除数:&#x27;))</span><br><span class="line">    print(result)</span><br><span class="line">except ValueError:</span><br><span class="line">    print(&#x27;必须输入整数&#x27;)</span><br><span class="line">except ArithmeticError:</span><br><span class="line">    print(&#x27;算术错误，除数不能为 0&#x27;)</span><br><span class="line">else:</span><br><span class="line">    print(&#x27;没有出现异常&#x27;)</span><br><span class="line">print(&quot;继续执行&quot;)</span><br></pre></td></tr></table></figure>
+<p>当我们输入正确的数据时，try 块中的程序正常执行，Python 解释器执行完 try 块中的程序之后，会继续执行 else 块中的程序，继而执行后续的程序。</p>
+<h5 id="Python-try-except-finally：资源回收"><a href="#Python-try-except-finally：资源回收" class="headerlink" title="Python try except finally：资源回收"></a>Python try except finally：资源回收</h5><p>Python 异常处理机制还提供了一个 finally 语句，通常用来为 try 块中的程序做扫尾清理工作。注意，和 else 语句不同，finally 只要求和 try 搭配使用，而至于该结构中是否包含 except 以及 else，对于 finally 不是必须的<strong>else 必须和 try except 搭配使用</strong>。<br>在整个异常处理机制中，finally 语句的功能是：<strong>无论 try 块是否发生异常，最终都要进入 finally 语句，并执行其中的代码块</strong>。</p>
+<p>基于 finally 语句的这种特性，在某些情况下，当 try 块中的程序打开了一些物理资源（文件、数据库连接等）时，由于这些资源必须手动回收，而回收工作通常就放在 finally 块中。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">try:</span><br><span class="line">    a = int(input(&quot;请输入 a 的值:&quot;))</span><br><span class="line">    print(20/a)</span><br><span class="line">except:</span><br><span class="line">    print(&quot;发生异常！&quot;)</span><br><span class="line">else:</span><br><span class="line">    print(&quot;执行 else 块中的代码&quot;)   </span><br><span class="line">finally :</span><br><span class="line">    print(&quot;执行 finally 块中的代码&quot;)</span><br></pre></td></tr></table></figure>
+
+<p><strong>总结</strong>：<br>在整个异常处理结构中，只有 try 块是必需的，也就是说：<br>如果没有 try 块，则不能有后面的 except 块、else 块和 finally 块。</p>
+<p>但是也不能只使用 try 块，要么使用 try except 结构，要么使用 try finally 结构；except 块、else 块、finally 块都是可选的，当然也可以同时出现；</p>
+<p>可以有多个 except 块，但捕获父类异常的 except 块应该位于捕获子类异常的 except 块的后面；多个 except 块必须位于 try 块之后，finally 块必须位于所有的 except 块之后。要使用 else 块，其前面必须包含 try 和 except。</p>
+<p>另外在通常情况下，不要在 finally 块中使用如 return 或 raise 等导致方法中止的语句，一旦在 finally 块中使用了 return 或 raise 语句，将会导致 try 块、except 块中的 return、raise 语句失效</p>
+<p>同样，如果 Python 程序在执行 try 块、except 块包含有 return 或 raise 语句，则 Python 解释器执行到该语句时，会先去查找 finally 块，如果没有 finally 块，程序才会立即执行 return 或 raise 语句；</p>
+<p>反之，如果找到 finally 块，系统立即开始执行 finally 块，只有当 finally 块执行完成后，系统才会再次跳回来执行 try 块、except 块里的 return 或 raise 语句。<br>但是，如果在 finally 块里也使用了 return 或 raise 等导致方法中止的语句，finally 块己经中止了方法，系统将不会跳回去执行 try 块、except 块里的任何代码。</p>
+<h5 id="Python-raise用法"><a href="#Python-raise用法" class="headerlink" title="Python raise用法"></a>Python raise用法</h5><p>Python 允许我们在程序中手动设置异常，使用 raise 语句即可。</p>
+<p>raise 语句的基本语法格式为：raise [exceptionName [(reason)]]<br>其中，用 [] 括起来的为可选参数，其作用是指定抛出的异常名称，以及异常信息的相关描述。如果可选参数全部省略，则 raise 会把当前错误原样抛出；如果仅省略 (reason)，则在抛出异常时，将不附带任何的异常描述信息。</p>
+<p>也就是说，raise 语句有如下三种常用的用法：<br>raise：单独一个 raise。该语句引发当前上下文中捕获的异常（比如在 except 块中），或默认引发 RuntimeError 异常。</p>
+<p>raise 异常类名称：raise 后带一个异常类名称，表示引发执行类型的异常。<br>raise 异常类名称(描述信息)：在引发指定类型的异常的同时，附带异常的描述信息。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">try:</span><br><span class="line">    a = input(&quot;输入一个数：&quot;)</span><br><span class="line">    #判断用户输入的是否为数字</span><br><span class="line">    if(not a.isdigit()):</span><br><span class="line">        raise ValueError(&quot;a 必须是数字&quot;)</span><br><span class="line">except ValueError as e:</span><br><span class="line">    print(&quot;引发异常：&quot;,repr(e))</span><br></pre></td></tr></table></figure>
+
+<p>当然，我们手动让程序引发异常，很多时候并不是为了让其崩溃。事实上，raise 语句引发的异常通常用 try except（else finally）异常处理结构来捕获并进行处理。例如</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">try:</span><br><span class="line">    a = input(&quot;输入一个数：&quot;)</span><br><span class="line">    #判断用户输入的是否为数字</span><br><span class="line">    if(not a.isdigit()):</span><br><span class="line">        raise ValueError(&quot;a 必须是数字&quot;)</span><br><span class="line">except ValueError as e:</span><br><span class="line">    print(&quot;引发异常：&quot;,repr(e))</span><br></pre></td></tr></table></figure>
+<p> raise 不需要参数<br>正如前面所看到的，在使用 raise 语句时可以不带参数，</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">try:</span><br><span class="line">    a = input(&quot;输入一个数：&quot;)</span><br><span class="line">    if(not a.isdigit()):</span><br><span class="line">        raise</span><br><span class="line">except RuntimeError as e:</span><br><span class="line">    print(&quot;引发异常：&quot;,repr(e))</span><br><span class="line">     </span><br></pre></td></tr></table></figure>
+
+<h5 id="Python-sys-exc-info-方法：获取异常信息"><a href="#Python-sys-exc-info-方法：获取异常信息" class="headerlink" title="Python sys.exc_info()方法：获取异常信息"></a>Python sys.exc_info()方法：获取异常信息</h5><p>捕获异常时，有 2 种方式可获得更多的异常信息，分别是：<br>使用 sys 模块中的 exc_info 方法</p>
+<p>使用 traceback 模块中的相关函数</p>
+<p>模块 sys 中，有两个方法可以返回异常的全部信息，分别是 exc_info() 和 last_traceback()，这两个函数有相同的功能和用法</p>
+<p>exc_info() 方法会将当前的异常信息以元组的形式返回，该元组中包含 3 个元素，分别为 type、value 和 traceback，它们的含义分别是：</p>
+<p>type：异常类型的名称<br>value：捕获到的异常实例<br>traceback：是一个 traceback 对象(无法直接看出有关异常的信息，还需要对其做进一步处理)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">import sys</span><br><span class="line">try:</span><br><span class="line">    x = int(input(&quot;请输入一个被除数：&quot;))</span><br><span class="line">    print(&quot;30除以&quot;,x,&quot;等于&quot;,30/x)</span><br><span class="line">except:</span><br><span class="line">    print(sys.exc_info())</span><br><span class="line">    print(&quot;其他异常...&quot;)</span><br></pre></td></tr></table></figure>
+
+
+<p>要查看 traceback 对象包含的内容，需要先引进 traceback 模块，然后调用 traceback 模块中的 print_tb 方法，并将 sys.exc_info() 输出的 traceback 对象作为参数参入：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">import sys</span><br><span class="line">import traceback</span><br><span class="line">try:</span><br><span class="line">    x = int(input(&quot;请输入一个被除数：&quot;))</span><br><span class="line">    print(&quot;30除以&quot;,x,&quot;等于&quot;,30/x)</span><br><span class="line">except:</span><br><span class="line">    traceback.print_tb(sys.exc_info()[2])</span><br><span class="line">    print(&quot;其他异常...&quot;)</span><br></pre></td></tr></table></figure>
+<h5 id="Python自定义异常类及用法"><a href="#Python自定义异常类及用法" class="headerlink" title="Python自定义异常类及用法"></a>Python自定义异常类及用法</h5><p>Python 允许用户自定义异常类型。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">class Error(Exception):</span><br><span class="line">   pass</span><br><span class="line">try:</span><br><span class="line">   raise Error()</span><br><span class="line">except :</span><br><span class="line">   print(&quot;error&quot;)</span><br></pre></td></tr></table></figure>
+
+<p>另外，系统自带的异常只要触发会自动抛出（比如 NameError、ValueError 等），但用户自定义的异常需要用户自己决定什么时候抛出。也就是说，<strong>自定义的异常需要使用 raise 手动抛出。</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">class InputError(Exception):</span><br><span class="line">    &#x27;&#x27;&#x27;当输出有误时，抛出此异常&#x27;&#x27;&#x27;</span><br><span class="line">    #自定义异常类型的初始化</span><br><span class="line">    def __init__(self, value):</span><br><span class="line">        self.value = value</span><br><span class="line">    #返回异常类对象的说明信息</span><br><span class="line">    def __str__(self):</span><br><span class="line">        return (&quot;&#123;&#125; is invalid input&quot;.format(repr(self.value)))</span><br><span class="line">   </span><br><span class="line">try:</span><br><span class="line">    raise InputError(1) # 抛出 MyInputError 这个异常</span><br><span class="line">except InputError as err:</span><br><span class="line">    print(&#x27;error: &#123;&#125;&#x27;.format(err))</span><br></pre></td></tr></table></figure>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://1yzf2zstgiyhub.io">漂亮鬼</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://1yzf2zstgiyhub.io/post/36f0a209.html">http://1yzf2zstgiyhub.io/post/36f0a209.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://1yzf2zstgiyhub.io" target="_blank">漂亮鬼</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/python%E6%8F%90%E5%8D%87/">python提升</a></div><div class="post_share"><div class="addthis_inline_share_toolbox"></div><script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-62e385ce9ecac8a4" async="async"></script></div></div><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/post/f16679c0.html" title="python提升一"><img class="cover" src="https://cdn.staticaly.com/gh/1yzf2zst/images@main/20220810/wallhaven-6owe86.5er1paw83ss0.webp" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-08-10</div><div class="title">python提升一</div></div></a></div><div><a href="/post/88bac164.html" title="python提升三"><img class="cover" src="https://pic2.zhimg.com/v2-7a3a5a5eafb5621fc4ae05c5327c0740_r.jpg?source=3af55fa1" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-08-12</div><div class="title">python提升三</div></div></a></div><div><a href="/post/cae65769.html" title="python提升二"><img class="cover" src="https://pic2.zhimg.com/80/v2-dd55abd19779b60abba7e0c6d2b26689_720w.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-08-11</div><div class="title">python提升二</div></div></a></div><div><a href="/post/686f287a.html" title="python提升七"><img class="cover" src="https://pica.zhimg.com/v2-1ca4168a38c1bb34542bdbe68fbd9515_r.jpg?source=3af55fa1" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-08-14</div><div class="title">python提升七</div></div></a></div><div><a href="/post/8b7b2458.html" title="python提升九"><img class="cover" src="https://cdn.staticaly.com/gh/1yzf2zst/images@main/20220806/9350218e-1588690336.jllxs18eb74.webp" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-08-17</div><div class="title">python提升九</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://picx.zhimg.com/v2-6576f8c64444c40baa4602979c75d1e3_r.jpg?source=3af55fa1" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">漂亮鬼</div><div class="author-info__description">爱干饭的程序员--嘿嘿</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">41</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">16</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/1yzf2zst/1yzf2zst.github.io"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/1yzf2zst" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:2562644984@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="xpand" style="height:200px;"><canvas class="illo" width="800" height="800" style="max-width: 200px; max-height: 200px; touch-action: none; width: 640px; height: 640px;"></canvas></div><script src="https://fastly.jsdelivr.net/gh/xiaopengand/blogCdn@latest/xzxr/twopeople1.js"></script><script src="https://fastly.jsdelivr.net/gh/xiaopengand/blogCdn@latest/xzxr/zdog.dist.js"></script><script id="rendered-js" src="https://fastly.jsdelivr.net/gh/xiaopengand/blogCdn@latest/xzxr/twopeople.js"></script><style>.card-widget.card-announcement {
+margin: 0;
+align-items: center;
+justify-content: center;
+text-align: center;
+}
+canvas {
+display: block;
+margin: 0 auto;
+cursor: move;
+}
+</style><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎各位， 各位来到xiaoyang的blog
+博主发布的博文都是博主学习笔记
+qq:2562644984 wechat:zst210621yzf</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%EF%BC%8CPython%E5%B8%B8%E8%A7%81%E5%BC%82%E5%B8%B8%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.</span> <span class="toc-text">什么是异常处理，Python常见异常类型</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#Python%E8%AF%AD%E6%B3%95%E9%94%99%E8%AF%AF"><span class="toc-number">1.1.</span> <span class="toc-text">Python语法错误</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#Python%E8%BF%90%E8%A1%8C%E6%97%B6%E9%94%99%E8%AF%AF"><span class="toc-number">1.2.</span> <span class="toc-text">Python运行时错误</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Python%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E6%9C%BA%E5%88%B6"><span class="toc-number">2.</span> <span class="toc-text">Python异常处理机制</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Python-try-except%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E8%AF%A6%E8%A7%A3"><span class="toc-number">3.</span> <span class="toc-text">Python try except异常处理详解</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96%E7%89%B9%E5%AE%9A%E5%BC%82%E5%B8%B8%E7%9A%84%E6%9C%89%E5%85%B3%E4%BF%A1%E6%81%AF"><span class="toc-number">3.1.</span> <span class="toc-text">获取特定异常的有关信息</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Python%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E6%9C%BA%E5%88%B6%E7%9A%84%E5%BA%95%E5%B1%82%E5%AE%9E%E7%8E%B0"><span class="toc-number">4.</span> <span class="toc-text">Python异常处理机制的底层实现</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Python-try-except-else"><span class="toc-number">5.</span> <span class="toc-text">Python try except else</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Python-try-except-finally%EF%BC%9A%E8%B5%84%E6%BA%90%E5%9B%9E%E6%94%B6"><span class="toc-number">6.</span> <span class="toc-text">Python try except finally：资源回收</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Python-raise%E7%94%A8%E6%B3%95"><span class="toc-number">7.</span> <span class="toc-text">Python raise用法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Python-sys-exc-info-%E6%96%B9%E6%B3%95%EF%BC%9A%E8%8E%B7%E5%8F%96%E5%BC%82%E5%B8%B8%E4%BF%A1%E6%81%AF"><span class="toc-number">8.</span> <span class="toc-text">Python sys.exc_info()方法：获取异常信息</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Python%E8%87%AA%E5%AE%9A%E4%B9%89%E5%BC%82%E5%B8%B8%E7%B1%BB%E5%8F%8A%E7%94%A8%E6%B3%95"><span class="toc-number">9.</span> <span class="toc-text">Python自定义异常类及用法</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/post/6ef6247d.html" title="os模块简单使用"><img src="https://cdn.staticaly.com/gh/1yzf2zst/images@main/20220806/wallhaven-47p3oy.41bzzkm64l40.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="os模块简单使用"/></a><div class="content"><a class="title" href="/post/6ef6247d.html" title="os模块简单使用">os模块简单使用</a><time datetime="2022-08-17T13:33:09.000Z" title="发表于 2022-08-17 21:33:09">2022-08-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/8b7b2458.html" title="python提升九"><img src="https://cdn.staticaly.com/gh/1yzf2zst/images@main/20220806/9350218e-1588690336.jllxs18eb74.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="python提升九"/></a><div class="content"><a class="title" href="/post/8b7b2458.html" title="python提升九">python提升九</a><time datetime="2022-08-17T13:27:36.000Z" title="发表于 2022-08-17 21:27:36">2022-08-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/36f0a209.html" title="python提升八"><img src="https://cdn.staticaly.com/gh/1yzf2zst/images@main/20220806/wallhaven-2ejm9x.4ciiqlcrsza0.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="python提升八"/></a><div class="content"><a class="title" href="/post/36f0a209.html" title="python提升八">python提升八</a><time datetime="2022-08-15T12:27:10.000Z" title="发表于 2022-08-15 20:27:10">2022-08-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/686f287a.html" title="python提升七"><img src="https://pica.zhimg.com/v2-1ca4168a38c1bb34542bdbe68fbd9515_r.jpg?source=3af55fa1" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="python提升七"/></a><div class="content"><a class="title" href="/post/686f287a.html" title="python提升七">python提升七</a><time datetime="2022-08-14T11:40:22.000Z" title="发表于 2022-08-14 19:40:22">2022-08-14</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/df93073c.html" title="python提升六"><img src="https://pic1.zhimg.com/v2-5c0fecc702d4d64f2b18bc7ea24a7e41_r.jpg?source=3af55fa1" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="python提升六"/></a><div class="content"><a class="title" href="/post/df93073c.html" title="python提升六">python提升六</a><time datetime="2022-08-14T10:15:53.000Z" title="发表于 2022-08-14 18:15:53">2022-08-14</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://picx.zhimg.com/v2-d1098f823452d83e34ce0aa6b6c484ae_r.jpg?source=3af55fa1')"><div id="footer-wrap"><div class="copyright">&copy;2022 By 漂亮鬼</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Hello,  welcome  to   <a  target="_blank" rel="noopener" href="https://xiaoyangzst.vercel.app">小杨的blog</a>!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><div class="js-pjax"></div><script src="/js/snowflake.js"></script><script src="https://cdn.jsdelivr.net/gh/caicheng918/CDN@4.0/res/mouse_snow.js"></script><script src="/js/funny.js"></script><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/fireworks.min.js"></script><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="true"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"superSample":2,"width":200,"height":400,"position":"left","hOffset":-30,"vOffset":-20},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.2},"log":false});</script></body></html>

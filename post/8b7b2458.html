@@ -1,0 +1,248 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>python提升九 | 漂亮鬼</title><meta name="keywords" content="python提升"><meta name="author" content="漂亮鬼"><meta name="copyright" content="漂亮鬼"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Python logging模块简单用法 logging 模块可以很容易地创建自定义的消息记录，这些日志消息将描述程序执行何时到达日志函数调用，并列出指定的任何变量当时的值。 启用 logging 模块很简单，直接将下面的代码复制到程序开头： 12import logginglogging.basicConfig(level&#x3D;logging.DEBUG, format&#x3D;&amp;#x27; %(ascti">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python提升九">
+<meta property="og:url" content="http://1yzf2zstgiyhub.io/post/8b7b2458.html">
+<meta property="og:site_name" content="漂亮鬼">
+<meta property="og:description" content="Python logging模块简单用法 logging 模块可以很容易地创建自定义的消息记录，这些日志消息将描述程序执行何时到达日志函数调用，并列出指定的任何变量当时的值。 启用 logging 模块很简单，直接将下面的代码复制到程序开头： 12import logginglogging.basicConfig(level&#x3D;logging.DEBUG, format&#x3D;&amp;#x27; %(ascti">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.staticaly.com/gh/1yzf2zst/images@main/20220806/9350218e-1588690336.jllxs18eb74.webp">
+<meta property="article:published_time" content="2022-08-17T13:27:36.000Z">
+<meta property="article:modified_time" content="2022-08-17T13:37:44.560Z">
+<meta property="article:author" content="漂亮鬼">
+<meta property="article:tag" content="python提升">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.staticaly.com/gh/1yzf2zst/images@main/20220806/9350218e-1588690336.jllxs18eb74.webp"><link rel="shortcut icon" href="https://pic2.zhimg.com/v2-9359c735aa38fa08bc161d8d6c0df38e_r.jpg?source=3af55fa1"><link rel="canonical" href="http://1yzf2zstgiyhub.io/post/8b7b2458"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin=""/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?fa627d7767ce07eaecb96088287b512d";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: 漂亮鬼","link":"链接: ","source":"来源: 漂亮鬼","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'python提升九',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: true,
+  isToc: true,
+  postUpdate: '2022-08-17 21:37:44'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/mouse.css"><style>#article-container.post-content h1:before, h2:before, h3:before, h4:before, h5:before, h6:before { -webkit-animation: avatar_turn_around 1s linear infinite; -moz-animation: avatar_turn_around 1s linear infinite; -o-animation: avatar_turn_around 1s linear infinite; -ms-animation: avatar_turn_around 1s linear infinite; animation: avatar_turn_around 1s linear infinite; }</style><meta name="generator" content="Hexo 6.2.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://picx.zhimg.com/v2-6576f8c64444c40baa4602979c75d1e3_r.jpg?source=3af55fa1" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">41</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">16</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 目录</span></a></div><div class="menus_item"><a class="site-page" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> images</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.staticaly.com/gh/1yzf2zst/images@main/20220806/9350218e-1588690336.jllxs18eb74.webp')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">漂亮鬼</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 目录</span></a></div><div class="menus_item"><a class="site-page" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> images</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">python提升九</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-08-17T13:27:36.000Z" title="发表于 2022-08-17 21:27:36">2022-08-17</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-08-17T13:37:44.560Z" title="更新于 2022-08-17 21:37:44">2022-08-17</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/python/">python</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">3k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>9分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="python提升九"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h5 id="Python-logging模块简单用法"><a href="#Python-logging模块简单用法" class="headerlink" title="Python logging模块简单用法"></a>Python logging模块简单用法</h5><p> logging 模块可以很容易地创建自定义的消息记录，这些日志消息将描述程序执行何时到达日志函数调用，并列出指定的任何变量当时的值。</p>
+<p>启用 logging 模块很简单，直接将下面的代码复制到程序开头：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import logging</span><br><span class="line">logging.basicConfig(level=logging.DEBUG, format=&#x27; %(asctime)s - %(levelname)s - %(message)s&#x27;)</span><br></pre></td></tr></table></figure>
+
+<p>当 Python 记录一个事件的日志时，它会创建一个 LogRecord 对象，保存关于该事件的信息。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">import logging</span><br><span class="line">logging.basicConfig(level=logging.DEBUG, format=&#x27; %(asctime)s - %(levelname)s - %(message)s&#x27;)</span><br><span class="line">for i in range(0,5):</span><br><span class="line">   logging.debug(&#x27;i is &#x27; + str(i))</span><br></pre></td></tr></table></figure>
+<p>通过 logging.debug() 函数可以打印日志信息，这个 debug() 函数将调用 basicConfig() 打印一行信息，这行信息的格式是在 basicConfig() 函数中指定的，并且包括传递给 debug() 的消息。</p>
+<h6 id="Python-logging日志级别"><a href="#Python-logging日志级别" class="headerlink" title="Python logging日志级别"></a>Python logging日志级别</h6><p>“日志级别”提供了一种方式，按重要性对日志消息进行分类。5 个日志级别如图所示，从最不重要到最重要。利用不同的日志函数，消息可以按某个级别记入日志。</p>
+<img src="/post/8b7b2458/40.png" class title="This is an image">
+
+<p>日志级别的好处在于，我们可以改变想看到的日志消息的优先级。比如说，向 basicConfig() 函数传入 logging.DEBUG 作为 level 关键字参数，这将显示所有级别为 DEBUG 的日志消息。</p>
+<p>当开发了更多的程序后，我们可能只对错误感兴趣，在这种情况下，可以将 basicConfig() 的 level 参数设置为 logging.ERROR，这将只显示 ERROR 和 CRITICAL 消息，跳过 DEBUG、INFO 和 WARNING 消息。</p>
+<h6 id="Python-logging禁用日志"><a href="#Python-logging禁用日志" class="headerlink" title="Python logging禁用日志"></a>Python logging禁用日志</h6><p>在调试完程序后，可能并不希望所有这些日志消息出现在屏幕上，这时就可以使用 logging.disable() 函数禁用这些日志消息，从而不必进入到程序中，手工删除所有的日志调用。</p>
+<p>logging.disable() 函数的用法是，向其传入一个日志级别，它会禁止该级别以及更低级别的所有日志消息。因此，如果想要禁用所有日志，只要在程序中添加 logging.disable(logging.CRITICAL) 即可，</p>
+<p>将日志消息输出到文件中<br>虽然日志消息很有用，但它们可能塞满屏幕，让你很难读到程序的输出。考虑到这种情况，可以将日志信息写入到文件，既能使屏幕保持干净，又能保存信息，一举两得。</p>
+<p>将日志消息输出到文件中的实现方法很简单，只需要设置 logging.basicConfig() 函数中的 filename 关键字参数即可</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">import logging</span><br><span class="line">logging.basicConfig(filename=&quot;aa.txt&quot;,level=logging.DEBUG, format=&#x27; %(asctime)s - %(levelname)s - %(message)s&#x27;)</span><br><span class="line">for i in range(0,5):</span><br><span class="line">   logging.debug(&#x27;i is &#x27; + str(i))</span><br></pre></td></tr></table></figure>
+<p>此程序中，将日志消息存储到了 demo.txt 文件中，该文件就位于运行的程序文件所在的目录。</p>
+<h5 id="文件路径，Python中如何书写文件路径"><a href="#文件路径，Python中如何书写文件路径" class="headerlink" title="文件路径，Python中如何书写文件路径"></a>文件路径，Python中如何书写文件路径</h5><p>路径中的 D:\ 指的是“根文件夹”，它包含了所有其他文件夹。在 Windows 中，根文件夹名为 D:\，也称为 D: 盘</p>
+<p>在 Windows 上，路径书写使用反斜杠 “&quot; 作为文件夹之间的分隔符</p>
+<p>不仅如此，如果需要创建带有文件名称的文件存储路径，<br>os.path.join() 函数同样很有用。<br>下面的例子将一个文件名列表中的名称，添加到文件夹名称的末尾：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">import os</span><br><span class="line">path = os.getcwd()</span><br><span class="line">lis = [&quot;a.jpg&quot;,&quot;b.jpg&quot;,&quot;c.jpg&quot;]</span><br><span class="line">for i in lis:</span><br><span class="line">    x = os.path.join(path,i)</span><br><span class="line">    print(x)</span><br></pre></td></tr></table></figure>
+
+<h5 id="Python绝对路径和相对路径详解"><a href="#Python绝对路径和相对路径详解" class="headerlink" title="Python绝对路径和相对路径详解"></a>Python绝对路径和相对路径详解</h5><h6 id="什么是绝对路径与相对路径"><a href="#什么是绝对路径与相对路径" class="headerlink" title="什么是绝对路径与相对路径"></a>什么是绝对路径与相对路径</h6><p>明确一个文件所在的路径，有 2 种表示方式，分别是：<br>绝对路径：总是从根文件夹开始，Window 系统中以盘符（C：、D：）作为根文件夹，而 OS X 或者 Linux 系统中以 &#x2F; 作为根文件夹。<br>相对路径：指的是文件相对于当前工作目录所在的位置。例如，当前工作目录为 “C:\Windows\System32”，若文件 demo.txt 就位于这个 System32 文件夹下，则 demo.txt 的相对路径表示为 “.\demo.txt”（其中 .\ 就表示当前所在目录）。</p>
+<p>在使用相对路径表示某文件所在的位置时，除了经常使用 .\ 表示当前所在目录之外，还会用到 ..\ 表示当前所在目录的父目录。</p>
+<h6 id="Python处理绝对路径和相对路径"><a href="#Python处理绝对路径和相对路径" class="headerlink" title="Python处理绝对路径和相对路径"></a>Python处理绝对路径和相对路径</h6><p>Python os.path 模块提供了一些函数，可以实现绝对路径和相对路径之间的转换，以及检查给定的路径是否为绝对路径，比如说：</p>
+<p>os模块</p>
+<h5 id="Python文件基本操作"><a href="#Python文件基本操作" class="headerlink" title="Python文件基本操作"></a>Python文件基本操作</h5><p>Python 中，对文件的操作有很多种，常见的操作包括创建、删除、修改权限、读取、写入等</p>
+<p>这些操作可大致分为以下 2 类：<br>删除、修改权限：作用于文件本身，属于系统级操作。</p>
+<p>写入、读取：是文件最常用的操作，作用于文件的内容，属于应用级操作。</p>
+<p>对文件的系统级操作功能单一，比较容易实现，可以借助 Python 中的专用模块（os、sys 等），并调用模块中的指定函数来实现。</p>
+<p>假设如下代码文件的同级目录中有一个文件“a.txt”，通过调用 os 模块中的 remove 函数，可以将该文件删除，具体实现代码如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import os</span><br><span class="line">os.remove(&quot;a.txt&quot;)</span><br></pre></td></tr></table></figure>
+<p>文件的应用级操作可以分为以下 3 步，每一步都需要借助对应的函数实现：</p>
+<p>打开文件：使用 open() 函数，该函数会返回一个<strong>文件对象</strong>；</p>
+<p>对已打开文件做读&#x2F;写操作：读取文件内容可使用 read()、readline() 以及 readlines() 函数；<br>向文件中写入内容，可以使用 write() 函数。</p>
+<p>关闭文件：完成对文件的读&#x2F;写操作之后，最后需要关闭文件，可以使用 close() 函数。</p>
+<h5 id="Python-open-函数详解：打开指定文件"><a href="#Python-open-函数详解：打开指定文件" class="headerlink" title="Python open()函数详解：打开指定文件"></a>Python open()函数详解：打开指定文件</h5><p>在 Python 中，如果想要操作文件，首先需要创建或者打开指定的文件，并创建一个文件对象，而这些工作可以通过内置的 open() 函数实现。</p>
+<p>语法格式：</p>
+<p>file &#x3D; open(file_name [, mode&#x3D;’r’ [ , buffering&#x3D;-1 [ , encoding &#x3D; None ]]]) </p>
+<p>名称要用引号（单引号或双引号都可以）括起来。</p>
+<p>需要注意的是，如果要打开的文件和当前执行的代码文件位于同一目录，则直接写文件名即可，否则，此参数需要指定打开文件所在的完整路径。</p>
+<p>mode：可选参数，用于指定文件的打开模式</p>
+<img src="/post/8b7b2458/41.png" class title="This is an image">
+
+<p>如果不写，则默认以只读（r）模式打开文件。</p>
+<p>buffering：可选参数，用于指定对文件做读写操作时，是否使用缓冲区</p>
+<p>encoding：手动设定打开文件时所使用的编码格式，不同平台的 ecoding 参数值也不同。</p>
+<h6 id="open-是否需要缓冲区"><a href="#open-是否需要缓冲区" class="headerlink" title="open()是否需要缓冲区"></a>open()是否需要缓冲区</h6><p>通常情况下、建议大家在使用 open() 函数时打开缓冲区，即不需要修改 buffing 参数的值。</p>
+<p>如果 buffing 参数的值为 0（或者 False），则表示在打开指定文件时不使用缓冲区；</p>
+<p>如果 buffing 参数值为大于 1 的整数，该整数用于指定缓冲区的大小（单位是字节）；</p>
+<p>如果 buffing 参数的值为负数，则代表使用默认的缓冲区大小。</p>
+<p>因为目前为止计算机内存的 I&#x2F;O 速度仍远远高于计算机外设（例如键盘、鼠标、硬盘等）的 I&#x2F;O 速度，如果不使用缓冲区，则程序在执行 I&#x2F;O 操作时，内存和外设就必须进行同步读写操作，也就是说，内存必须等待外设输入（输出）一个字节之后，才能再次输出（输入）一个字节。这意味着，内存中的程序大部分时间都处于等待状态。<br>而如果使用缓冲区，则程序在执行输出操作时，会先将所有数据都输出到缓冲区中，然后继续执行其它操作，缓冲区中的数据会有外设自行读取处理；同样，当程序执行输入操作时，会先等外设将数据读入缓冲区中，无需同外设做同步读写操作。</p>
+<h6 id="open-文件对象常用的属性"><a href="#open-文件对象常用的属性" class="headerlink" title="open()文件对象常用的属性"></a>open()文件对象常用的属性</h6><p>成功打开文件之后，可以调用文件对象本身拥有的属性获取当前文件的部分信息，其常见的属性为：</p>
+<p>file.name：返回文件的名称；</p>
+<p>file.mode：返回打开文件时，采用的文件打开模式；</p>
+<p>file.encoding：返回打开文件时使用的编码格式；</p>
+<p>file.closed：判断文件是否己经关闭。</p>
+<h6 id="Python-read-函数"><a href="#Python-read-函数" class="headerlink" title="Python read()函数"></a>Python read()函数</h6><p>对于借助 open() 函数，并以可读模式（包括 r、r+、rb、rb+）打开的文件，可以调用 read() 函数逐个字节（或者逐个字符）读取文件中的内容。如果文件是以文本模式（非二进制模式）打开的，则 read() 函数会逐个字符进行读取；</p>
+<p>反之，如果文件以二进制模式打开，则 read() 函数会逐个字节进行读取。<br>语法格式： file.read([size])</p>
+<p>file 表示已打开的文件对象；</p>
+<p>size 作为一个可选参数，用于指定一次最多可读取的字符（字节）个数，如果省略，则默认一次性读取所有内容。</p>
+<p>当然，我们也可以通过使用 size 参数，指定 read() 每次可读取的最大字符（或者字节）数</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">file = open(&quot;aa.txt, encoding= &quot;utf-8&quot;)</span><br><span class="line">print(file.read())</span><br><span class="line">file.close()</span><br></pre></td></tr></table></figure>
+<p>但是一般都使用这种方式打开<br>这样可以不用 关闭操作</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">with open(&quot;aa.txt&quot;,encoding=&quot;utf-8&quot;) as f:</span><br><span class="line">   print(f.read())</span><br></pre></td></tr></table></figure>
+
+<h6 id="read-函数抛出UnicodeDecodeError异常的解决方法"><a href="#read-函数抛出UnicodeDecodeError异常的解决方法" class="headerlink" title="read()函数抛出UnicodeDecodeError异常的解决方法"></a>read()函数抛出UnicodeDecodeError异常的解决方法</h6><p>在使用 read() 函数时，如果 Python 解释器提示UnicodeDecodeError异常，其原因在于，目标文件使用的编码格式和 open() 函数打开该文件时使用的编码格式不匹配。<br>举个例子，如果目标文件的编码格式为 GBK 编码，而我们在使用 open() 函数并以文本模式打开该文件时，手动指定 encoding 参数为 UTF-8。这种情况下，由于编码格式不匹配，当我们使用 read() 函数读取目标文件中的数据时，Python 解释器就会提示UnicodeDecodeError异常。<br>要解决这个问题，要么将 open() 函数中的 encoding 参数值修改为和目标文件相同的编码格式，要么重新生成目标文件（即将该文件的编码格式改为和 open() 函数中的 encoding 参数相同）。</p>
+<p>除此之外，还有一种方法：先使用二进制模式读取文件，然后调用 bytes 的 decode() 方法，使用目标文件的编码格式，将读取到的字节串转换成认识的字符串。<br>eg.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#以二进制形式打开指定文件，该文件编码格式为 utf-8</span><br><span class="line">f = open(&quot;aa.txt&quot;,&#x27;rb+&#x27;)</span><br><span class="line">byt = f.read()</span><br><span class="line">print(byt)</span><br><span class="line">print(&quot;\n转换后：&quot;)</span><br><span class="line">print(byt.decode(&#x27;utf-8&#x27;))</span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
+
+<h6 id="Python-readline-和readlines-函数：按行读取文件"><a href="#Python-readline-和readlines-函数：按行读取文件" class="headerlink" title="Python readline()和readlines()函数：按行读取文件"></a>Python readline()和readlines()函数：按行读取文件</h6><p>这 2 个函数都以“行”作为读取单位，即每次都读取目标文件中的一行。</p>
+<p>对于读取以文本格式打开的文件，读取一行很好理解；</p>
+<p>对于读取以二进制格式打开的文件，它们会以“\n”作为读取一行的标志。</p>
+<h6 id="Python-readline-函数"><a href="#Python-readline-函数" class="headerlink" title="Python readline()函数"></a>Python readline()函数</h6><p>readline() 函数用于读取文件中的一行，包含最后的换行符“\n”。</p>
+<p>语法格式：<br>file.readline([size])</p>
+<p>size 为可选参数，用于指定读取每一行时，一次最多读取的字符（字节）数。</p>
+<h6 id="Python-readlines-函数"><a href="#Python-readlines-函数" class="headerlink" title="Python readlines()函数"></a>Python readlines()函数</h6><p>readlines() 函数用于读取文件中的所有行，它和调用不指定 size 参数的 read() 函数类似，只不过该函数<strong>返回是一个字符串列表</strong>，其中每个元素为文件中的一行内容。</p>
+<p>语法格式：<br>file.readlines()</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://1yzf2zstgiyhub.io">漂亮鬼</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://1yzf2zstgiyhub.io/post/8b7b2458.html">http://1yzf2zstgiyhub.io/post/8b7b2458.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://1yzf2zstgiyhub.io" target="_blank">漂亮鬼</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/python%E6%8F%90%E5%8D%87/">python提升</a></div><div class="post_share"><div class="addthis_inline_share_toolbox"></div><script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-62e385ce9ecac8a4" async="async"></script></div></div><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/post/f16679c0.html" title="python提升一"><img class="cover" src="https://cdn.staticaly.com/gh/1yzf2zst/images@main/20220810/wallhaven-6owe86.5er1paw83ss0.webp" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-08-10</div><div class="title">python提升一</div></div></a></div><div><a href="/post/88bac164.html" title="python提升三"><img class="cover" src="https://pic2.zhimg.com/v2-7a3a5a5eafb5621fc4ae05c5327c0740_r.jpg?source=3af55fa1" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-08-12</div><div class="title">python提升三</div></div></a></div><div><a href="/post/cae65769.html" title="python提升二"><img class="cover" src="https://pic2.zhimg.com/80/v2-dd55abd19779b60abba7e0c6d2b26689_720w.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-08-11</div><div class="title">python提升二</div></div></a></div><div><a href="/post/686f287a.html" title="python提升七"><img class="cover" src="https://pica.zhimg.com/v2-1ca4168a38c1bb34542bdbe68fbd9515_r.jpg?source=3af55fa1" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-08-14</div><div class="title">python提升七</div></div></a></div><div><a href="/post/36f0a209.html" title="python提升八"><img class="cover" src="https://cdn.staticaly.com/gh/1yzf2zst/images@main/20220806/wallhaven-2ejm9x.4ciiqlcrsza0.webp" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-08-15</div><div class="title">python提升八</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://picx.zhimg.com/v2-6576f8c64444c40baa4602979c75d1e3_r.jpg?source=3af55fa1" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">漂亮鬼</div><div class="author-info__description">爱干饭的程序员--嘿嘿</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">41</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">16</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/1yzf2zst/1yzf2zst.github.io"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/1yzf2zst" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:2562644984@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="xpand" style="height:200px;"><canvas class="illo" width="800" height="800" style="max-width: 200px; max-height: 200px; touch-action: none; width: 640px; height: 640px;"></canvas></div><script src="https://fastly.jsdelivr.net/gh/xiaopengand/blogCdn@latest/xzxr/twopeople1.js"></script><script src="https://fastly.jsdelivr.net/gh/xiaopengand/blogCdn@latest/xzxr/zdog.dist.js"></script><script id="rendered-js" src="https://fastly.jsdelivr.net/gh/xiaopengand/blogCdn@latest/xzxr/twopeople.js"></script><style>.card-widget.card-announcement {
+margin: 0;
+align-items: center;
+justify-content: center;
+text-align: center;
+}
+canvas {
+display: block;
+margin: 0 auto;
+cursor: move;
+}
+</style><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎各位， 各位来到xiaoyang的blog
+博主发布的博文都是博主学习笔记
+qq:2562644984 wechat:zst210621yzf</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#Python-logging%E6%A8%A1%E5%9D%97%E7%AE%80%E5%8D%95%E7%94%A8%E6%B3%95"><span class="toc-number">1.</span> <span class="toc-text">Python logging模块简单用法</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#Python-logging%E6%97%A5%E5%BF%97%E7%BA%A7%E5%88%AB"><span class="toc-number">1.1.</span> <span class="toc-text">Python logging日志级别</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#Python-logging%E7%A6%81%E7%94%A8%E6%97%A5%E5%BF%97"><span class="toc-number">1.2.</span> <span class="toc-text">Python logging禁用日志</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E8%B7%AF%E5%BE%84%EF%BC%8CPython%E4%B8%AD%E5%A6%82%E4%BD%95%E4%B9%A6%E5%86%99%E6%96%87%E4%BB%B6%E8%B7%AF%E5%BE%84"><span class="toc-number">2.</span> <span class="toc-text">文件路径，Python中如何书写文件路径</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Python%E7%BB%9D%E5%AF%B9%E8%B7%AF%E5%BE%84%E5%92%8C%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84%E8%AF%A6%E8%A7%A3"><span class="toc-number">3.</span> <span class="toc-text">Python绝对路径和相对路径详解</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E7%BB%9D%E5%AF%B9%E8%B7%AF%E5%BE%84%E4%B8%8E%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84"><span class="toc-number">3.1.</span> <span class="toc-text">什么是绝对路径与相对路径</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#Python%E5%A4%84%E7%90%86%E7%BB%9D%E5%AF%B9%E8%B7%AF%E5%BE%84%E5%92%8C%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84"><span class="toc-number">3.2.</span> <span class="toc-text">Python处理绝对路径和相对路径</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Python%E6%96%87%E4%BB%B6%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="toc-number">4.</span> <span class="toc-text">Python文件基本操作</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Python-open-%E5%87%BD%E6%95%B0%E8%AF%A6%E8%A7%A3%EF%BC%9A%E6%89%93%E5%BC%80%E6%8C%87%E5%AE%9A%E6%96%87%E4%BB%B6"><span class="toc-number">5.</span> <span class="toc-text">Python open()函数详解：打开指定文件</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#open-%E6%98%AF%E5%90%A6%E9%9C%80%E8%A6%81%E7%BC%93%E5%86%B2%E5%8C%BA"><span class="toc-number">5.1.</span> <span class="toc-text">open()是否需要缓冲区</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#open-%E6%96%87%E4%BB%B6%E5%AF%B9%E8%B1%A1%E5%B8%B8%E7%94%A8%E7%9A%84%E5%B1%9E%E6%80%A7"><span class="toc-number">5.2.</span> <span class="toc-text">open()文件对象常用的属性</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#Python-read-%E5%87%BD%E6%95%B0"><span class="toc-number">5.3.</span> <span class="toc-text">Python read()函数</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#read-%E5%87%BD%E6%95%B0%E6%8A%9B%E5%87%BAUnicodeDecodeError%E5%BC%82%E5%B8%B8%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95"><span class="toc-number">5.4.</span> <span class="toc-text">read()函数抛出UnicodeDecodeError异常的解决方法</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#Python-readline-%E5%92%8Creadlines-%E5%87%BD%E6%95%B0%EF%BC%9A%E6%8C%89%E8%A1%8C%E8%AF%BB%E5%8F%96%E6%96%87%E4%BB%B6"><span class="toc-number">5.5.</span> <span class="toc-text">Python readline()和readlines()函数：按行读取文件</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#Python-readline-%E5%87%BD%E6%95%B0"><span class="toc-number">5.6.</span> <span class="toc-text">Python readline()函数</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#Python-readlines-%E5%87%BD%E6%95%B0"><span class="toc-number">5.7.</span> <span class="toc-text">Python readlines()函数</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/post/6ef6247d.html" title="os模块简单使用"><img src="https://cdn.staticaly.com/gh/1yzf2zst/images@main/20220806/wallhaven-47p3oy.41bzzkm64l40.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="os模块简单使用"/></a><div class="content"><a class="title" href="/post/6ef6247d.html" title="os模块简单使用">os模块简单使用</a><time datetime="2022-08-17T13:33:09.000Z" title="发表于 2022-08-17 21:33:09">2022-08-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/8b7b2458.html" title="python提升九"><img src="https://cdn.staticaly.com/gh/1yzf2zst/images@main/20220806/9350218e-1588690336.jllxs18eb74.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="python提升九"/></a><div class="content"><a class="title" href="/post/8b7b2458.html" title="python提升九">python提升九</a><time datetime="2022-08-17T13:27:36.000Z" title="发表于 2022-08-17 21:27:36">2022-08-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/36f0a209.html" title="python提升八"><img src="https://cdn.staticaly.com/gh/1yzf2zst/images@main/20220806/wallhaven-2ejm9x.4ciiqlcrsza0.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="python提升八"/></a><div class="content"><a class="title" href="/post/36f0a209.html" title="python提升八">python提升八</a><time datetime="2022-08-15T12:27:10.000Z" title="发表于 2022-08-15 20:27:10">2022-08-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/686f287a.html" title="python提升七"><img src="https://pica.zhimg.com/v2-1ca4168a38c1bb34542bdbe68fbd9515_r.jpg?source=3af55fa1" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="python提升七"/></a><div class="content"><a class="title" href="/post/686f287a.html" title="python提升七">python提升七</a><time datetime="2022-08-14T11:40:22.000Z" title="发表于 2022-08-14 19:40:22">2022-08-14</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/df93073c.html" title="python提升六"><img src="https://pic1.zhimg.com/v2-5c0fecc702d4d64f2b18bc7ea24a7e41_r.jpg?source=3af55fa1" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="python提升六"/></a><div class="content"><a class="title" href="/post/df93073c.html" title="python提升六">python提升六</a><time datetime="2022-08-14T10:15:53.000Z" title="发表于 2022-08-14 18:15:53">2022-08-14</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://picx.zhimg.com/v2-d1098f823452d83e34ce0aa6b6c484ae_r.jpg?source=3af55fa1')"><div id="footer-wrap"><div class="copyright">&copy;2022 By 漂亮鬼</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Hello,  welcome  to   <a  target="_blank" rel="noopener" href="https://xiaoyangzst.vercel.app">小杨的blog</a>!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><div class="js-pjax"></div><script src="/js/snowflake.js"></script><script src="https://cdn.jsdelivr.net/gh/caicheng918/CDN@4.0/res/mouse_snow.js"></script><script src="/js/funny.js"></script><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/fireworks.min.js"></script><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="true"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"superSample":2,"width":200,"height":400,"position":"left","hOffset":-30,"vOffset":-20},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.2},"log":false});</script></body></html>
