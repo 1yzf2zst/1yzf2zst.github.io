@@ -1,0 +1,239 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>tkinter-event事件 | 漂亮鬼</title><meta name="keywords" content="python"><meta name="author" content="漂亮鬼"><meta name="copyright" content="漂亮鬼"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Tkinter Event事件处理事件处理，是 GUI 程序中不可或缺的重要组成部分，相比来说，控件只是组成一台机器的零部件， 而事件处理则是驱动这台机器“正常”运转的关键所在，它能够将零部件之间“优雅”的贯穿起来，因此“事件处理”可谓是 GUI 程序的“灵魂”，同时它也是实现人机交互的关键。 在一款 GUI 程序中，我们将用户对软件的操作统称为“事件”，比如鼠标点击按钮、键盘输入文本以及窗口管理">
+<meta property="og:type" content="article">
+<meta property="og:title" content="tkinter-event事件">
+<meta property="og:url" content="http://1yzf2zstgiyhub.io/post/f50e177a.html">
+<meta property="og:site_name" content="漂亮鬼">
+<meta property="og:description" content="Tkinter Event事件处理事件处理，是 GUI 程序中不可或缺的重要组成部分，相比来说，控件只是组成一台机器的零部件， 而事件处理则是驱动这台机器“正常”运转的关键所在，它能够将零部件之间“优雅”的贯穿起来，因此“事件处理”可谓是 GUI 程序的“灵魂”，同时它也是实现人机交互的关键。 在一款 GUI 程序中，我们将用户对软件的操作统称为“事件”，比如鼠标点击按钮、键盘输入文本以及窗口管理">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://pica.zhimg.com/v2-1ca4168a38c1bb34542bdbe68fbd9515_r.jpg?source=3af55fa1">
+<meta property="article:published_time" content="2022-08-30T14:30:17.000Z">
+<meta property="article:modified_time" content="2022-08-30T14:34:53.549Z">
+<meta property="article:author" content="漂亮鬼">
+<meta property="article:tag" content="python">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://pica.zhimg.com/v2-1ca4168a38c1bb34542bdbe68fbd9515_r.jpg?source=3af55fa1"><link rel="shortcut icon" href="https://pic2.zhimg.com/v2-9359c735aa38fa08bc161d8d6c0df38e_r.jpg?source=3af55fa1"><link rel="canonical" href="http://1yzf2zstgiyhub.io/post/f50e177a"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin=""/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?fa627d7767ce07eaecb96088287b512d";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: 漂亮鬼","link":"链接: ","source":"来源: 漂亮鬼","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'tkinter-event事件',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: true,
+  isToc: true,
+  postUpdate: '2022-08-30 22:34:53'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/mouse.css"><style>#article-container.post-content h1:before, h2:before, h3:before, h4:before, h5:before, h6:before { -webkit-animation: avatar_turn_around 1s linear infinite; -moz-animation: avatar_turn_around 1s linear infinite; -o-animation: avatar_turn_around 1s linear infinite; -ms-animation: avatar_turn_around 1s linear infinite; animation: avatar_turn_around 1s linear infinite; }</style><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/js-heo@1.0.11/mainColor/heoMainColor.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/js-heo@1.0.11/404/404.css"><meta name="generator" content="Hexo 6.2.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://picx.zhimg.com/v2-6576f8c64444c40baa4602979c75d1e3_r.jpg?source=3af55fa1" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">44</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">17</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">10</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 目录</span></a></div><div class="menus_item"><a class="site-page" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> images</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 资源</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://pica.zhimg.com/v2-1ca4168a38c1bb34542bdbe68fbd9515_r.jpg?source=3af55fa1')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">漂亮鬼</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 目录</span></a></div><div class="menus_item"><a class="site-page" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> images</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 资源</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">tkinter-event事件</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-08-30T14:30:17.000Z" title="发表于 2022-08-30 22:30:17">2022-08-30</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-08-30T14:34:53.549Z" title="更新于 2022-08-30 22:34:53">2022-08-30</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/python-tkinter/">python--tkinter</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.6k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>5分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="tkinter-event事件"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h5 id="Tkinter-Event事件处理"><a href="#Tkinter-Event事件处理" class="headerlink" title="Tkinter Event事件处理"></a>Tkinter Event事件处理</h5><p>事件处理，是 GUI 程序中不可或缺的重要组成部分，相比来说，控件只是组成一台机器的零部件， 而事件处理则是驱动这台机器“正常”运转的关键所在，它能够将零部件之间“优雅”的贯穿起来，因此“事件处理”可谓是 GUI 程序的“灵魂”，同时它也是实现人机交互的关键。</p>
+<p>在一款 GUI 程序中，我们将用户对软件的操作统称为“事件”，比如鼠标点击按钮、键盘输入文本以及窗口管理器触发的重绘事件等，这些事件有一个共同的特点，即都是由用户直接或者间接触发的。</p>
+<p>事件绑定方法</p>
+<p>Tkinter 提供的事件处理机制允许我们为“控件”绑定相应的事件和事件处理函数（即 callback函数），从而实现控件与用户的交互<br>语法格式：widget.bind(“<event>“,func)</event></p>
+<p>widget 代表控件的实例对象，之后，采用 bind() 方法进行事件绑定<br>该函数有两个参数：<br><event>：一个字符串参数，表示事件的类型，并使用“尖括号”的形式进行包裹；<br>func：表示事件的处理函数（callback，即回调函数），当触发事件时，Tk 会携带事件对象（Event）去调用 func 方法。</event></p>
+<p><strong>注意：bind() 方法可以完成事件与处理函数绑定，而使用 unbind() 方法可以将事件与处理函数解绑。</strong></p>
+<p>常用事件类型</p>
+<p>事件类型（也称事件码）是 Tkinter 模块规定的，主要包括鼠标、键盘、光标等相关事件</p>
+<p>Tkinter 为其规定了相应的语法格式：</p>
+<modifier-type-detail>
+
+<p>上述语法由三部分组成：<br>&lt;&gt;：事件类型必须包含在“尖括号”内；</p>
+<p>modifier：可选项，事件类型的修饰符，通常用于描述组合键、双击<Double-Button-1>、大写锁定键<Lock>以及<Alt-Shift>等；</Alt-Shift></Lock></Double-Button-1></p>
+<p>type：是必不可少的一项，表示事件的具体类型；</p>
+<p>detail：可选项，通常用于描述具体的哪个按键，比如 <Button-1> 表示鼠标左键；</Button-1></p>
+<p>这里有必要对经常使用的 modifier 修饰符做简单的介绍，修饰符可以修改事件的激活条件，比如双击鼠标或者需要同时按下某个键才触发事件，常用的修饰符如下：</p>
+<p>Control<br>事件发生时需按下 Control 键</p>
+<p>Alt<br>事件发生时需按下 Alt 键</p>
+<p>Shift<br>事件发生时需按下 Shift 键</p>
+<p>Lock<br>事件发生时需处于大写锁定状态</p>
+<p>Double<br>事件连续发生两次，比如双击鼠标</p>
+<p>Triple<br>事件连续发生三次</p>
+<p>Quadruple<br>事件连续发生四次</p>
+<p> Tkinter 中经常使用的事件类型：</p>
+<p><ButtonPress-1>单击鼠标左键，简写为<Button-1>，后面的数字可以是1&#x2F;2&#x2F;3，分别代表左键、中间滑轮、右键</Button-1></ButtonPress-1></p>
+<ButtonRelease-1>
+释放鼠标左键，后面数字可以是1/2/3，分别代表释放左键、滑轮、右键
+
+<B1-Motion>
+按住鼠标左键移动，<B2-Motion>和<B3-Motion>分别表示按住鼠标滑轮移动、右键移动
+
+<MouseWheel>
+转动鼠标滑轮
+
+<Double-Button-1>
+双击鼠标左键
+
+<Enter>
+鼠标光标进入控件实例
+
+<Leave>
+鼠标光标离开控件实例
+
+<Key>
+按下键盘上的任意键
+
+<p>&lt;KeyPress-字母&gt;&#x2F;&lt;KeyPress-数字&gt;按下键盘上的某一个字母或者数字键</p>
+<KeyRelease>
+释放键盘上的按键
+
+<Return>
+回车键，其他同类型键有<Shift>/<Tab>/<Control>/<Alt><Space>空格键<UP>/<Down>/<Left>/<Right>方向键<F1>...<F12>常用的功能键<Control-Alt>组合键，再比如<Control-Shift-KeyPress-T>，表示用户同时点击 Ctrl + Shift + T<FocusIn>当控件获取焦点时候触发
+
+<p>比如鼠标点击输入控件输入内容，可以调用 <strong>focus_set()</strong> 方法使控件获得焦点<br><FocusOut>当控件失去焦点时激活</FocusOut></p>
+<p>比如当鼠标离开输入框的时候<Configure>控件的发生改变的时候触发事件</Configure></p>
+<p>比如调整了控件的大小等<Deactivate>当控件的状态从“激活”变为“未激活”时触发事件</Deactivate></p>
+<p><Destroy>当控件被销毁的时候触发执行事件的函数</Destroy></p>
+<p><Expose>当窗口或组件的某部分不再被覆盖的时候触发事件</Expose></p>
+<p><Visibility>当应用程序至少有一部分在屏幕中是可见状态时触发事件</Visibility></p>
+<p>Event事件对象</p>
+<p>当事件触发后，Tkinter 会自动将事件对象交给回调函数进行下步的处理<br>Event 对象包含常用属性：</p>
+<p>widget<br>发生事件的是哪一个控件</p>
+<p>x,y相对于窗口的左上角而言，当前鼠标的坐标位置</p>
+<p>x_root,y_root<br>相对于屏幕的左上角而言，当前鼠标的坐标位置</p>
+<p>char<br>用来显示所按键相对应的字符</p>
+<p>keysym<br>查看按键名，比如 Control_L 表示左边的 Ctrl 按键keycode按键码，一个按键的数字编号，比如 Delete 按键码是107num1&#x2F;2&#x2F;3中的一个，表示点击了鼠标的哪个按键，按键分为左、中、右</p>
+<p>width,height<br>控件的修改后的尺寸，对应着 <Configure>事件type事件类型</Configure></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">from tkinter import *</span><br><span class="line"># 定义事件函数，必须用event参数</span><br><span class="line">def show_key(event):</span><br><span class="line">    # 查看触发事件的按钮</span><br><span class="line">    s=event.keysym</span><br><span class="line">    # 将其显示在按钮控件上</span><br><span class="line">    lb.config(text=s)</span><br><span class="line"></span><br><span class="line">root=Tk()</span><br><span class="line">root.geometry(&#x27;450x350+300+200&#x27;)</span><br><span class="line"></span><br><span class="line"># 添加一个按钮控件</span><br><span class="line">lb=Label(root,text=&#x27;请按键&#x27;,fg=&#x27;blue&#x27;,font=(&#x27;微软雅黑&#x27;,15))</span><br><span class="line"># 给按钮控件绑定事件，按下任意键，然后调用事件处理函数。注意，此处需要在英文状态下进行输入</span><br><span class="line">lb.bind(&#x27;&lt;Key&gt;&#x27;,show_key)</span><br><span class="line"># 设置按钮获取焦点，这里必须使用这个</span><br><span class="line">lb.focus_set()</span><br><span class="line">lb.pack()</span><br><span class="line"># 显示窗口</span><br><span class="line">root.mainloop()</span><br></pre></td></tr></table></figure>
+<p>注意：只有当 Label 控件获取焦点后才能接收键盘事件，因此在给控件绑定事件和回调函数后，需要使用 focus_set() 方法来获取焦点。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"># 定义事件函数</span><br><span class="line">from tkinter import *</span><br><span class="line">def handleMotion(event):</span><br><span class="line">    lb1[&#x27;text&#x27;] = &#x27;你移动了光标的所在位置&#x27;</span><br><span class="line">    lb2[&#x27;text&#x27;] = &#x27;目前光标位置：x =&#x27;+ str(event.x)+&#x27;;y=&#x27;+str(event.y)</span><br><span class="line">    print(&#x27;光标当前位置&#x27;,event.x,event.y)</span><br><span class="line">win = Tk()</span><br><span class="line">win.config(bg=&#x27;#87CEEB&#x27;)</span><br><span class="line">win.geometry(&#x27;450x350+300+200&#x27;)</span><br><span class="line"># 创建一个窗体容器frame</span><br><span class="line">frame = Frame (win, relief=RAISED, borderwidth=2, width=300,height=200)</span><br><span class="line">frame.bind(&#x27;&lt;Motion&gt;&#x27;,handleMotion)</span><br><span class="line">lb1 = Label(frame,text=&#x27;没有任何事件触发&#x27;, bg=&#x27;purple&#x27;, )</span><br><span class="line">lb1.place (x=20,y=20)</span><br><span class="line">lb2 = Label(frame,text=&#x27;&#x27;)</span><br><span class="line">lb2.place (x=16,y=60)</span><br><span class="line">frame.pack(side=TOP)</span><br><span class="line"># 显示窗口</span><br><span class="line">win.mainloop()</span><br></pre></td></tr></table></figure>
+</FocusIn></Control-Shift-KeyPress-T></Control-Alt></F12></F1></Right></Left></Down></UP></Space></Alt></Control></Tab></Shift></Return></KeyRelease></Key></Leave></Enter></Double-Button-1></MouseWheel></B3-Motion></B2-Motion></B1-Motion></ButtonRelease-1></modifier-type-detail></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://1yzf2zstgiyhub.io">漂亮鬼</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://1yzf2zstgiyhub.io/post/f50e177a.html">http://1yzf2zstgiyhub.io/post/f50e177a.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://1yzf2zstgiyhub.io" target="_blank">漂亮鬼</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/python/">python</a></div><div class="post_share"><div class="addthis_inline_share_toolbox"></div><script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-62e385ce9ecac8a4" async="async"></script></div></div><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/post/67fd3ea0.html" title="Pillow为图片添加水印"><img class="cover" src="https://cdn.staticaly.com/gh/1yzf2zst/images@main/20220806/wallhaven-6k38g7.4z8ybi7h04g0.webp" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-08-05</div><div class="title">Pillow为图片添加水印</div></div></a></div><div><a href="/post/2d89a648.html" title="Pillow图像几何变换"><img class="cover" src="https://cdn.staticaly.com/gh/1yzf2zst/images@main/20220806/wallhaven-47p3oy.41bzzkm64l40.webp" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-08-04</div><div class="title">Pillow图像几何变换</div></div></a></div><div><a href="/post/f6193f79.html" title="Pillow图像分离与合并"><img class="cover" src="https://cdn.staticaly.com/gh/1yzf2zst/images@main/20220806/wallhaven-wyozx6.cow0k8e9rts.webp" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-08-04</div><div class="title">Pillow图像分离与合并</div></div></a></div><div><a href="/post/4c1116f9.html" title="Pillow图像降噪处理和颜色处理"><img class="cover" src="https://cdn.staticaly.com/gh/1yzf2zst/images@main/20220806/wallhaven-4oq279.1euk6lgktaps.webp" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-08-05</div><div class="title">Pillow图像降噪处理和颜色处理</div></div></a></div><div><a href="/post/20b2c4ea.html" title="Tkinter-Canvas画布控件"><img class="cover" src="https://cdn.staticaly.com/gh/1yzf2zst/images@main/20220806/wallhaven-5djr99.1aoi1y41yb0g.webp" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-08-13</div><div class="title">Tkinter-Canvas画布控件</div></div></a></div><div><a href="/post/6b4ce71c.html" title="Tkinter--Text文本框控件"><img class="cover" src="https://cdn.staticaly.com/gh/1yzf2zst/images@main/20220806/wallhaven-4oq279.1euk6lgktaps.webp" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-08-05</div><div class="title">Tkinter--Text文本框控件</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://picx.zhimg.com/v2-6576f8c64444c40baa4602979c75d1e3_r.jpg?source=3af55fa1" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">漂亮鬼</div><div class="author-info__description">爱干饭的程序员--嘿嘿</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">44</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">17</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">10</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/1yzf2zst/1yzf2zst.github.io"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://cdn.staticaly.com/gh/1yzf2zst/images@main/20220823/IMG_4539(20220823-200421).750ofrla5w40.webp" target="_blank" title="WeChat"><i class="fab fa-weixin"></i></a><a class="social-icon" href="https://cdn.staticaly.com/gh/1yzf2zst/images@main/20220823/B8E86698E2D953CD7245DBFA591CDB59.3y2c2f2kdxy0.webp" target="_blank" title="QQ"><i class="fab fa-qq"></i></a><a class="social-icon" href="https://github.com/1yzf2zst" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:2562644984@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="xpand" style="height:200px;"><canvas class="illo" width="800" height="800" style="max-width: 200px; max-height: 200px; touch-action: none; width: 640px; height: 640px;"></canvas></div><script src="https://fastly.jsdelivr.net/gh/xiaopengand/blogCdn@latest/xzxr/twopeople1.js"></script><script src="https://fastly.jsdelivr.net/gh/xiaopengand/blogCdn@latest/xzxr/zdog.dist.js"></script><script id="rendered-js" src="https://fastly.jsdelivr.net/gh/xiaopengand/blogCdn@latest/xzxr/twopeople.js"></script><style>.card-widget.card-announcement {
+margin: 0;
+align-items: center;
+justify-content: center;
+text-align: center;
+}
+canvas {
+display: block;
+margin: 0 auto;
+cursor: move;
+}
+</style><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎各位， 各位来到xiaoyang的blog
+博主发布的博文都是博主学习笔记
+qq:2562644984</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#Tkinter-Event%E4%BA%8B%E4%BB%B6%E5%A4%84%E7%90%86"><span class="toc-number">1.</span> <span class="toc-text">Tkinter Event事件处理</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/post/f50e177a.html" title="tkinter-event事件"><img src="https://pica.zhimg.com/v2-1ca4168a38c1bb34542bdbe68fbd9515_r.jpg?source=3af55fa1" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="tkinter-event事件"/></a><div class="content"><a class="title" href="/post/f50e177a.html" title="tkinter-event事件">tkinter-event事件</a><time datetime="2022-08-30T14:30:17.000Z" title="发表于 2022-08-30 22:30:17">2022-08-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/ce6b206b.html" title="python搞笑表白"><img src="https://cdn.staticaly.com/gh/1yzf2zst/images@main/20220806/wallhaven-5d9qq8.6z0cq098ck40.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="python搞笑表白"/></a><div class="content"><a class="title" href="/post/ce6b206b.html" title="python搞笑表白">python搞笑表白</a><time datetime="2022-08-30T05:35:34.000Z" title="发表于 2022-08-30 13:35:34">2022-08-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/33f31c3e.html" title="Tkinter-布局管理器"><img src="https://cdn.staticaly.com/gh/1yzf2zst/images@main/20220805/10001.5orx1k91xr40.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Tkinter-布局管理器"/></a><div class="content"><a class="title" href="/post/33f31c3e.html" title="Tkinter-布局管理器">Tkinter-布局管理器</a><time datetime="2022-08-29T15:38:43.000Z" title="发表于 2022-08-29 23:38:43">2022-08-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/6ef6247d.html" title="os模块简单使用"><img src="https://cdn.staticaly.com/gh/1yzf2zst/images@main/20220806/wallhaven-lqrlyl.1v85vdp912w0.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="os模块简单使用"/></a><div class="content"><a class="title" href="/post/6ef6247d.html" title="os模块简单使用">os模块简单使用</a><time datetime="2022-08-17T13:33:09.000Z" title="发表于 2022-08-17 21:33:09">2022-08-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/8b7b2458.html" title="python提升九"><img src="https://cdn.staticaly.com/gh/1yzf2zst/images@main/20220806/wallhaven-2ejm9x.4ciiqlcrsza0.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="python提升九"/></a><div class="content"><a class="title" href="/post/8b7b2458.html" title="python提升九">python提升九</a><time datetime="2022-08-17T13:27:36.000Z" title="发表于 2022-08-17 21:27:36">2022-08-17</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://picx.zhimg.com/v2-d1098f823452d83e34ce0aa6b6c484ae_r.jpg?source=3af55fa1')"><div id="footer-wrap"><div class="copyright">&copy;2022 By 漂亮鬼</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Hello,  welcome  to   <a  target="_blank" rel="noopener" href="https://xiaoyangzst.vercel.app">小杨的blog</a>!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"></div><script src="/js/snowflake.js"></script><script src="https://cdn.jsdelivr.net/gh/caicheng918/CDN@4.0/res/mouse_snow.js"></script><script src="/js/funny.js"></script><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/fireworks.min.js"></script><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"superSample":2,"width":200,"height":400,"position":"left","hOffset":-30,"vOffset":-20},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.2},"log":false});</script></body></html>
