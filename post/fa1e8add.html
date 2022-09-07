@@ -1,0 +1,549 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>常见爬虫知识 | 漂亮鬼</title><meta name="keywords" content="爬虫"><meta name="author" content="漂亮鬼"><meta name="copyright" content="漂亮鬼"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="简单的python爬虫程序使用 Python 内置的 urllib 库获取网页的 html 信息 获取网页html信息  获取响应对象向百度（http:&#x2F;&#x2F;www.baidu.com&#x2F;）发起请求，获取百度首页的 HTML 信息  1234import urllib.request# urlopen()向URL发请求,返回响应对象response&#x3D;urllib.request.urlopen(&amp;#x">
+<meta property="og:type" content="article">
+<meta property="og:title" content="常见爬虫知识">
+<meta property="og:url" content="http://1yzf2zstgiyhub.io/post/fa1e8add.html">
+<meta property="og:site_name" content="漂亮鬼">
+<meta property="og:description" content="简单的python爬虫程序使用 Python 内置的 urllib 库获取网页的 html 信息 获取网页html信息  获取响应对象向百度（http:&#x2F;&#x2F;www.baidu.com&#x2F;）发起请求，获取百度首页的 HTML 信息  1234import urllib.request# urlopen()向URL发请求,返回响应对象response&#x3D;urllib.request.urlopen(&amp;#x">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.staticaly.com/gh/1yzf2zst/images@main/20220806/wallhaven-6k38g7.4z8ybi7h04g0.webp">
+<meta property="article:published_time" content="2022-09-06T03:47:59.000Z">
+<meta property="article:modified_time" content="2022-09-06T12:42:57.593Z">
+<meta property="article:author" content="漂亮鬼">
+<meta property="article:tag" content="爬虫">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.staticaly.com/gh/1yzf2zst/images@main/20220806/wallhaven-6k38g7.4z8ybi7h04g0.webp"><link rel="shortcut icon" href="https://pic2.zhimg.com/v2-9359c735aa38fa08bc161d8d6c0df38e_r.jpg?source=3af55fa1"><link rel="canonical" href="http://1yzf2zstgiyhub.io/post/fa1e8add"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin=""/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?fa627d7767ce07eaecb96088287b512d";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: 漂亮鬼","link":"链接: ","source":"来源: 漂亮鬼","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '常见爬虫知识',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: true,
+  isToc: true,
+  postUpdate: '2022-09-06 20:42:57'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/mouse.css"><style>#article-container.post-content h1:before, h2:before, h3:before, h4:before, h5:before, h6:before { -webkit-animation: avatar_turn_around 1s linear infinite; -moz-animation: avatar_turn_around 1s linear infinite; -o-animation: avatar_turn_around 1s linear infinite; -ms-animation: avatar_turn_around 1s linear infinite; animation: avatar_turn_around 1s linear infinite; }</style><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/js-heo@1.0.11/mainColor/heoMainColor.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/js-heo@1.0.11/404/404.css"><link rel="stylesheet" href="/css/custom.css"  media="defer" onload="this.media='all'"><meta name="generator" content="Hexo 6.2.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://picx.zhimg.com/v2-6576f8c64444c40baa4602979c75d1e3_r.jpg?source=3af55fa1" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">46</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">18</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">11</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 目录</span></a></div><div class="menus_item"><a class="site-page" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> images</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 资源</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.staticaly.com/gh/1yzf2zst/images@main/20220806/wallhaven-6k38g7.4z8ybi7h04g0.webp')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">漂亮鬼</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 目录</span></a></div><div class="menus_item"><a class="site-page" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> images</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 资源</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">常见爬虫知识</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-09-06T03:47:59.000Z" title="发表于 2022-09-06 11:47:59">2022-09-06</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-09-06T12:42:57.593Z" title="更新于 2022-09-06 20:42:57">2022-09-06</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%88%AC%E8%99%AB/">爬虫</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">9.4k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>37分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="常见爬虫知识"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h4 id="简单的python爬虫程序"><a href="#简单的python爬虫程序" class="headerlink" title="简单的python爬虫程序"></a>简单的python爬虫程序</h4><p>使用 Python 内置的 urllib 库获取网页的 html 信息</p>
+<p>获取网页html信息</p>
+<ol>
+<li>获取响应对象向百度（<a target="_blank" rel="noopener" href="http://www.baidu.com/%EF%BC%89%E5%8F%91%E8%B5%B7%E8%AF%B7%E6%B1%82%EF%BC%8C%E8%8E%B7%E5%8F%96%E7%99%BE%E5%BA%A6%E9%A6%96%E9%A1%B5%E7%9A%84">http://www.baidu.com/）发起请求，获取百度首页的</a> HTML 信息</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">import urllib.request</span><br><span class="line"># urlopen()向URL发请求,返回响应对象</span><br><span class="line">response=urllib.request.urlopen(&#x27;http://www.baidu.com/&#x27;)</span><br><span class="line">print(response)</span><br></pre></td></tr></table></figure>
+
+<p>其中 urlopen() 表示打开一个网页地址。</p>
+<p><strong>注意：请求的 url 必须带有 http 或者 https 传输协议。</strong></p>
+<ol start="2">
+<li>输出HTML信息</li>
+</ol>
+<p>在上述代码的基础上继续编写如下代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#提取响应内容</span><br><span class="line">html = response.read().decode(&#x27;utf-8&#x27;)</span><br><span class="line">print(html)</span><br></pre></td></tr></table></figure>
+
+<p>通过调用 response 响应对象的 read() 方法提取 HTML 信息，该**方法返回的结果是字节串类型(bytes)**，因此需要使用 decode() 转换为字符串。</p>
+<h4 id="urllib常用方法"><a href="#urllib常用方法" class="headerlink" title="urllib常用方法"></a>urllib常用方法</h4><p>爬虫库 urllib中的常用方法</p>
+<ol>
+<li>urlopen()表示向网站发起请求并获取响应对象</li>
+</ol>
+<p>urllib.request.urlopen(url,timeout)<br>参数说明：<br>url：表示要爬取数据的 url 地址<br>timeout：设置等待超时时间，指定时间内未得到响应则抛出超时异常</p>
+<ol start="2">
+<li>Request()该方法用于创建请求对象、包装请求头，比如重构 User-Agent（即用户代理，指用户使用的浏览器）使程序更像人类的请求，而非机器。<br>urllib.request.Request(url,headers)</li>
+</ol>
+<p>参数说明：<br>url：请求的URL地址。<br>headers：重构请求头。</p>
+<ol start="3">
+<li>html响应对象方法</li>
+</ol>
+<p>bytes &#x3D; response.read() # 返回结果为 bytes 数据类型</p>
+<p>string &#x3D; response.read().decode() # decode()将字节串转换为 string 类型</p>
+<p>url &#x3D; response.geturl() # 返回响应对象的URL地址</p>
+<p>code &#x3D; response.getcode() # 返回请求时的HTTP响应码</p>
+<ol start="4">
+<li>编码解码操作</li>
+</ol>
+<p>#字符串转换为字节码<br>string.encode(“utf-8”)<br>#字节码转换为字符串<br>bytes.decode(“utf-8”) </p>
+<h4 id="User-Agent（用户代理）"><a href="#User-Agent（用户代理）" class="headerlink" title="User-Agent（用户代理）"></a>User-Agent（用户代理）</h4><p>User-Agent 即用户代理，简称“UA”，它是一个特殊字符串头<br>网站服务器通过识别 “UA”来确定用户所使用的操作系统版本、CPU 类型、浏览器版本等信息。而网站服务器则通过判断 UA 来给客户端发送不同的页面。</p>
+<p>网站通过识别请求头中 User-Agent 信息来判断是否是爬虫访问网站。如果是，网站首先对该 IP 进行预警，对其进行重点监控，当发现该 IP 超过规定时间内的访问次数， 将在一段时间内禁止其再次访问网站</p>
+<h5 id="爬虫程序UA信息"><a href="#爬虫程序UA信息" class="headerlink" title="爬虫程序UA信息"></a>爬虫程序UA信息</h5><p>通过向 HTTP 测试网站（<a target="_blank" rel="noopener" href="http://httpbin.org/%EF%BC%89%E5%8F%91%E9%80%81">http://httpbin.org/）发送</a> GET 请求来查看请求头信息，从而获取爬虫程序的 UA</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">import urllib.request</span><br><span class="line">#向网站发送get请求</span><br><span class="line">response=urllib.request.urlopen(&#x27;http://httpbin.org/get&#x27;)</span><br><span class="line">html = response.read().decode()</span><br><span class="line">print(html)</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>注意</strong>：httpbin.org 这个网站能测试 HTTP 请求和响应的各种信息，比如 cookie、IP、headers 和登录验证等，且支持 GET、POST 等多种方法，对 Web 开发和测试很有帮助。</p>
+<h5 id="重构爬虫UA信息"><a href="#重构爬虫UA信息" class="headerlink" title="重构爬虫UA信息"></a>重构爬虫UA信息</h5><p>ua信息可以百度得到 一大片然后再复制过来</p>
+<p>下面使用urllib.request.Request()方法重构 User-Agent 信息</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">from urllib import request</span><br><span class="line">url = &#x27;http://httpbin.org/get&#x27; #向测试网站发送请求</span><br><span class="line">#重构请求头，伪装成 Mac火狐浏览器访问，可以使用上表中任意浏览器的UA信息</span><br><span class="line">headers = &#123;</span><br><span class="line">&#x27;User-Agent&#x27;:&#x27;Mozilla/5.0 (Macintosh; Intel Mac OS X 10.12; rv:65.0) Gecko/20100101 Firefox/65.0&#x27;&#125;</span><br><span class="line"></span><br><span class="line">#创建请求对象，包装ua信息</span><br><span class="line">req = request.Request(url=url,headers=headers)</span><br><span class="line">#发送请求，获取响应对象</span><br><span class="line">res = request.urlopen(req)</span><br><span class="line">html = res.read().decode(&#x27;utf-8&#x27;)</span><br><span class="line">print(html)</span><br></pre></td></tr></table></figure>
+
+<p>上述代码重构了 User-Agent 字符串信息，这样就解决了网站通过识别 User-Agent 来封杀爬虫程序的问题。</p>
+<p>重构 UA 也可以通过其他模块实现，比如 requests 模块。</p>
+<h5 id="构建User-Agnet代理池"><a href="#构建User-Agnet代理池" class="headerlink" title="构建User-Agnet代理池"></a>构建User-Agnet代理池</h5><p>在编写爬虫程序时，一般都会构建一个 User-Agent （用户代理）池，就是把多个浏览器的 UA 信息放进列表中，然后再从中随机选择。构建用户代理池，能够避免总是使用一个 UA 来访问网站，因为短时间内总使用一个 UA 高频率访问的网站，可能会引起网站的警觉，从而封杀掉 IP。</p>
+<p>自定义UA代理池</p>
+<p>构建代理池的方法也非常简单，当前文件的工作目录中定义一个 py 文件，并将以下 UA 信息以列表的形式粘贴到该文件中再在需要的地方引用这个文件就好</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">ua_list = [</span><br><span class="line">    &#x27;Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; Maxthon 2.0&#x27;,</span><br><span class="line">    &#x27;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_0) AppleWebKit/535.11 (KHTML, like Gecko) Chrome/17.0.963.56 Safari/535.11&#x27;,</span><br><span class="line">    &#x27;User-Agent:Opera/9.80 (Windows NT 6.1; U; en) Presto/2.8.131 Version/11.11&#x27;,</span><br><span class="line">    &#x27;Mozilla/5.0 (Windows NT 6.1; rv:2.0.1) Gecko/20100101 Firefox/4.0.1&#x27;,</span><br><span class="line">    &#x27;Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0)&#x27;,</span><br><span class="line">    &#x27;Mozilla/5.0 (Windows; U; Windows NT 6.1; en-us) AppleWebKit/534.50 (KHTML, like Gecko) Version/5.1 Safari/534.50&#x27;,</span><br><span class="line">    &#x27;Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0&#x27;,</span><br><span class="line">    &#x27; Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1&#x27;,</span><br><span class="line">    &#x27;Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1&#x27;,</span><br><span class="line">    &#x27; Mozilla/5.0 (Macintosh; Intel Mac OS X 10.6; rv:2.0.1) Gecko/20100101 Firefox/4.0.1&#x27;,</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+
+
+<p>python中有专门的第三方的模块来随机获取浏览器 UA 信息</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">from fake_useragent import UserAgent</span><br><span class="line">#实例化一个对象</span><br><span class="line">ua=UserAgent()</span><br><span class="line">#随机获取一个ie浏览器ua</span><br><span class="line">print(ua.ie)</span><br><span class="line">#随机获取一个火狐浏览器ua</span><br><span class="line">print(ua.firefox)</span><br></pre></td></tr></table></figure>
+
+<h4 id="Python实现编码与解码"><a href="#Python实现编码与解码" class="headerlink" title="Python实现编码与解码"></a>Python实现编码与解码</h4><p>Python 的标准库urllib.parse模块中提供了用来编码和解码的方法，分别是 urlencode() 与 unquote() 方法。</p>
+<p>urlencode()<br>该方法实现了对 url 地址的编码操作</p>
+<p>unquote()<br>该方法将编码后的 url 地址进行还原，被称为解码</p>
+<ol>
+<li>编码urlencode()<br>打开百度首页，在搜索框中输入“爬虫”，然后点击“百度一下”。当搜索结果显示后，此时地址栏的 URL 信息，如下所示：<a target="_blank" rel="noopener" href="https://www.baidu.com/s?wd=%E7%88%AC%E8%99%AB&amp;rsv_spt=1&amp;rsv_iqid=0xa3ca348c0001a2ab&amp;issp=1&amp;f=8&amp;rsv_bp=1&amp;rsv_idx=2&amp;ie=utf8&amp;tn=baiduhome_pg&amp;rsv_enter=1&amp;rsv_dl=ib&amp;rsv_sug3=8&amp;rsv_sug1=7&amp;rsv_sug7=101">https://www.baidu.com/s?wd=爬虫&amp;rsv_spt=1&amp;rsv_iqid=0xa3ca348c0001a2ab&amp;issp=1&amp;f=8&amp;rsv_bp=1&amp;rsv_idx=2&amp;ie=utf8&amp;tn=baiduhome_pg&amp;rsv_enter=1&amp;rsv_dl=ib&amp;rsv_sug3=8&amp;rsv_sug1=7&amp;rsv_sug7=101</a></li>
+</ol>
+<p>可以看出 URL 中有很多的查询字符串，而第一个查询字符串就是“wd&#x3D;爬虫”，其中 wd 表示查询字符串的键，而“爬虫”则代表您输入的值。在网页地址栏中删除多余的查询字符串，最后显示的 URL 如下所示：<a target="_blank" rel="noopener" href="https://www.baidu.com/s?wd=%E7%88%AC%E8%99%AB">https://www.baidu.com/s?wd=爬虫</a></p>
+<p>使用搜索修改后的 URL 进行搜索，依然会得到相同页面。因此可知“wd”参数是百度搜索的关键查询参数。</p>
+<p>下面编写爬虫程序对 “wd&#x3D;爬虫”进行编码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">from urllib import parse</span><br><span class="line">#构建查询字符串字典</span><br><span class="line">query_string = &#123;&#x27;wd&#x27; : &#x27;爬虫&#x27;&#125;</span><br><span class="line">result = parse.urlencode(query_string)</span><br><span class="line">#使用format函数格式化字符串，拼接url地址</span><br><span class="line">url = &#x27;http://www.baidu.com/s?&#123;&#125;&#x27;.format(result)</span><br><span class="line">print(url)</span><br></pre></td></tr></table></figure>
+
+<p>编码后的 URL 地址依然可以通过地网页址栏实现搜索功能。</p>
+<p>除了使用 urlencode() 方法之外，也可以使用 quote(string) 方法实现编码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">from urllib import parse</span><br><span class="line">#注意url的书写格式，和 urlencode存在不同</span><br><span class="line">url = &#x27;http://www.baidu.com/s?wd=&#123;&#125;&#x27;</span><br><span class="line">word = input(&#x27;请输入要搜索的内容:&#x27;)</span><br><span class="line">#quote()只能对字符串进行编码</span><br><span class="line">query_string = parse.quote(word)</span><br><span class="line">print(url.format(query_string))</span><br></pre></td></tr></table></figure>
+
+<p><strong>注意</strong>：quote() 只能对字符串编码，而 urlencode() 可以直接对查询字符串字典进行编码。</p>
+<p>因此在定义 URL 时，需要注意两者之间的差异。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#urllib.parse</span><br><span class="line">urllib.parse.urlencode(&#123;&#x27;key&#x27;:&#x27;value&#x27;&#125;) #字典</span><br><span class="line">urllib.parse.quote(string) #字符串</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>解码unquote(string)解码是对编码后的 URL 进行还原的一种操作</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">from urllib import parse</span><br><span class="line">string = &#x27;%E7%88%AC%E8%99%AB&#x27;</span><br><span class="line">result = parse.unquote(string)</span><br><span class="line">print(result)</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>URL地址拼接方式</li>
+</ol>
+<p>介绍三种拼接 URL 地址的方法。除了使用 format() 函数外，还可以使用字符串相加，以及字符串占位符：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"># 1、字符串相加</span><br><span class="line">  baseurl = &#x27;http://www.baidu.com/s?&#x27;</span><br><span class="line">  params=&#x27;wd=%E7%88%AC%E8%99%AB&#x27;</span><br><span class="line">  url = baseurl + params</span><br><span class="line"></span><br><span class="line"># 2、字符串格式化（占位符）</span><br><span class="line">  params=&#x27;wd=%E7%88%AC%E8%99%AB&#x27;</span><br><span class="line">  url = &#x27;http://www.baidu.com/s?%s&#x27;% params</span><br><span class="line"></span><br><span class="line"># 3、format()方法</span><br><span class="line">  url = &#x27;http://www.baidu.com/s?&#123;&#125;&#x27;</span><br><span class="line">  params=&#x27;wd=%E7%88%AC%E8%99%AB&#x27;</span><br><span class="line">  url = url.format(params)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="Python-re模块用法"><a href="#Python-re模块用法" class="headerlink" title="Python re模块用法"></a>Python re模块用法</h4><p>在 Python 爬虫过程中，实现网页元素解析的方法有很多，正则解析只是其中之一，常见的还有 BeautifulSoup 和 lxml，它们都支持网页 HTML 元素的解析操作。</p>
+<p>re模块常用方法</p>
+<p> re.compile()<br>该方法用来生成正则表达式对象</p>
+<p>regex&#x3D;re.compile(pattern,flags&#x3D;0)<br>pattern：正则表达式对象<br>flags：代表功能标志位，扩展正则表达式的匹配。</p>
+<p>re.findall()<br>根据正则表达式匹配目标字符串内容。</p>
+<p>re.findall(pattern,string,flags&#x3D;0)<br>该函数的返回值是匹配到的内容列表，如果正则表达式有子组，则只能获取到子组对应的内容<br>pattern：正则表达式对象<br>string：目标字符串<br>flags：代表功能标志位，扩展正则表达式的匹配。</p>
+<p>regex.findall()<br>该函数根据正则表达式对象匹配目标字符串内容。regex.findall(string,pos,endpos)<br>string 目标字符串。<br>pos 截取目标字符串的开始匹配位置。<br>endpos 截取目标字符串的结束匹配位置。</p>
+<p>re.split()<br>该函数使用正则表达式匹配内容，切割目标字符串。返回值是切割后的内容列表。<br>re.split(pattern,string,flags &#x3D; 0)<br>pattern：正则表达式。<br>string：目标字符串。<br>flags：功能标志位,扩展正则表达式的匹配。</p>
+<p>re.sub<br>该函数使用一个字符串替换正则表达式匹配到的内容。返回值是替换后的字符串。<br>re.sub(pattern,replace,string,max,flags &#x3D; 0)<br>pattern：正则表达式。<br>replace：替换的字符串。<br>string：目标字符串。<br>max：最多替换几处，默认替换全部，<br>flags：功能标志位,扩展正则表达式的匹配。</p>
+<p>re.search()<br>匹配目标字符串<strong>第一个</strong>符合的内容，返回值为匹配的对象。re.search(pattern,string,flags&#x3D;0)<br>pattern：正则表达式<br>string：目标字符串<br>flags功能标志位</p>
+<p>功能标志位的作用是扩展正则表达的匹配功能。常用的 flag </p>
+<img src="/post/undefined/81.png" class title="This is an image">
+
+
+<p>注意：可以同时使用福多个功能标志位，比如 flags&#x3D;re.I|re.S。</p>
+<p>使用贪婪和非贪婪两种模式来匹配 HTML 元素，分别，如下所示：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">import re</span><br><span class="line">html=&quot;&quot;&quot;</span><br><span class="line">&lt;div&gt;&lt;p&gt;www.biancheng.net&lt;/p&gt;&lt;/div&gt;</span><br><span class="line">&lt;div&gt;&lt;p&gt;编程帮&lt;/p&gt;&lt;/div&gt;</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line">#贪婪匹配，re.S可以匹配换行符</span><br><span class="line">pattern=re.compile(&#x27;&lt;div&gt;&lt;p&gt;.*&lt;/p&gt;&lt;/div&gt;&#x27;,re.S)</span><br><span class="line">re_list=pattern.findall(html)</span><br><span class="line">print(re_list)</span><br><span class="line"></span><br><span class="line">#非贪婪模式匹配，re.S可以匹配换行符</span><br><span class="line">pattern=re.compile(&#x27;&lt;div&gt;&lt;p&gt;.*?&lt;/p&gt;&lt;/div&gt;&#x27;,re.S)</span><br><span class="line">re_list=pattern.findall(html)</span><br><span class="line">print(re_list)</span><br></pre></td></tr></table></figure>
+
+<h5 id="正则表达式分组"><a href="#正则表达式分组" class="headerlink" title="正则表达式分组"></a>正则表达式分组</h5><p>通过正则表达式分组可以从匹配的信息中提取出想要的信息</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">#正则表达式分组</span><br><span class="line">website=&quot;编程帮 www.biancheng.net&quot;</span><br><span class="line"></span><br><span class="line">#注意此时正则表达式的 &quot;.&quot; 需要转义因此使用 \.</span><br><span class="line">pattern_1=re.compile(&#x27;\w+\s+\w+\.\w+\.\w+&#x27;)</span><br><span class="line">print(pattern_1.findall(website))</span><br><span class="line"></span><br><span class="line">#提取匹配信息的第一项</span><br><span class="line">pattern_2=re.compile(&#x27;(\w+)\s+\w+\.\w+\.\w+&#x27;)</span><br><span class="line">print(pattern_2.findall(website))</span><br><span class="line"></span><br><span class="line">#有两个及以上的()则以元组形式显示</span><br><span class="line">pattern_3=re.compile(&#x27;(\w+)\s+(\w+\.\w+\.\w+)&#x27;)</span><br><span class="line">print(pattern_3.findall(website))</span><br></pre></td></tr></table></figure>
+
+<p>正则表达式分组是提取信息的常用方式。当需要哪个特定信息的时候，就可以通过分组(也就是加括号)的方式获得。</p>
+<h5 id="网页信息提取"><a href="#网页信息提取" class="headerlink" title="网页信息提取"></a>网页信息提取</h5><p>从下面的 HTML 代码中使用 re 模块提取出两部影片的名称和主演信息。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">html=&quot;&quot;&quot;</span><br><span class="line">&lt;div class=&quot;movie-item-info&quot;&gt;</span><br><span class="line">&lt;p class=&quot;name&quot;&gt;</span><br><span class="line">&lt;a title=&quot;你好，李焕英&quot;&gt;你好，李焕英&lt;/a&gt;</span><br><span class="line">&lt;/p&gt;</span><br><span class="line">&lt;p class=&quot;star&quot;&gt;</span><br><span class="line">主演：贾玲,张小斐,沈腾</span><br><span class="line">&lt;/p&gt;    </span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;div class=&quot;movie-item-info&quot;&gt;</span><br><span class="line">&lt;p class=&quot;name&quot;&gt;</span><br><span class="line">&lt;a title=&quot;刺杀，小说家&quot;&gt;刺杀，小说家&lt;/a&gt;</span><br><span class="line">&lt;/p&gt;</span><br><span class="line">&lt;p class=&quot;star&quot;&gt;</span><br><span class="line">主演：雷佳音,杨幂,董子健,于和伟</span><br><span class="line">&lt;/p&gt;    </span><br><span class="line">&lt;/div&gt; </span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line"># 寻找HTML规律，书写正则表达式，使用正则表达式分组提取信息</span><br><span class="line">pattern=re.compile(r&#x27;&lt;div.*?&lt;a title=&quot;(.*?)&quot;.*?star&quot;&gt;(.*?)&lt;/p.*?div&gt;&#x27;,re.S)</span><br><span class="line">r_list=pattern.findall(html)</span><br><span class="line">print(r_list)</span><br><span class="line"># 整理数据格式并输出</span><br><span class="line">if  r_list:</span><br><span class="line">    for r_info in  r_list:</span><br><span class="line">        print(&quot;影片名称：&quot;,r_info[0])</span><br><span class="line">        print(&quot;影片主演：&quot;,r_info[1].strip())</span><br><span class="line">        print(20*&quot;*&quot;)</span><br></pre></td></tr></table></figure>
+
+<p>这里给一些博主自己使用正则表达式的经验：<br>&lt;div.<em>?&lt;a title&#x3D;”(.*?)”.*?star”&gt;(.</em>?)&lt;&#x2F;p.*?div&gt;<br>比如说上面这个正则表达式<br>他就只能匹配下面这种类型里面的信息</p>
+<div class="movie-item-info">
+<p class="name">
+<a title="你好，李焕英">你好，李焕英</a>
+</p>
+<p class="star">
+主演：贾玲,张小斐,沈腾
+</p>    
+</div>
+
+
+<div class="movie-item-info">
+<p class="name">
+<a title="刺杀，小说家">刺杀，小说家</a>
+</p>
+<p class="star">
+主演：雷佳音,杨幂,董子健,于和伟
+</p>    
+</div>
+
+<p>你如果需要匹配的对象(注意仔细看博主删减的那部分)是这样的（如下）<br>他就只能匹配到，第一部影片的信息第二部影片的信息好像匹配不到<br>而遇到这种情况 就使用xlme来匹配更好</p>
+<div class="movie-item-info">
+<p class="name">
+<a title="你好，李焕英">你好，李焕英</a>
+</p>
+<p class="star">
+主演：贾玲,张小斐,沈腾
+</p>    
+</div>
+
+
+
+<p class="name">
+<a title="刺杀，小说家">刺杀，小说家</a>
+</p>
+<p class="star">
+主演：雷佳音,杨幂,董子健,于和伟
+</p>    
+
+
+
+
+<h4 id="Python-csv模块（读写文件）"><a href="#Python-csv模块（读写文件）" class="headerlink" title="Python csv模块（读写文件）"></a>Python csv模块（读写文件）</h4><p>CSV 文件又称为逗号分隔值文件，是一种通用的、相对简单的文件格式，用以存储表格数据，包括数字或者字符。CSV 是电子表格和数据库中最常见的输入、输出文件格式</p>
+<p>通过爬虫将数据抓取的下来，然后把数据保存在文件，或者数据库中，这个过程称为数据的持久化存储</p>
+<h5 id="CSV文件写入"><a href="#CSV文件写入" class="headerlink" title="CSV文件写入"></a>CSV文件写入</h5><ol>
+<li>csv.writer()<br>csv 模块中的 writer 类可用于读写序列化的数据<br>其语法格式如下：writer(csvfile, dialect&#x3D;’excel’, **fmtparams)</li>
+</ol>
+<p>csvfile：必须是支持迭代(Iterator)的对象，可以是文件(file)对象或者列表(list)对象。<br>dialect：编码风格，默认为 excel 的风格，也就是使用逗号,分隔。<br>fmtparam：格式化参数，用来覆盖之前</p>
+<p>dialect 对象指定的编码风格。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">import csv</span><br><span class="line"># 操作文件对象时，需要添加newline参数逐行写入，否则会出现空行现象</span><br><span class="line">with open(&#x27;eggs.csv&#x27;, &#x27;w&#x27;, newline=&#x27;&#x27;) as csvfile:</span><br><span class="line">    # delimiter 指定分隔符，默认为逗号，这里指定为空格</span><br><span class="line">    # quotechar 表示引用符</span><br><span class="line">    # writerow 单行写入，列表格式传入数据</span><br><span class="line">    spamwriter = csv.writer(csvfile, delimiter=&#x27; &#x27;,quotechar=&#x27;|&#x27;)</span><br><span class="line">    spamwriter.writerow([&#x27;www.biancheng.net&#x27;] * 5 + [&#x27;how are you&#x27;])</span><br><span class="line">    spamwriter.writerow([&#x27;hello world&#x27;, &#x27;web site&#x27;, &#x27;www.biancheng.net&#x27;])</span><br></pre></td></tr></table></figure>
+
+<p>其中，quotechar 是引用符，当一段话中出现分隔符的时候，用引用符将这句话括起来，以能排除歧义。</p>
+<p>如果想同时写入多行数据，需要使用 writerrows() 方法</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">import csv</span><br><span class="line">with open(&#x27;aggs.csv&#x27;, &#x27;w&#x27;, newline=&#x27;&#x27;) as f:</span><br><span class="line">    writer = csv.writer(f)</span><br><span class="line">    # 注意传入数据的格式为列表元组格式</span><br><span class="line">    writer.writerows([(&#x27;hello&#x27;,&#x27;world&#x27;), (&#x27;I&#x27;,&#x27;love&#x27;,&#x27;you&#x27;)])</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>csv.DictWriter()当然也可使用 DictWriter 类以字典的形式读写数据</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">import csv</span><br><span class="line">with open(&#x27;names.csv&#x27;, &#x27;w&#x27;, newline=&#x27;&#x27;) as csvfile:</span><br><span class="line">    #构建字段名称，也就是key</span><br><span class="line">    fieldnames = [&#x27;first_name&#x27;, &#x27;last_name&#x27;]</span><br><span class="line">    writer = csv.DictWriter(csvfile, fieldnames=fieldnames)</span><br><span class="line">    # 写入字段名，当做表头</span><br><span class="line">    writer.writeheader()</span><br><span class="line">    # 多行写入</span><br><span class="line">    writer.writerows([&#123;&#x27;first_name&#x27;: &#x27;Baked&#x27;, &#x27;last_name&#x27;: &#x27;Beans&#x27;&#125;,&#123;&#x27;first_name&#x27;: &#x27;Lovely&#x27;, &#x27;last_name&#x27;: &#x27;Spam&#x27;&#125;])</span><br><span class="line">    # 单行写入</span><br><span class="line">    writer.writerow(&#123;&#x27;first_name&#x27;: &#x27;Wonderful&#x27;, &#x27;last_name&#x27;: &#x27;Spam&#x27;&#125;)</span><br></pre></td></tr></table></figure>
+
+
+<h6 id="CSV文件读取"><a href="#CSV文件读取" class="headerlink" title="CSV文件读取"></a>CSV文件读取</h6><ol>
+<li>csv,reader()<br>csv 模块中的 reader 类和  DictReader 类用于读取文件中的数据</li>
+</ol>
+<p>reader() ：<br>csv.reader(csvfile, dialect&#x3D;’excel’, **fmtparams)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">import csv</span><br><span class="line">with open(&#x27;eggs.csv&#x27;, &#x27;r&#x27;, newline=&#x27;&#x27;) as csvfile:</span><br><span class="line">    spamreader = csv.reader(csvfile, delimiter=&#x27; &#x27;, quotechar=&#x27;|&#x27;)</span><br><span class="line">    for row in spamreader:</span><br><span class="line">        print(&#x27;, &#x27;.join(row))</span><br></pre></td></tr></table></figure>
+
+
+<ol>
+<li>csv.DictReader() ：</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">import csv</span><br><span class="line">with open(&#x27;names.csv&#x27;, newline=&#x27;&#x27;) as csvfile:</span><br><span class="line">    reader = csv.DictReader(csvfile)</span><br><span class="line">    for row in reader:</span><br><span class="line">        print(row[&#x27;first_name&#x27;], row[&#x27;last_name&#x27;])</span><br></pre></td></tr></table></figure>
+
+<h4 id="Python-Requests库的使用"><a href="#Python-Requests库的使用" class="headerlink" title="Python Requests库的使用"></a>Python Requests库的使用</h4><p>Python 提供了多个用来编写爬虫程序的库，除了 urllib 库之外，还有一个很重的 Requests 库</p>
+<p>Requests 库是在 urllib 的基础上开发而来，它使用 Python 语言编写，并且采用了 Apache2 Licensed（一种开源协议）的 HTTP 库。</p>
+<p>与 urllib 相比，Requests 更加方便、快捷，因此在编写爬虫程序时 Requests 库使用较多。</p>
+<h5 id="常用请求方法"><a href="#常用请求方法" class="headerlink" title="常用请求方法"></a>常用请求方法</h5><ol>
+<li>requests.get()该方法用于 GET 请求，表示向网站发起请求，获取页面响应对象。</li>
+</ol>
+<p>res &#x3D; requests.get(url,headers&#x3D;headers,params,timeout)<br>参数说明如下：url：要抓取的 url 地址。<br>headers：用于包装请求头信息。<br>params：请求时携带的查询字符串参数。<br>timeout：超时时间，超过时间会抛出异常。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">import requests</span><br><span class="line">url = &#x27;http://baidu.com&#x27;</span><br><span class="line">response = requests.get(url)</span><br><span class="line">print(response)</span><br></pre></td></tr></table></figure>
+
+<p>获取带查询字符串参数的响应对象：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">import requests</span><br><span class="line">data = &#123;</span><br><span class="line">    &#x27;name&#x27;: &#x27;编程帮&#x27;,</span><br><span class="line">    &#x27;url&#x27;: &quot;www.biancheng.net&quot;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">response = requests.get(&#x27;http://httpbin.org/get&#x27;, params=data)</span><br><span class="line">#直接拼接参数也可以</span><br><span class="line">#response = requests.get(http://httpbin.org/get?name=gemey&amp;age=22)</span><br><span class="line">#调用响应对象text属性，获取文本信息</span><br><span class="line">print(response.text)</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>requests.post()</li>
+</ol>
+<p>该方法用于 POST 请求，先由用户向目标 url 提交数据，然后服务器返回一个 HttpResponse 响应对象，语法如下：<br>response&#x3D;requests.post(url,data&#x3D;{请求体的字典})</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">import requests</span><br><span class="line">#百度翻译</span><br><span class="line">url = &#x27;https://fanyi.baidu.com&#x27;</span><br><span class="line">#post请求体携带的参数，可通过开发者调试工具查看</span><br><span class="line">#查看步骤：NetWork选项-&gt;Headers选项-&gt;Form Data</span><br><span class="line">data = &#123;&#x27;from&#x27;: &#x27;zh&#x27;,</span><br><span class="line">        &#x27;to&#x27;: &#x27;en&#x27;,</span><br><span class="line">        &#x27;query&#x27;: &#x27;编程帮www.biancheng.net你好&#x27;</span><br><span class="line">        &#125;</span><br><span class="line">response = requests.post(url, data=data)</span><br><span class="line">print(response)</span><br></pre></td></tr></table></figure>
+
+<h5 id="常见对象属性"><a href="#常见对象属性" class="headerlink" title="常见对象属性"></a>常见对象属性</h5><p>当我们使用 Requests 模块向一个 URL 发起请求后会返回一个 HttpResponse 响应对象，该对象具有以下常用属性：</p>
+<p>常用属性说明</p>
+<p>encoding查看或者指定响应字符编码</p>
+<p>status_code返回HTTP响应码</p>
+<p>url查看请求的 url 地址</p>
+<p>headers查看请求头信息</p>
+<p>cookies查看cookies 信息</p>
+<p>text以字符串形式输出</p>
+<p><strong>content以字节流形式输出，若要保存下载图片需使用该属性。</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">import requests</span><br><span class="line">response = requests.get(&#x27;http://www.baidu.com&#x27;)</span><br><span class="line">print(response.encoding)</span><br><span class="line">response.encoding=&quot;utf-8&quot;    #更改为utf-8编码</span><br><span class="line">print(response.status_code)  # 打印状态码</span><br><span class="line">print(response.url)          # 打印请求url</span><br><span class="line">print(response.headers)      # 打印头信息</span><br><span class="line">print(response.cookies)      # 打印cookie信息</span><br><span class="line">print(response.text)  #以字符串形式打印网页源码</span><br><span class="line">print(response.content) #以字节流形式打印</span><br></pre></td></tr></table></figure>
+
+<h5 id="Requests库常用方法及参数介绍"><a href="#Requests库常用方法及参数介绍" class="headerlink" title="Requests库常用方法及参数介绍"></a>Requests库常用方法及参数介绍</h5><p>Requests 库中定义了七个常用的请求方法，这些方法各自有着不同的作用，在这些请求方法中 requests.get() 与 requests.post() 方法最为常用。<br>请求方法如下所示：</p>
+<p>requests.request()<br>构造一个请求对象，该方法是实现以下各个方法的基础。</p>
+<p>requests.get()<br>获取HTML网页的主要方法，对应于 HTTP 的 GET 方法。</p>
+<p>requests.head()<br>获取HTML网页头信息的方法，对应于 HTTP 的 HEAD 方法。</p>
+<p>requests.post()<br>获取 HTML 网页提交 POST请求方法，对应于 HTTP 的 POST。</p>
+<p>requests.put()<br>获取HTML网页提交PUT请求方法，对应于 HTTP 的 PUT。</p>
+<p>requests.patch()<br>获取HTML网页提交局部修改请求，对应于 HTTP 的 PATCH。</p>
+<p>requests.delete()<br>获取HTML页面提交删除请求，对应于 HTTP 的 DELETE。</p>
+<p>上述方法都提供了相同的参数，其中某些参数已经使用过，比如headers和params，前者用来构造请求头，后者用来构建查询字符串。这些参数对于编写爬虫程序有着至关重要的作用</p>
+<p>SSL认证-verify参数</p>
+<p>SSL 证书是数字证书的一种，类似于驾驶证、护照和营业执照。因为配置在服务器上，也称为 SSL 服务器证书。SSL 证书遵守 SSL 协议，由受信任的数字证书颁发机构 CA（电子认证服务）颁发。 SSL 具有服务器身份验证和数据传输加密功能。</p>
+<p>verify参数的作用是检查 SSL 证书认证，参数的默认值为 True，如果设置为 False 则表示不检查 SSL证书，此参数适用于没有经过 CA 机构认证的 HTTPS 类型的网站。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">response = requests.get(</span><br><span class="line">  url=url,</span><br><span class="line">  params=params,</span><br><span class="line">  headers=headers,</span><br><span class="line">  verify=False</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+
+<p>代理IP-proxies参数</p>
+<p>一些网站为了限制爬虫从而设置了很多反爬策略，其中一项就是针对 IP 地址设置的。<br>比如，访问网站超过规定次数导致流量异常，或者某个时间段内频繁地更换浏览器访问，存在上述行为的 IP 极有可能被网站封杀掉。</p>
+<p>代理 IP 就是解决上述问题的，它突破了 IP 地址的访问限制，隐藏了本地网络的真实 IP，而使用第三方 IP 代替自己去访问网站。</p>
+<ol>
+<li><p>代理IP池通过构建代理 IP 池可以让你编写的爬虫程序更加稳定，从 IP 池中随机选择一个 IP 去访问网站，而不使用固定的真实 IP。总之将爬虫程序伪装的越像人，它就越不容易被网站封杀。当然代理 IP 也不是完全不能被察觉，通过端口探测技等术识仍然可以辨别。</p>
+</li>
+<li><p>proxies参数Requests 提供了一个代理 IP 参数 proxies，该参数的语法结构如下：</p>
+</li>
+</ol>
+<p>proxies &#x3D; {<br>      ‘协议类型(http&#x2F;https)’:’协议类型:&#x2F;&#x2F;IP地址:端口号’<br>    }</p>
+<p>下面构建了两个协议版本的代理 IP，示例如下：</p>
+<p>proxies &#x3D; {<br>   ‘http’:’<a href="http://IP:端口号&#39;">http://IP:端口号&#39;</a>,<br>   ‘https’:’<a href="https://IP:端口号&#39;">https://IP:端口号&#39;</a><br>}</p>
+<ol start="3">
+<li>代理IP使用</li>
+<li>下面通过简单演示如何使用proxies参数，示例如下：</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">import requests</span><br><span class="line">url = &#x27;http://httpbin.org/get&#x27;</span><br><span class="line">headers = &#123;</span><br><span class="line">    &#x27;User-Agent&#x27;:&#x27;Mozilla/5.0&#x27;</span><br><span class="line">&#125;</span><br><span class="line"># 网上找的免费代理ip</span><br><span class="line">proxies = &#123;</span><br><span class="line">    &#x27;http&#x27;:&#x27;http://191.231.62.142:8000&#x27;,</span><br><span class="line">    &#x27;https&#x27;:&#x27;https://191.231.62.142:8000&#x27;</span><br><span class="line">&#125;</span><br><span class="line">html = requests.get(url,proxies=proxies,headers=headers,timeout=5).text</span><br><span class="line">print(html)</span><br></pre></td></tr></table></figure>
+
+<p>由于上述示例使用的是免费代理 IP，因此其质量、稳定性较差，可能会随时失效。如果想构建一个稳定的代理 IP 池，就需要花费成本。</p>
+<ol start="4">
+<li>付费代理IP网上有许多提供代理 IP 服务的网 站，比如快代理、代理精灵、齐云代理等。这些网站也提供了相关文档说明，以及 API 接口，爬虫程序通过访问 API 接口，就可以构建自己的代理 IP 池。付费代理 IP 按照资源类型可划分为：开发代理、私密代理、隧道代理、独享代理，其中最常使用的是开放代理与私密代理。</li>
+<li>开放代理：开放代理是从公网收集的代理服务器，具有 IP 数量大，使用成本低的特点，全年超过 80% 的时间都能有 3000 个以上的代理 IP 可供提取使用。<br>私密代理：私密代理是基于云主机构建的高品质代理服务器，为您提供高速、可信赖的网络代理服务。私密代理每天可用 IP 数量超过 20 万个，可用率在 95 %以上，1 次可提取 IP 数量超过 700 个，可以为爬虫业务提供强大的助力。付费代理的收费标准根据 IP 使用的时间长短，以及 IP 的质量高低，从几元到几百元不等。89 免费代理（<a target="_blank" rel="noopener" href="http://www.89ip.cn/%EF%BC%89%E6%98%AF%E4%B8%80%E4%B8%AA%E4%B8%93%E9%97%A8%E6%8F%90%E4%BE%9B%E5%85%8D%E8%B4%B9%E4%BB%A3%E7%90%86">http://www.89ip.cn/）是一个专门提供免费代理</a> IP 的网站，不过想找到一个质量较高的免费代理好比大海捞针。</li>
+</ol>
+<p>用户认证-auth参数<br>Requests 提供了一个auth参数，该参数的支持用户认证功能，也就是适合那些需要验证用户名、密码的网站。auth 的参数形式是一个元组</p>
+<p>格式:<br>auth &#x3D; (‘username’,’password’)</p>
+<h4 id="Xpath"><a href="#Xpath" class="headerlink" title="Xpath"></a>Xpath</h4><p>在编写爬虫程序的过程中提取信息是非常重要的环节，但是有时使用正则表达式无法匹配到想要的信息，或者书写起来非常麻烦，此时就需要用另外一种数据解析方法， Xpath 表达式。</p>
+<p>Xpath表达式</p>
+<p>XPath（全称：XML Path Language）即 XML 路径语言，它是一门在 XML 文档中查找信息的语言，最初被用来搜寻 XML 文档，同时它也适用于搜索 HTML 文档。因此，在爬虫过程中可以使用 XPath 来提取相应的数据。</p>
+<p>可以将 Xpath 理解为在XML&#x2F;HTML文档中检索、匹配元素节点的工具。</p>
+<p>Xpath 使用路径表达式来选取XML&#x2F;HTML文档中的节点或者节点集。</p>
+<p>Xpath 的功能十分强大，它除了提供了简洁的路径表达式外，还提供了100 多个内建函数，包括了处理字符串、数值、日期以及时间的函数。</p>
+<p>因此 Xpath 路径表达式几乎可以匹配所有的元素节点。</p>
+<p>Python 第三方解析库 lxml 对 Xpath 路径表达式提供了良好的支持，能够解析 XML 与 HTML 文档</p>
+<p>Xpath节点</p>
+<p>XPath 提供了多种类型的节点，常用的节点有：元素、属性、文本、注释以及文档节点。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span><br><span class="line">&lt;website&gt;</span><br><span class="line"></span><br><span class="line">&lt;site&gt;</span><br><span class="line">  &lt;title lang=&quot;zh-CN&quot;&gt;website name&lt;/title&gt;</span><br><span class="line">  &lt;name&gt;编程帮&lt;/name&gt;</span><br><span class="line">  &lt;year&gt;2010&lt;/year&gt;</span><br><span class="line">  &lt;address&gt;www.biancheng.net&lt;/address&gt;</span><br><span class="line">&lt;/site&gt;</span><br><span class="line"></span><br><span class="line">&lt;/website&gt;</span><br></pre></td></tr></table></figure>
+
+<p>上面的 XML 文档中的节点例子：</p>
+<p><website></website> （文档节点）<br><name></name> （元素节点）<br>lang&#x3D;”zh-CN” （属性节点） </p>
+<p>节点关系XML 文档的节点关系和 HTML 文档相似，同样有父、子、同代、先辈、后代节点。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span><br><span class="line">&lt;website&gt;</span><br><span class="line"></span><br><span class="line">&lt;site&gt;</span><br><span class="line">  &lt;title lang=&quot;zh-CN&quot;&gt;website name&lt;/title&gt;</span><br><span class="line">  &lt;name&gt;编程帮&lt;/name&gt;</span><br><span class="line">  &lt;year&gt;2010&lt;/year&gt;</span><br><span class="line">  &lt;address&gt;www.biancheng.net&lt;/address&gt;</span><br><span class="line">&lt;/site&gt;</span><br><span class="line"></span><br><span class="line">&lt;/website&gt;</span><br></pre></td></tr></table></figure>
+
+<p>上述示例分析后，会得到如下结果：title name year address 都是 site 的子节点<br>site 是 title name year address 父节点<br>title name year address 属于同代节点<br>title 元素的先辈节点是 site website<br>website 的后代节点是 site title name year address</p>
+<h5 id="Xpath基本语法"><a href="#Xpath基本语法" class="headerlink" title="Xpath基本语法"></a>Xpath基本语法</h5><ol>
+<li>基本语法使用<br>Xpath 使用路径表达式在文档中选取节点，下表列出了常用的表达式规则：</li>
+</ol>
+<p>表达式描述<br>node_name<br>选取此节点的所有子节点。</p>
+<p>&#x2F;<br>绝对路径匹配，从根节点选取。</p>
+<p>&#x2F;&#x2F;<br>相对路径匹配，从所有节点中查找当前选择的节点，包括子节点和后代节点，其第一个 &#x2F; 表示根节点。</p>
+<p>.<br>取当前节点。</p>
+<p>..<br>选取当前节点的父节点。</p>
+<p>@<br>选取属性值，通过属性值选取数据。<br>常用元素属性有 @id 、@name、@type、@class、@tittle、@href。</p>
+<p>下面讲解 Xpath 表达式的基本应用</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul class=&quot;BookList&quot;&gt;</span><br><span class="line">  &lt;li class=&quot;book1&quot; id=&quot;book_01&quot; href=&quot;http://www.biancheng.net/&quot;&gt;</span><br><span class="line">        &lt;p class=&quot;name&quot;&gt;c语言小白变怪兽&lt;/p&gt;</span><br><span class="line">        &lt;p class=&quot;model&quot;&gt;纸质书&lt;/p&gt;</span><br><span class="line">        &lt;p class=&quot;price&quot;&gt;80元&lt;/p&gt;</span><br><span class="line">        &lt;p class=&quot;color&quot;&gt;红蓝色封装&lt;/p&gt;</span><br><span class="line">    &lt;/li&gt;</span><br><span class="line">  </span><br><span class="line">    &lt;li class=&quot;book2&quot; id=&quot;book_02&quot; href=&quot;http://www.biancheng.net/&quot;&gt;</span><br><span class="line">        &lt;p class=&quot;name&quot;&gt;Python入门到精通&lt;/p&gt;</span><br><span class="line">        &lt;p class=&quot;model&quot;&gt;电子书&lt;/p&gt;</span><br><span class="line">        &lt;p class=&quot;price&quot;&gt;45元&lt;/p&gt;</span><br><span class="line">        &lt;p class=&quot;color&quot;&gt;蓝绿色封装&lt;/p&gt;</span><br><span class="line">    &lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br></pre></td></tr></table></figure>
+
+<p>路径表达式以及相应的匹配内容如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">xpath表达式：//li</span><br><span class="line"></span><br><span class="line">匹配内容：</span><br><span class="line">c语言小白变怪兽</span><br><span class="line">纸质书</span><br><span class="line">80元</span><br><span class="line">红蓝色封装</span><br><span class="line">   </span><br><span class="line"></span><br><span class="line">Python入门到精通</span><br><span class="line">电子书</span><br><span class="line">45元</span><br><span class="line">蓝绿色封装</span><br><span class="line"></span><br><span class="line">xpath表达式：//li/p[@class=&quot;name&quot;]</span><br><span class="line">匹配内容：</span><br><span class="line">c语言小白变怪兽</span><br><span class="line">Python入门到精通</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">xpath表达式：//li/p[@class=&quot;model&quot;]</span><br><span class="line">匹配内容：</span><br><span class="line">纸质书</span><br><span class="line">电子书</span><br><span class="line"></span><br><span class="line">xpath表达式：//ul/li/@href</span><br><span class="line">匹配内容：</span><br><span class="line">http://www.biancheng.net/</span><br><span class="line">http://www.biancheng.net/</span><br><span class="line"></span><br><span class="line">xpath表达式：//ul/li</span><br><span class="line">匹配内容：</span><br><span class="line">c语言小白变怪兽</span><br><span class="line">纸质书</span><br><span class="line">80元</span><br><span class="line">红蓝色封装</span><br><span class="line">  </span><br><span class="line">Python入门到精通</span><br><span class="line">电子书</span><br><span class="line">45元</span><br><span class="line">蓝绿色封装</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>注意：当需要查找某个特定的节点或者选取节点中包含的指定值时需要使用[]<strong>方括号</strong>。如下所示：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">xpath表达式：//ul/li[@class=&quot;book2&quot;]/p[@class=&quot;price&quot;]</span><br><span class="line">匹配结果：45元</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>xpath通配符Xpath 表达式的<strong>通配符</strong>可以用来选取未知的节点元素，基本语法如下：<ul>
+<li>匹配任意元素节点</li>
+</ul>
+</li>
+</ol>
+<p>@*<br>匹配任意属性节点</p>
+<p>node()<br>匹配任意类型的节点</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">xpath表达式：//li/*</span><br><span class="line"></span><br><span class="line">匹配内容：</span><br><span class="line">c语言小白变怪兽</span><br><span class="line">纸质书</span><br><span class="line">80元</span><br><span class="line">红蓝色封装</span><br><span class="line">Python入门到精通</span><br><span class="line">电子书</span><br><span class="line">45元</span><br><span class="line">蓝绿色封装</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>多路径匹配多个 Xpath 路径表达式可以同时使用，其语法如下：<br>xpath表达式1 | xpath表达式2 | xpath表达式3</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">表达式：//ul/li[@class=&quot;book2&quot;]/p[@class=&quot;price&quot;]|//ul/li/@href</span><br><span class="line"></span><br><span class="line">匹配内容：</span><br><span class="line">45元</span><br><span class="line">http://www.biancheng.net/</span><br><span class="line">http://www.biancheng.net/</span><br></pre></td></tr></table></figure>
+
+<p>Xpath内建函数Xpath 提供 100 多个内建函数，这些函数给我们提供了很多便利，比如实现文本匹配、模糊匹配、以及位置匹配等，下面介绍几个常用的内建函数。</p>
+<h4 id="Python-lxml库的使用"><a href="#Python-lxml库的使用" class="headerlink" title="Python lxml库的使用"></a>Python lxml库的使用</h4><p>lxml 是 Python 的第三方解析库，完全使用 Python 语言编写，它对 Xpath 表达式提供了良好的支持，因此能够了高效地解析 HTML&#x2F;XML 文档。</p>
+<p>lxml使用流程</p>
+<p>lxml 库提供了一个 etree 模块，该模块专门用来解析 HTML&#x2F;XML 文档</p>
+<p>lxml 库的使用流程：</p>
+<ol>
+<li><p>导入模块<br>from lxml import etree</p>
+</li>
+<li><p>创建解析对象调用 etree 模块的 HTML() 方法来创建 HTML 解析对象。parse_html &#x3D; etree.HTML(html)</p>
+</li>
+</ol>
+<p>HTML() 方法能够将 HTML 标签字符串解析为 HTML 文件，该方法可以自动修正 HTML 文本。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">from lxml import etree</span><br><span class="line">html_str = &#x27;&#x27;&#x27;</span><br><span class="line">&lt;div&gt;</span><br><span class="line">    &lt;ul&gt;</span><br><span class="line">         &lt;li class=&quot;item1&quot;&gt;&lt;a href=&quot;link1.html&quot;&gt;Python&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">         &lt;li class=&quot;item2&quot;&gt;&lt;a href=&quot;link2.html&quot;&gt;Java&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">         &lt;li class=&quot;site1&quot;&gt;&lt;a href=&quot;c.biancheng.net&quot;&gt;C语言中文网&lt;/a&gt;</span><br><span class="line">         &lt;li class=&quot;site2&quot;&gt;&lt;a href=&quot;www.baidu.com&quot;&gt;百度&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">         &lt;li class=&quot;site3&quot;&gt;&lt;a href=&quot;www.jd.com&quot;&gt;京东&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">     &lt;/ul&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&#x27;&#x27;&#x27;</span><br><span class="line">html = etree.HTML(html_str)</span><br><span class="line"></span><br><span class="line"># tostring()将标签元素转换为字符串输出，注意：result为字节类型</span><br><span class="line">result = etree.tostring(html)</span><br><span class="line"></span><br><span class="line">print(result.decode(&#x27;utf-8&#x27;))</span><br></pre></td></tr></table></figure>
+
+<p>上述 HTML 字符串存在缺少标签的情况，比如“C语言中文网”缺少一个  闭合标签，当使用了 HTML() 方法后，会将其自动转换为符合规范的 HTML 文档格式</p>
+<ol start="3">
+<li>调用xpath表达式最后使用第二步创建的解析对象调用 xpath() 方法，完成数据的提取，如下所示：</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">r_list = parse_html.xpath(&#x27;xpath表达式&#x27;)</span><br></pre></td></tr></table></figure>
+
+<p>lxml库</p>
+<p>数据提取下面通过一段 HTML 代码实例演示如何使用 lxml 库提取想要的数据。HTML 代码如下所示：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;wrapper&quot;&gt;</span><br><span class="line">    &lt;a href=&quot;www.biancheng.net/product/&quot; id=&quot;site&quot;&gt;website product&lt;/a&gt;</span><br><span class="line">    &lt;ul id=&quot;sitename&quot;&gt;</span><br><span class="line">    &lt;li&gt;&lt;a href=&quot;http://www.biancheng.net/&quot; title=&quot;编程帮&quot;&gt;编程&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">    &lt;li&gt;&lt;a href=&quot;http://world.sina.com/&quot; title=&quot;新浪娱乐&quot;&gt;微博&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">    &lt;li&gt;&lt;a href=&quot;http://www.baidu.com&quot; title=&quot;百度&quot;&gt;百度贴吧&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">    &lt;li&gt;&lt;a href=&quot;http://www.taobao.com&quot; title=&quot;淘宝&quot;&gt;天猫淘宝&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">    &lt;li&gt;&lt;a href=&quot;http://www.jd.com/&quot; title=&quot;京东&quot;&gt;京东购物&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">    &lt;li&gt;&lt;a href=&quot;http://c.bianchneg.net/&quot; title=&quot;C语言中文网&quot;&gt;编程&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">    &lt;li&gt;&lt;a href=&quot;http://www.360.com&quot; title=&quot;360科技&quot;&gt;安全卫士&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">    &lt;li&gt;&lt;a href=&quot;http://www.bytesjump.com/&quot; title=字节&quot;&gt;视频娱乐&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">    &lt;li&gt;&lt;a href=&quot;http://bzhan.com/&quot; title=&quot;b站&quot;&gt;年轻娱乐&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">    &lt;li&gt;&lt;a href=&quot;http://hao123.com/&quot; title=&quot;浏览器&quot;&gt;搜索引擎&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">    &lt;/ul&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>提取所有a标签内的文本信息</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">from lxml import etree</span><br><span class="line"># 创建解析对象</span><br><span class="line">parse_html=etree.HTML(html)</span><br><span class="line"># 书写xpath表达式,提取文本最终使用text()</span><br><span class="line">xpath_bds=&#x27;//a/text()&#x27;</span><br><span class="line"># 提取文本数据，以列表形式输出</span><br><span class="line">r_list=parse_html.xpath(xpath_bds)</span><br><span class="line"># 打印数据列表</span><br><span class="line">print(r_list)</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>获取所有href的属性值</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">from lxml import etree</span><br><span class="line"># 创建解析对象</span><br><span class="line">parse_html=etree.HTML(html)</span><br><span class="line"># 书写xpath表达式,提取文本最终使用text()</span><br><span class="line">xpath_bds=&#x27;//a/@href&#x27;</span><br><span class="line"># 提取文本数据，以列表形式输出</span><br><span class="line">r_list=parse_html.xpath(xpath_bds)</span><br><span class="line"># 打印数据列表</span><br><span class="line">print(r_list)</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>不匹配href&#x3D;” <a target="_blank" rel="noopener" href="http://www.biancheng.net/priduct&quot;">www.biancheng.net/priduct&quot;</a></li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">from lxml import etree</span><br><span class="line"># 创建解析对象</span><br><span class="line">parse_html=etree.HTML(html)</span><br><span class="line"># 书写xpath表达式,提取文本最终使用text()</span><br><span class="line">xpath_bds=&#x27;//a/@href&#x27;</span><br><span class="line"># 提取文本数据，以列表形式输出</span><br><span class="line">xpath_bds=&#x27;//ul[@id=&quot;sitename&quot;]/li/a/@href&#x27;</span><br><span class="line"># 打印数据列表</span><br><span class="line">print(r_list)</span><br></pre></td></tr></table></figure>
+
+<h4 id="Python-json模块常用方法"><a href="#Python-json模块常用方法" class="headerlink" title="Python json模块常用方法"></a>Python json模块常用方法</h4><p>JSON（JavaScript Object Notation）是一种轻量级的数据交换格式，遵循欧洲计算机协会制定的 JavaScript 规范（简称 ECMAScript）。</p>
+<p>它常被作为网络、程序之间传递信息的标准语言，比如客户端与服务器之间信息交互就是以 JSON 格式传递的。</p>
+<p>简单地说，JSON 可以将 JavaScript 对象表示的一组数据转换为字符串格式，以便于在网络、程序间传输这个字符串。</p>
+<p>并且在需要的时候，您还可以将它转换为编程语言所支持的数据格式。本节主要介绍如何实现 JSON 数据与 Python 数据类型间的相互转换。</p>
+<p>Python 语言内置了专门处理 JOSN 数据的模块 —— jons 模块，通过该模块就可以完成 JSON 与 Python 两种数据格式的相互转换。</p>
+<p>json.dump()</p>
+<p>它可以将 Python 对象（字典、列表等）转换为 json 字符串，并将转换后的数据写入到 json 格式的文件中 ，因此该方法必须操作<strong>文件</strong>流对象。</p>
+<p>比如当使用爬虫程序完成数据抓取后，有时需要将数据保存为 json 格式，此时就用到了 json.dump() 方法，语法格式如下：</p>
+<p>json.dump(object,f,inden&#x3D;0，ensure_ascii&#x3D;False)</p>
+<p>object：Python 数据对象，比如字典，列表等</p>
+<p>f：文件流对象，即文件句柄。</p>
+<p>indent：格式化存储数据，使 JSON 字符串更易阅读。</p>
+<p>ensure_ascii：是否使用 ascii 编码，当数据中出现中文的时候，需要将其设置为 False。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">import json</span><br><span class="line"></span><br><span class="line">ditc_info=&#123;&quot;name&quot; : &quot;c语言中文网&quot;,&quot;PV&quot; : &quot;50万&quot;,&quot;UV&quot; : &quot;20万&quot;,&quot;create_time&quot; : &quot;2010年&quot;&#125;</span><br><span class="line">with open(&quot;web.josn&quot;,&quot;a&quot;) as f:</span><br><span class="line">    json.dump(ditc_info,f,ensure_ascii=False)</span><br></pre></td></tr></table></figure>
+
+<p>也可以将 Python 列表转换成 JSON 字符串，并保存至 json 文件中，如下所示：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">import json</span><br><span class="line"></span><br><span class="line">item_list = []</span><br><span class="line">item = &#123;&#x27;website&#x27;: &#x27;C语言中文网&#x27;, &#x27;url&#x27;: &quot;c.biancheng.net&quot;&#125;</span><br><span class="line">for k,v in item.items():</span><br><span class="line">    item_list.append(v)</span><br><span class="line"></span><br><span class="line">with open(&#x27;info_web.json&#x27;, &#x27;a&#x27;) as f:</span><br><span class="line">    json.dump(item_list, f, ensure_ascii=False)</span><br></pre></td></tr></table></figure>
+
+
+<p>json.load()</p>
+<p>该方法用于操作文件流对象，不过它与 dump() 恰好相反，它表示从  json 文件中读取 JSON 字符串，并将读取内容转换为 Python 对象</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">import json</span><br><span class="line"></span><br><span class="line">site = &#123;&#x27;name&#x27;:&#x27;c语言中文网&#x27;,&quot;url&quot;:&quot;c.biancheng.net&quot;&#125;</span><br><span class="line">filename = &#x27;website.json&#x27;</span><br><span class="line">with open (filename,&#x27;w&#x27;) as f:</span><br><span class="line">    json.dump(site,f,ensure_ascii=False)</span><br><span class="line">with open (filename,&#x27;r&#x27;) as f:</span><br><span class="line">    print(json.load(f))</span><br><span class="line">    </span><br></pre></td></tr></table></figure>
+
+<p>json.loads()</p>
+<p>该方法可以将 json 格式的字符串转换成 Python 对象（比如列表、字典、元组、整型以及浮点型），其中最常用的是转换为字典类型。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># coding:utf8</span><br><span class="line">import json</span><br><span class="line">#JOSN字符串</span><br><span class="line">website_info=&#x27;&#123;&quot;name&quot; : &quot;c语言中文网&quot;,&quot;PV&quot; : &quot;50万&quot;,&quot;UV&quot; : &quot;20万&quot;,&quot;create_time&quot; : &quot;2010年&quot;&#125;&#x27;</span><br><span class="line">py_dict=json.loads(website_info)</span><br><span class="line">print(&quot;python字典数据格式：%s；数据类型：%s&quot;% (py_dict,type(py_dict)))</span><br></pre></td></tr></table></figure>
+
+<p>注意：上述示例中 JSON 字符串看上去和 Python 字典非常相似，但是其本质不同，JOSN 是字符串类型，而 Python 字典是 dict 类型。</p>
+<p>json.dumps()<br>该方法可以将 Python 对象转换成 JSON 字符串</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">import json</span><br><span class="line">#python字典</span><br><span class="line">item = &#123;&#x27;website&#x27;: &#x27;C语言中文网&#x27;, &#x27;rank&#x27;: 1&#125;</span><br><span class="line"># json.dumps之后</span><br><span class="line">item = json.dumps(item,ensure_ascii=False)</span><br><span class="line">print(&#x27;转换之后的数据类型为：&#x27;,type(item))</span><br><span class="line">print(item)</span><br></pre></td></tr></table></figure>
+
+<p>方法作用json.dumps()将 Python 对象转换成 JSON 字符串。json.loads()将 JSON 字符串转换成 Python 对象。json.dump()将 Python 中的对象转化成 JSON 字符串储存到文件中。json.load()将文件中的 JSON 字符串转化成 Python 对象提取出来。</p>
+<p>综上所述 json.load() 与 json.dump() 操作的是文件流对象，实现了 json 文件的读写操作，而 json.loads() 与 json.dumps() 操作的是 Python 对象或者 JOSN 字符串。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://1yzf2zstgiyhub.io">漂亮鬼</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://1yzf2zstgiyhub.io/post/fa1e8add.html">http://1yzf2zstgiyhub.io/post/fa1e8add.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://1yzf2zstgiyhub.io" target="_blank">漂亮鬼</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E7%88%AC%E8%99%AB/">爬虫</a></div><div class="post_share"><div class="addthis_inline_share_toolbox"></div><script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-62e385ce9ecac8a4" async="async"></script></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://picx.zhimg.com/v2-6576f8c64444c40baa4602979c75d1e3_r.jpg?source=3af55fa1" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">漂亮鬼</div><div class="author-info__description">爱干饭的程序员--嘿嘿</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">46</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">18</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">11</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/1yzf2zst/1yzf2zst.github.io"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://cdn.staticaly.com/gh/1yzf2zst/images@main/20220823/IMG_4539(20220823-200421).750ofrla5w40.webp" target="_blank" title="WeChat"><i class="fab fa-weixin"></i></a><a class="social-icon" href="https://cdn.staticaly.com/gh/1yzf2zst/images@main/20220823/B8E86698E2D953CD7245DBFA591CDB59.3y2c2f2kdxy0.webp" target="_blank" title="QQ"><i class="fab fa-qq"></i></a><a class="social-icon" href="https://github.com/1yzf2zst" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:2562644984@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="xpand" style="height:200px;"><canvas class="illo" width="800" height="800" style="max-width: 200px; max-height: 200px; touch-action: none; width: 640px; height: 640px;"></canvas></div><script src="https://fastly.jsdelivr.net/gh/xiaopengand/blogCdn@latest/xzxr/twopeople1.js"></script><script src="https://fastly.jsdelivr.net/gh/xiaopengand/blogCdn@latest/xzxr/zdog.dist.js"></script><script id="rendered-js" src="https://fastly.jsdelivr.net/gh/xiaopengand/blogCdn@latest/xzxr/twopeople.js"></script><style>.card-widget.card-announcement {
+margin: 0;
+align-items: center;
+justify-content: center;
+text-align: center;
+}
+canvas {
+display: block;
+margin: 0 auto;
+cursor: move;
+}
+</style><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎各位， 各位来到xiaoyang的blog
+博主发布的博文都是博主学习笔记
+qq:2562644984</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AE%80%E5%8D%95%E7%9A%84python%E7%88%AC%E8%99%AB%E7%A8%8B%E5%BA%8F"><span class="toc-number">1.</span> <span class="toc-text">简单的python爬虫程序</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#urllib%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-number">2.</span> <span class="toc-text">urllib常用方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#User-Agent%EF%BC%88%E7%94%A8%E6%88%B7%E4%BB%A3%E7%90%86%EF%BC%89"><span class="toc-number">3.</span> <span class="toc-text">User-Agent（用户代理）</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%88%AC%E8%99%AB%E7%A8%8B%E5%BA%8FUA%E4%BF%A1%E6%81%AF"><span class="toc-number">3.1.</span> <span class="toc-text">爬虫程序UA信息</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%87%8D%E6%9E%84%E7%88%AC%E8%99%ABUA%E4%BF%A1%E6%81%AF"><span class="toc-number">3.2.</span> <span class="toc-text">重构爬虫UA信息</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%9E%84%E5%BB%BAUser-Agnet%E4%BB%A3%E7%90%86%E6%B1%A0"><span class="toc-number">3.3.</span> <span class="toc-text">构建User-Agnet代理池</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Python%E5%AE%9E%E7%8E%B0%E7%BC%96%E7%A0%81%E4%B8%8E%E8%A7%A3%E7%A0%81"><span class="toc-number">4.</span> <span class="toc-text">Python实现编码与解码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Python-re%E6%A8%A1%E5%9D%97%E7%94%A8%E6%B3%95"><span class="toc-number">5.</span> <span class="toc-text">Python re模块用法</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%88%86%E7%BB%84"><span class="toc-number">5.1.</span> <span class="toc-text">正则表达式分组</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%BD%91%E9%A1%B5%E4%BF%A1%E6%81%AF%E6%8F%90%E5%8F%96"><span class="toc-number">5.2.</span> <span class="toc-text">网页信息提取</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Python-csv%E6%A8%A1%E5%9D%97%EF%BC%88%E8%AF%BB%E5%86%99%E6%96%87%E4%BB%B6%EF%BC%89"><span class="toc-number">6.</span> <span class="toc-text">Python csv模块（读写文件）</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#CSV%E6%96%87%E4%BB%B6%E5%86%99%E5%85%A5"><span class="toc-number">6.1.</span> <span class="toc-text">CSV文件写入</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#CSV%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96"><span class="toc-number">6.1.1.</span> <span class="toc-text">CSV文件读取</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Python-Requests%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-number">7.</span> <span class="toc-text">Python Requests库的使用</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E8%AF%B7%E6%B1%82%E6%96%B9%E6%B3%95"><span class="toc-number">7.1.</span> <span class="toc-text">常用请求方法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E5%AF%B9%E8%B1%A1%E5%B1%9E%E6%80%A7"><span class="toc-number">7.2.</span> <span class="toc-text">常见对象属性</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Requests%E5%BA%93%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95%E5%8F%8A%E5%8F%82%E6%95%B0%E4%BB%8B%E7%BB%8D"><span class="toc-number">7.3.</span> <span class="toc-text">Requests库常用方法及参数介绍</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Xpath"><span class="toc-number">8.</span> <span class="toc-text">Xpath</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Xpath%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95"><span class="toc-number">8.1.</span> <span class="toc-text">Xpath基本语法</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Python-lxml%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-number">9.</span> <span class="toc-text">Python lxml库的使用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Python-json%E6%A8%A1%E5%9D%97%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-number">10.</span> <span class="toc-text">Python json模块常用方法</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/post/fa1e8add.html" title="常见爬虫知识"><img src="https://cdn.staticaly.com/gh/1yzf2zst/images@main/20220806/wallhaven-6k38g7.4z8ybi7h04g0.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="常见爬虫知识"/></a><div class="content"><a class="title" href="/post/fa1e8add.html" title="常见爬虫知识">常见爬虫知识</a><time datetime="2022-09-06T03:47:59.000Z" title="发表于 2022-09-06 11:47:59">2022-09-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/86d4ae82.html" title="python-random库"><img src="https://cdn.staticaly.com/gh/1yzf2zst/images@main/20220806/wallhaven-471z2v.6d6wm85oprg0.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="python-random库"/></a><div class="content"><a class="title" href="/post/86d4ae82.html" title="python-random库">python-random库</a><time datetime="2022-08-31T15:33:55.000Z" title="发表于 2022-08-31 23:33:55">2022-08-31</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/f50e177a.html" title="tkinter-event事件"><img src="https://cdn.staticaly.com/gh/1yzf2zst/images@main/20220806/wallhaven-1ky673.15gj7p6j5b9c.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="tkinter-event事件"/></a><div class="content"><a class="title" href="/post/f50e177a.html" title="tkinter-event事件">tkinter-event事件</a><time datetime="2022-08-30T14:30:17.000Z" title="发表于 2022-08-30 22:30:17">2022-08-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/ce6b206b.html" title="python搞笑表白"><img src="https://cdn.staticaly.com/gh/1yzf2zst/images@main/20220806/wallhaven-39rljy.7e8p6h2j5r40.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="python搞笑表白"/></a><div class="content"><a class="title" href="/post/ce6b206b.html" title="python搞笑表白">python搞笑表白</a><time datetime="2022-08-30T05:35:34.000Z" title="发表于 2022-08-30 13:35:34">2022-08-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/33f31c3e.html" title="Tkinter-布局管理器"><img src="https://cdn.staticaly.com/gh/1yzf2zst/images@main/20220806/wallhaven-lqrlyl.1v85vdp912w0.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Tkinter-布局管理器"/></a><div class="content"><a class="title" href="/post/33f31c3e.html" title="Tkinter-布局管理器">Tkinter-布局管理器</a><time datetime="2022-08-29T15:38:43.000Z" title="发表于 2022-08-29 23:38:43">2022-08-29</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://picx.zhimg.com/v2-d1098f823452d83e34ce0aa6b6c484ae_r.jpg?source=3af55fa1')"><div id="footer-wrap"><div class="copyright">&copy;2022 By 漂亮鬼</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Hello,  welcome  to   <a  target="_blank" rel="noopener" href="https://xiaoyangzst.vercel.app">小杨的blog</a>!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"></div><script src="/js/snowflake.js"></script><script src="https://cdn.jsdelivr.net/gh/caicheng918/CDN@4.0/res/mouse_snow.js"></script><script src="/js/funny.js"></script><div class="aplayer no-destroy" data-id="6686195784" data-server="netease" data-type="playlist" data-fixed="true" data-mini="true" data-listFolded="false" data-order="random" data-preload="none" data-autoplay="false" muted></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/fireworks.min.js"></script><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"superSample":2,"width":200,"height":400,"position":"left","hOffset":-30,"vOffset":-20},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.2},"log":false});</script></body></html>
