@@ -1,0 +1,265 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>numpy（七） | 漂亮鬼</title><meta name="keywords" content="数据分析三剑客"><meta name="author" content="漂亮鬼"><meta name="copyright" content="漂亮鬼"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="NumPy和Matplotlib绘图Matplotlib 是 Python 的绘图库，它经常与 NumPy 一起使用，从而提供一种能够代替 Matlab 的方案。不仅如此 Matplotlib 还可以与 PyQt 和 wxPython 等图形工具包一起使用。 绘制线性函数图像 Matplotlib 的子模块模块 pyplot 是用来绘制 2D 图像的重要模块。 绘制了函数 y &#x3D; 2x">
+<meta property="og:type" content="article">
+<meta property="og:title" content="numpy（七）">
+<meta property="og:url" content="http://1yzf2zstgiyhub.io/post/80ae9ac0.html">
+<meta property="og:site_name" content="漂亮鬼">
+<meta property="og:description" content="NumPy和Matplotlib绘图Matplotlib 是 Python 的绘图库，它经常与 NumPy 一起使用，从而提供一种能够代替 Matlab 的方案。不仅如此 Matplotlib 还可以与 PyQt 和 wxPython 等图形工具包一起使用。 绘制线性函数图像 Matplotlib 的子模块模块 pyplot 是用来绘制 2D 图像的重要模块。 绘制了函数 y &#x3D; 2x">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.staticaly.com/gh/1yzf2zst/images@main/20220805/10004.6ttdbumtqts0.webp">
+<meta property="article:published_time" content="2022-10-16T02:51:20.000Z">
+<meta property="article:modified_time" content="2022-10-16T02:54:24.397Z">
+<meta property="article:author" content="漂亮鬼">
+<meta property="article:tag" content="数据分析三剑客">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.staticaly.com/gh/1yzf2zst/images@main/20220805/10004.6ttdbumtqts0.webp"><link rel="shortcut icon" href="https://pic2.zhimg.com/v2-9359c735aa38fa08bc161d8d6c0df38e_r.jpg?source=3af55fa1"><link rel="canonical" href="http://1yzf2zstgiyhub.io/post/80ae9ac0"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin=""/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?fa627d7767ce07eaecb96088287b512d";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":1000,"languages":{"author":"作者: 漂亮鬼","link":"链接: ","source":"来源: 漂亮鬼","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'numpy（七）',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: true,
+  isToc: true,
+  postUpdate: '2022-10-16 10:54:24'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/mouse.css"><style>#article-container.post-content h1:before, h2:before, h3:before, h4:before, h5:before, h6:before { -webkit-animation: avatar_turn_around 1s linear infinite; -moz-animation: avatar_turn_around 1s linear infinite; -o-animation: avatar_turn_around 1s linear infinite; -ms-animation: avatar_turn_around 1s linear infinite; animation: avatar_turn_around 1s linear infinite; }</style><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/js-heo@1.0.11/mainColor/heoMainColor.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/js-heo@1.0.11/404/404.css"><link rel="stylesheet" href="/css/custom.css"  media="defer" onload="this.media='all'"><meta name="generator" content="Hexo 6.2.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://picx.zhimg.com/v2-6576f8c64444c40baa4602979c75d1e3_r.jpg?source=3af55fa1" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">66</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">27</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">18</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 目录</span></a></div><div class="menus_item"><a class="site-page" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> images</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 资源</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.staticaly.com/gh/1yzf2zst/images@main/20220805/10004.6ttdbumtqts0.webp')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">漂亮鬼</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 目录</span></a></div><div class="menus_item"><a class="site-page" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> images</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 资源</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">numpy（七）</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-10-16T02:51:20.000Z" title="发表于 2022-10-16 10:51:20">2022-10-16</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-10-16T02:54:24.397Z" title="更新于 2022-10-16 10:54:24">2022-10-16</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/numpy/">numpy</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.6k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>6分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="numpy（七）"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h4 id="NumPy和Matplotlib绘图"><a href="#NumPy和Matplotlib绘图" class="headerlink" title="NumPy和Matplotlib绘图"></a>NumPy和Matplotlib绘图</h4><p>Matplotlib 是 Python 的绘图库，它经常与 NumPy 一起使用，从而提供一种能够代替 Matlab 的方案。不仅如此 Matplotlib 还可以与 PyQt 和 wxPython 等图形工具包一起使用。</p>
+<p>绘制线性函数图像</p>
+<p>Matplotlib 的子模块模块 pyplot 是用来绘制 2D 图像的重要模块。</p>
+<p>绘制了函数 y &#x3D; 2x + 5 的图像：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">import numpy as np</span><br><span class="line">from matplotlib import pyplot as plt</span><br><span class="line">x = np.arange(1,11)</span><br><span class="line">y = 2 * x + 5</span><br><span class="line">#绘制坐标标题</span><br><span class="line">plt.title(&quot;Matplotlib demo&quot;)</span><br><span class="line">#绘制x、y轴备注</span><br><span class="line">plt.xlabel(&quot;x axis&quot;)</span><br><span class="line">plt.ylabel(&quot;y axis&quot;)</span><br><span class="line">plt.plot(x,y)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<p>您可以向 plot() 函数中添加格式化字符，来实现不同样式的显示或标记。 </p>
+<p>常用的格式化字符：</p>
+<p>‘-‘<br>实线样式</p>
+<p>‘–’<br>短横线样式</p>
+<p>‘-.’<br>点划线样式</p>
+<p>‘:’<br>虚线样式</p>
+<p>‘.’<br>点标记</p>
+<p>‘,’<br>像素标记</p>
+<p>‘o’<br>圆标记</p>
+<p>‘v’<br>倒三角标记</p>
+<p>‘^’<br>正三角标记</p>
+<p>‘&lt;’<br>左三角标记</p>
+<p>‘&gt;’<br>右三角标记</p>
+<p>‘1’<br>下箭头标记</p>
+<p>‘2’<br>上箭头标记</p>
+<p>‘3’<br>左箭头标记</p>
+<p>‘4’<br>右箭头标记</p>
+<p>‘s’<br>正方形标记</p>
+<p>‘p’<br>五边形标记</p>
+<p>‘*’<br>星形标记</p>
+<p>‘h’<br>六边形标记 1</p>
+<p>‘H’<br>六边形标记 2</p>
+<p>‘+’<br>加号标记</p>
+<p>‘x’<br>X 标记</p>
+<p>‘D’<br>菱形标记</p>
+<p>‘d’<br>窄菱形标记</p>
+<p>‘|’<br>竖直线标记</p>
+<p>‘_’<br>水平线标记</p>
+<p>同时 Matplotlib 还定义了一些颜色字符</p>
+<p>‘b’<br>蓝色</p>
+<p>‘g’<br>绿色</p>
+<p>‘r’<br>红色</p>
+<p>‘c’<br>青色</p>
+<p>‘m’<br>品红色</p>
+<p>‘y’<br>黄色</p>
+<p>‘k’<br>黑色</p>
+<p>‘w’<br>白色</p>
+<p>如果想要以圆点的样式，来代替图 1 中的线条样式，那么可以使用“ ob”作为 plot() 的格式化字符。如下所示：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">import numpy as np</span><br><span class="line">from matplotlib import pyplot as plt</span><br><span class="line">x = np.arange(1,11)</span><br><span class="line">y = 2 * x + 5</span><br><span class="line">plt.title(&quot;Matplotlib demo1&quot;)</span><br><span class="line">plt.xlabel(&quot;x axis&quot;)</span><br><span class="line">plt.ylabel(&quot;y axis&quot;)</span><br><span class="line">plt.plot(x,y,&quot;ob&quot;)</span><br><span class="line">plt.show() </span><br></pre></td></tr></table></figure>
+
+<p>绘制正弦波图</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">import numpy as np</span><br><span class="line">import matplotlib.pyplot as plt </span><br><span class="line"># 计算正弦曲线上的x和y坐标</span><br><span class="line">x = np.arange(0, 3 * np.pi, 0.1)</span><br><span class="line">y = np.sin(x)</span><br><span class="line">plt.title(&quot;sine wave image&quot;)</span><br><span class="line"># 使用matplotlib制图</span><br><span class="line">plt.plot(x, y)</span><br><span class="line">plt.show() </span><br></pre></td></tr></table></figure>
+
+<p>subplot()<br>subplot() 允许您在同一画布中的不同位置绘制多个图像，可以理解为对画布按行、列分割</p>
+<p>函数的语法格式：</p>
+<p>plt.subplot(nrows, ncols, index, **kwargs)</p>
+<p>该函数使用三个整数描述子图的位置信息，这三个整数是行数、列数和索引值（此处索引值从1开始），子图将分布在设定的索引位置上。</p>
+<p>从右上角增加到右下角。<br>plt.subplot(2, 3, 5) 表示子图位于 2 行 3 列 中的第 5 个位置上。</p>
+<p>下面示例是在同一画布中绘制正弦和余弦图像：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">import numpy as np</span><br><span class="line">import matplotlib.pyplot as plt </span><br><span class="line">  </span><br><span class="line">#计算正弦和余弦曲线上的点的 x 和 y 坐标 </span><br><span class="line">x = np.arange(0, 3 * np.pi, 0.1)</span><br><span class="line">y_sin = np.sin(x)</span><br><span class="line">y_cos = np.cos(x) </span><br><span class="line">  </span><br><span class="line">#绘制subplot 网格为2行1列</span><br><span class="line">#激活第一个 subplot</span><br><span class="line">plt.subplot(2, 1, 1)</span><br><span class="line">#绘制第一个图像</span><br><span class="line">plt.plot(x, y_sin)</span><br><span class="line">plt.title(&#x27;Sine&#x27;) </span><br><span class="line"></span><br><span class="line">#将第二个 subplot 激活，并绘制第二个图像</span><br><span class="line">plt.subplot(2, 1, 2)</span><br><span class="line">plt.plot(x, y_cos)</span><br><span class="line">plt.title(&#x27;Cosine&#x27;)</span><br><span class="line">#展示图像</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<p>bar()柱状图</p>
+<p>pyplot 子模块中提供了 bar() 函数来生成柱状图。</p>
+<p>下面示例代码，生成了两组数据的柱状图：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">from matplotlib import pyplot as plt</span><br><span class="line">#第一组数据</span><br><span class="line">x1 = [5,8,10]</span><br><span class="line">y1 = [12,16,6] </span><br><span class="line">#第二组数据</span><br><span class="line">x2 = [6,9,11]</span><br><span class="line">y2 = [6,15,7]</span><br><span class="line">plt.bar(x1, y1, align = &#x27;center&#x27;)</span><br><span class="line">plt.bar(x2, y2, color = &#x27;g&#x27;, align = &#x27;center&#x27;)</span><br><span class="line">plt.title(&#x27;Bar graph&#x27;)</span><br><span class="line">#设置x轴与y轴刻度</span><br><span class="line">plt.ylabel(&#x27;Y axis&#x27;)</span><br><span class="line">plt.xlabel(&#x27;X axis&#x27;) </span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+
+<p>numpy.histogram()</p>
+<p>直方图是一种表示数据概率分布的常用图形。</p>
+<p>NumPy 提供了 histogram() 函数，它以直方图的形式表示一组数据的概率分布值。histogram() 函数有两个返回值，分别是 hist 与 bin_edges，分别代表直方图高度值与 bin 数值区间范围，</p>
+<p>函数的语法格式如下：<br>histogram(array,bins&#x3D;10,range&#x3D;None,weights&#x3D;None,density&#x3D;False)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import numpy as np </span><br><span class="line">a = np.arange(8) </span><br><span class="line">hist, bin_edges = np.histogram(a, density=True) </span><br></pre></td></tr></table></figure>
+
+<p>numpy.histogram() 将输入数组 a 和 bins 作为两个参数，其中 bins 数组的连续元素作为 bin 区间的边界值</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">import numpy as np</span><br><span class="line">a = np.array([22,87,5,43,56,73,55,54,11,20,51,5,79,31,27])</span><br><span class="line">np.histogram(a,bins = [0,20,40,60,80,100])</span><br><span class="line">hist,bins = np.histogram(a,bins = [0,20,40,60,80,100]) </span><br><span class="line">print(hist)</span><br><span class="line">print(bins)</span><br></pre></td></tr></table></figure>
+
+<p>plt()<br>pyplot 子模块的 plt() 函数将一个输入数组和 bins 数组作为参数，并将其输出为直方图。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">from matplotlib import pyplot as plt</span><br><span class="line">import numpy as np </span><br><span class="line">a = np.array([22,87,5,43,56,73,55,54,11,20,51,5,79,31,27])</span><br><span class="line">plt.hist(a, bins =  [0,20,40,60,80,100])</span><br><span class="line">plt.title(&quot;histogram&quot;)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+
+<h4 id="NumPy-IO操作"><a href="#NumPy-IO操作" class="headerlink" title="NumPy IO操作"></a>NumPy IO操作</h4><p>NumPy  IO 操作是以文件的形式从磁盘中加载 ndarray 对象。在这个过程中，NumPy 可以两种文件类型处理 ndarray 对象，一类是二进制文件（以.npy结尾），另一类是普通文本文件。</p>
+<img src="/post/undefined/349.png" class title="This is an image">
+
+<p>我们知道，文件会被保存在不同的计算机上（比如 Linux、Windows、MacOSX 等）。为了不受的计算机架构影响，NumPy 开发团队给 ndarray 对象引入了一种.npy文件格式，通过它来件实现对 ndarray 对象的保存。</p>
+<p>numpy.save() 方法将输入数组存储在.npy文件中。</p>
+<p>numpy.save(file, arr, allow_pickle&#x3D;True, fix_imports&#x3D;True)</p>
+<p>file：保存后的文件名称，其文件类型为.npy；</p>
+<p>arr：要保存的数组</p>
+<p>allow_pickle：可选项，布尔值参数，允许使用 pickle 序列化保存数组对象</p>
+<p>fix_imports：可选项，为了便于在 Pyhton2 版本中读取 Python3 保存的数据</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import numpy as np</span><br><span class="line">a = np.array([1,2,3,4,5])</span><br><span class="line">np.save(&#x27;first&#x27;,a)</span><br></pre></td></tr></table></figure>
+
+<p>使用 load() 从 first.npy 文件中加载数据</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import numpy as np</span><br><span class="line">b = np.load(&#x27;outfile.npy&#x27;)</span><br><span class="line">print( b) </span><br></pre></td></tr></table></figure>
+
+<p>savetxt()</p>
+<p>savetxt() 和 loadtxt() 分别表示以文本格式存储数据或加载数据。</p>
+<p>savetxt() 语法格式：<br>np.savetxt(‘filename文件路径’, self.task, fmt&#x3D;”%d”, delimiter&#x3D;” “)</p>
+<p>filename：表示保存文件的路径<br>self.task： 要保存数组的变量名<br>fmt&#x3D;”%d”： 指定保存文件的格式，默认是十进制<br>delimiter&#x3D;” “表示分隔符，默认以空格的形式隔开</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">import numpy as np</span><br><span class="line">a = np.array([1,2,3,4,5])</span><br><span class="line">np.savetxt(&#x27;second.txt&#x27;,a)</span><br><span class="line">#使用loadtxt重载数据</span><br><span class="line">b = np.loadtxt(&#x27;second.txt&#x27;)</span><br><span class="line">print(b) </span><br></pre></td></tr></table></figure>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://1yzf2zstgiyhub.io">漂亮鬼</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://1yzf2zstgiyhub.io/post/80ae9ac0.html">http://1yzf2zstgiyhub.io/post/80ae9ac0.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://1yzf2zstgiyhub.io" target="_blank">漂亮鬼</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E4%B8%89%E5%89%91%E5%AE%A2/">数据分析三剑客</a></div><div class="post_share"><div class="addthis_inline_share_toolbox"></div><script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-62e385ce9ecac8a4" async="async"></script></div></div><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/post/921b352e.html" title="numpy（一）"><img class="cover" src="https://cdn.staticaly.com/gh/1yzf2zst/images@main/20220806/wallhaven-nmw9dy.up6ciobuia8.webp" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-10-16</div><div class="title">numpy（一）</div></div></a></div><div><a href="/post/ef137aa4.html" title="numpy（三）"><img class="cover" src="https://cdn.staticaly.com/gh/1yzf2zst/images@main/20220806/wallhaven-4v1e78.3gf56hiwtpe0.webp" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-10-16</div><div class="title">numpy（三）</div></div></a></div><div><a href="/post/a20dd9f6.html" title="numpy（二）"><img class="cover" src="https://cdn.staticaly.com/gh/1yzf2zst/images@main/20220806/wallhaven-lqrlyl.1v85vdp912w0.webp" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-10-16</div><div class="title">numpy（二）</div></div></a></div><div><a href="/post/52aeed5f.html" title="numpy（六）"><img class="cover" src="https://pic2.zhimg.com/v2-7a3a5a5eafb5621fc4ae05c5327c0740_r.jpg?source=3af55fa1" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-10-16</div><div class="title">numpy（六）</div></div></a></div><div><a href="/post/37a0a686.html" title="numpy（五）"><img class="cover" src="https://pica.zhimg.com/v2-da98f106777bd7f084837841abef297b_r.jpg?source=3af55fa1" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-10-16</div><div class="title">numpy（五）</div></div></a></div><div><a href="/post/583e63c1.html" title="numpy（四）"><img class="cover" src="https://pic2.zhimg.com/80/v2-dd55abd19779b60abba7e0c6d2b26689_720w.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-10-16</div><div class="title">numpy（四）</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://picx.zhimg.com/v2-6576f8c64444c40baa4602979c75d1e3_r.jpg?source=3af55fa1" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">漂亮鬼</div><div class="author-info__description">爱干饭的程序员--嘿嘿</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">66</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">27</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">18</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/1yzf2zst/1yzf2zst.github.io"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://cdn.staticaly.com/gh/1yzf2zst/images@main/20220823/IMG_4539(20220823-200421).750ofrla5w40.webp" target="_blank" title="WeChat"><i class="fab fa-weixin"></i></a><a class="social-icon" href="https://cdn.staticaly.com/gh/1yzf2zst/images@main/20220823/B8E86698E2D953CD7245DBFA591CDB59.3y2c2f2kdxy0.webp" target="_blank" title="QQ"><i class="fab fa-qq"></i></a><a class="social-icon" href="https://github.com/1yzf2zst" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:2562644984@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="xpand" style="height:200px;"><canvas class="illo" width="800" height="800" style="max-width: 200px; max-height: 200px; touch-action: none; width: 640px; height: 640px;"></canvas></div><script src="https://fastly.jsdelivr.net/gh/xiaopengand/blogCdn@latest/xzxr/twopeople1.js"></script><script src="https://fastly.jsdelivr.net/gh/xiaopengand/blogCdn@latest/xzxr/zdog.dist.js"></script><script id="rendered-js" src="https://fastly.jsdelivr.net/gh/xiaopengand/blogCdn@latest/xzxr/twopeople.js"></script><style>.card-widget.card-announcement {
+margin: 0;
+align-items: center;
+justify-content: center;
+text-align: center;
+}
+canvas {
+display: block;
+margin: 0 auto;
+cursor: move;
+}
+</style><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎各位， 各位来到xiaoyang的blog
+博主发布的博文都是博主学习笔记
+qq:2562644984</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#NumPy%E5%92%8CMatplotlib%E7%BB%98%E5%9B%BE"><span class="toc-number">1.</span> <span class="toc-text">NumPy和Matplotlib绘图</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#NumPy-IO%E6%93%8D%E4%BD%9C"><span class="toc-number">2.</span> <span class="toc-text">NumPy IO操作</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/post/80ae9ac0.html" title="numpy（七）"><img src="https://cdn.staticaly.com/gh/1yzf2zst/images@main/20220805/10004.6ttdbumtqts0.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="numpy（七）"/></a><div class="content"><a class="title" href="/post/80ae9ac0.html" title="numpy（七）">numpy（七）</a><time datetime="2022-10-16T02:51:20.000Z" title="发表于 2022-10-16 10:51:20">2022-10-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/52aeed5f.html" title="numpy（六）"><img src="https://pic2.zhimg.com/v2-7a3a5a5eafb5621fc4ae05c5327c0740_r.jpg?source=3af55fa1" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="numpy（六）"/></a><div class="content"><a class="title" href="/post/52aeed5f.html" title="numpy（六）">numpy（六）</a><time datetime="2022-10-16T02:47:01.000Z" title="发表于 2022-10-16 10:47:01">2022-10-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/37a0a686.html" title="numpy（五）"><img src="https://pica.zhimg.com/v2-da98f106777bd7f084837841abef297b_r.jpg?source=3af55fa1" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="numpy（五）"/></a><div class="content"><a class="title" href="/post/37a0a686.html" title="numpy（五）">numpy（五）</a><time datetime="2022-10-16T02:44:53.000Z" title="发表于 2022-10-16 10:44:53">2022-10-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/583e63c1.html" title="numpy（四）"><img src="https://pic2.zhimg.com/80/v2-dd55abd19779b60abba7e0c6d2b26689_720w.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="numpy（四）"/></a><div class="content"><a class="title" href="/post/583e63c1.html" title="numpy（四）">numpy（四）</a><time datetime="2022-10-16T02:39:20.000Z" title="发表于 2022-10-16 10:39:20">2022-10-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/ef137aa4.html" title="numpy（三）"><img src="https://cdn.staticaly.com/gh/1yzf2zst/images@main/20220806/wallhaven-4v1e78.3gf56hiwtpe0.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="numpy（三）"/></a><div class="content"><a class="title" href="/post/ef137aa4.html" title="numpy（三）">numpy（三）</a><time datetime="2022-10-16T02:30:56.000Z" title="发表于 2022-10-16 10:30:56">2022-10-16</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://picx.zhimg.com/v2-d1098f823452d83e34ce0aa6b6c484ae_r.jpg?source=3af55fa1')"><div id="footer-wrap"><div class="copyright">&copy;2022 By 漂亮鬼</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Hello,  welcome  to   <a  target="_blank" rel="noopener" href="https://1yzf2zst.github.io/">小杨的blog</a>!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"></div><script src="/js/snowflake.js"></script><script src="https://cdn.jsdelivr.net/gh/caicheng918/CDN@4.0/res/mouse_snow.js"></script><script src="/js/funny.js"></script><div class="aplayer no-destroy" data-id="6686195784" data-server="netease" data-type="playlist" data-fixed="true" data-mini="true" data-listFolded="false" data-order="random" data-preload="none" data-autoplay="false" muted></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/fireworks.min.js"></script><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"superSample":2,"width":200,"height":400,"position":"left","hOffset":-30,"vOffset":-20},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.2},"log":false});</script></body></html>
