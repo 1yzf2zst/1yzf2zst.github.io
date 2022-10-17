@@ -1,0 +1,314 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>c语言常见函数 | 漂亮鬼</title><meta name="keywords" content="c++"><meta name="author" content="漂亮鬼"><meta name="copyright" content="漂亮鬼"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="[TOC] 一. &lt;ctype.h&gt;函数原型功能int iscntrl(int c)判断字符c是否为控制字符。 int isalnum(int c)判断字符c是否为字母或数字 int isalpha(int c)判断字符c是否为英文字母 int isascii(int c)判断字符c是否为ascii码 int isblank(int c)判断字符c是否为TAB或空格 int isdig">
+<meta property="og:type" content="article">
+<meta property="og:title" content="c语言常见函数">
+<meta property="og:url" content="http://1yzf2zstgiyhub.io/post/25258312.html">
+<meta property="og:site_name" content="漂亮鬼">
+<meta property="og:description" content="[TOC] 一. &lt;ctype.h&gt;函数原型功能int iscntrl(int c)判断字符c是否为控制字符。 int isalnum(int c)判断字符c是否为字母或数字 int isalpha(int c)判断字符c是否为英文字母 int isascii(int c)判断字符c是否为ascii码 int isblank(int c)判断字符c是否为TAB或空格 int isdig">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.staticaly.com/gh/1yzf2zst/images@main/20220806/wallhaven-2ejm9x.4ciiqlcrsza0.webp">
+<meta property="article:published_time" content="2022-10-17T05:11:14.000Z">
+<meta property="article:modified_time" content="2022-10-17T05:12:54.078Z">
+<meta property="article:author" content="漂亮鬼">
+<meta property="article:tag" content="c++">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.staticaly.com/gh/1yzf2zst/images@main/20220806/wallhaven-2ejm9x.4ciiqlcrsza0.webp"><link rel="shortcut icon" href="https://pic2.zhimg.com/v2-9359c735aa38fa08bc161d8d6c0df38e_r.jpg?source=3af55fa1"><link rel="canonical" href="http://1yzf2zstgiyhub.io/post/25258312"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin=""/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?fa627d7767ce07eaecb96088287b512d";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":1000,"languages":{"author":"作者: 漂亮鬼","link":"链接: ","source":"来源: 漂亮鬼","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'c语言常见函数',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: true,
+  isToc: true,
+  postUpdate: '2022-10-17 13:12:54'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/mouse.css"><style>#article-container.post-content h1:before, h2:before, h3:before, h4:before, h5:before, h6:before { -webkit-animation: avatar_turn_around 1s linear infinite; -moz-animation: avatar_turn_around 1s linear infinite; -o-animation: avatar_turn_around 1s linear infinite; -ms-animation: avatar_turn_around 1s linear infinite; animation: avatar_turn_around 1s linear infinite; }</style><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/js-heo@1.0.11/mainColor/heoMainColor.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/js-heo@1.0.11/404/404.css"><link rel="stylesheet" href="/css/custom.css"  media="defer" onload="this.media='all'"><meta name="generator" content="Hexo 6.2.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://picx.zhimg.com/v2-6576f8c64444c40baa4602979c75d1e3_r.jpg?source=3af55fa1" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">67</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">28</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">18</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 目录</span></a></div><div class="menus_item"><a class="site-page" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> images</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 资源</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.staticaly.com/gh/1yzf2zst/images@main/20220806/wallhaven-2ejm9x.4ciiqlcrsza0.webp')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">漂亮鬼</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 目录</span></a></div><div class="menus_item"><a class="site-page" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> images</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 资源</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">c语言常见函数</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-10-17T05:11:14.000Z" title="发表于 2022-10-17 13:11:14">2022-10-17</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-10-17T05:12:54.078Z" title="更新于 2022-10-17 13:12:54">2022-10-17</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/c-c/">c/c++</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">2.6k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>10分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="c语言常见函数"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>[TOC]</p>
+<h4 id="一-lt-ctype-h-gt-函数原型功能"><a href="#一-lt-ctype-h-gt-函数原型功能" class="headerlink" title="一. &lt;ctype.h&gt;函数原型功能"></a>一. &lt;ctype.h&gt;函数原型功能</h4><p>int iscntrl(int c)<br>判断字符c是否为控制字符。</p>
+<p>int isalnum(int c)<br>判断字符c是否为字母或数字</p>
+<p>int isalpha(int c)<br>判断字符c是否为英文字母</p>
+<p>int isascii(int c)<br>判断字符c是否为ascii码</p>
+<p>int isblank(int c)<br>判断字符c是否为TAB或空格</p>
+<p>int isdigit(int c)<br>判断字符c是否为数字</p>
+<p>int isgraph(int c)<br>判断字符c是否为除空格外的可打印字符</p>
+<p>int islower(int c)<br>判断字符c是否为小写英文字母</p>
+<p>int isprint(int c)<br>判断字符c是否为可打印字符（含空格）</p>
+<p>int ispunct(int c)<br>判断字符c是否为标点符号</p>
+<p>int isspace(int c)<br>判断字符c是否为空白符</p>
+<p>int isupper(int c)<br>判断字符c是否为大写英文字母</p>
+<p>int isxdigit(int c)<br>判断字符c是否为十六进制数字</p>
+<p>int toascii(int c)<br>将字符c转换为ascii码</p>
+<p>int tolower(int c)<br>将字符c转换为小写英文字母</p>
+<p>int toupper(int c)<br>将字符c转换为大写英文字母</p>
+<h4 id="二-lt-math-h-gt-函数原型功能"><a href="#二-lt-math-h-gt-函数原型功能" class="headerlink" title="二. &lt;math.h&gt;函数原型功能"></a>二. &lt;math.h&gt;函数原型功能</h4><p>float fabs(float x)<br>求浮点数x的绝对值</p>
+<p>int abs(int x)<br>求整数x的绝对值</p>
+<p>float acos(float x)<br>求x（弧度表示）的反余弦值</p>
+<p>float asin(float x)<br>求x（弧度表示）的反正弦值</p>
+<p>float atan(float x)<br>求x（弧度表示）的反正切值</p>
+<p>float atan2(float y, float x)<br>求y&#x2F;x（弧度表示）的反正切值</p>
+<p>float ceil(float x)<br>不小于x的最小整数</p>
+<p>float cos(float x)<br>求x（弧度表示）的余弦值</p>
+<p>float cosh(float x)<br>求x的双曲余弦值</p>
+<p>float exp(float x)<br>求e的x次幂</p>
+<p>float floor(float x)<br>求不大于x的最大整数</p>
+<p>float fmod(float x, float y)<br>计算x&#x2F;y的余数</p>
+<p>float frexp(float x, int *exp)<br>把浮点数x分解成尾数和指数</p>
+<p>float ldexp(float x, int exp)<br>返回x*2^exp的值</p>
+<p>float modf(float num, float *i)<br>将浮点数num分解成整数部分和小数部分</p>
+<p>float hypot(float x, float y)<br>对于给定的直角三角形的两个直角边，求其斜边的长度</p>
+<p>float log(float x)<br>计算x的自然对数</p>
+<p>float log10(float x)<br>计算x的常用对数</p>
+<p>float pow(float x, float y)<br>计算x的y次幂</p>
+<p>float pow10(float x)<br>计算10的x次幂</p>
+<p>float sin(float x)<br>计算x（弧度表示）的正弦值</p>
+<p>float sinh(float x)<br>计算x（弧度表示）的双曲正弦值</p>
+<p>float sqrt(float x)<br>计算x的平方根</p>
+<p>float tan(float x)<br>计算x（弧度表示）的正切值</p>
+<p>float tanh(float x)<br>求x的双曲正切值</p>
+<h4 id="三-lt-stdio-h-gt-函数原型功能"><a href="#三-lt-stdio-h-gt-函数原型功能" class="headerlink" title="三. &lt;stdio.h&gt;函数原型功能"></a>三. &lt;stdio.h&gt;函数原型功能</h4><p>int printf(char *format…)<br>产生格式化输出的函数</p>
+<p>int getchar(void)<br>从键盘上读取一个键，并返回该键的键值</p>
+<p>int putchar(char c)<br>在屏幕上显示字符</p>
+<p>cFILE *fopen(char *filename, char *type)<br>打开一个文件</p>
+<p>FILE *freopen(char *filename, char *type,FILE *fp)<br>打开一个文件，并将该文件关联到fp指定的流</p>
+<p>int fflush(FILE *stream)<br>清除一个流</p>
+<p>int fclose(FILE *stream)<br>关闭一个文件</p>
+<p>int remove(char *filename)<br>删除一个文件</p>
+<p>int rename(char *oldname, char *newname)<br>重命名文件</p>
+<p>FILE *tmpfile(void)<br>以二进制方式打开暂存文件</p>
+<p>char *tmpnam(char *sptr)<br>创建一个唯一的文件名</p>
+<p>int setvbuf(FILE *stream, char *buf, int type, unsigned size)<br>把缓冲区与流相关</p>
+<p>int fprintf(FILE *stream, char *format[, argument,…])<br>传送格式化输出到一个流中</p>
+<p>int scanf(char *format[,argument,…])<br>执行格式化输入</p>
+<p>int fscanf(FILE *stream, char *format[,argument…])<br>从一个流中执行格式化输入</p>
+<p>int fgetc(FILE *stream)<br>从流中读取字符</p>
+<p>char *fgets(char *string, int n, FILE *stream)<br>从流中读取一字符串</p>
+<p>int fputc(int ch, FILE *stream)<br>送一个字符到一个流中</p>
+<p>int fputs(char *string, FILE *stream)<br>送一个字符到一个流中</p>
+<p>int getc(FILE *stream)<br>从流中取字符</p>
+<p>int getchar(void)<br>从 stdin 流中读字符</p>
+<p>char *gets(char *string)<br>从流中取一字符串</p>
+<p>int putchar(int ch)<br>在 stdout 上输出字符</p>
+<p>int puts(char *string)<br>送一字符串到流中</p>
+<p>int ungetc(char c, FILE *stream)<br>把一个字符退回到输入流中</p>
+<p>int fread(void *ptr, int size, int nitems, FILE *stream)<br>从一个流中读数据</p>
+<p>int fwrite(void *ptr, int size, int nitems, FILE *stream)<br>写内容到流中</p>
+<p>int fseek(FILE *stream, long offset, int fromwhere)<br>重定位流上的文件指针</p>
+<p>long ftell(FILE *stream)<br>返回当前文件指针</p>
+<p>int rewind(FILE *stream)<br>将文件指针重新指向一个流的开头</p>
+<p>int fgetpos(FILE *stream)<br>取得当前文件的句柄</p>
+<p>int fsetpos(FILE *stream, const fpos_t *pos)<br>定位流上的文件指针</p>
+<p>void clearerr(FILE *stream)<br>复位错误标志</p>
+<p>int feof(FILE *stream)<br>检测流上的文件结束符</p>
+<p>int ferror(FILE *stream)<br>检测流上的错误</p>
+<p>void perror(char *string)<br>系统错误信息</p>
+<h4 id="四-lt-stdlib-h-gt-函数原型功能"><a href="#四-lt-stdlib-h-gt-函数原型功能" class="headerlink" title="四. &lt;stdlib.h&gt;函数原型功能"></a>四. &lt;stdlib.h&gt;函数原型功能</h4><p>char *itoa(int i)<br>把整数i转换成字符串</p>
+<p>void exit(int retval)<br>结束程序</p>
+<p>double atof(const char *s)<br>将字符串s转换为double类型</p>
+<p>int atoi(const char *s)<br>将字符串s转换为int类型</p>
+<p>long atol(const char *s)<br>将字符串s转换为long类型</p>
+<p>double strtod (const char*s,char **endp)<br>将字符串s前缀转换为double型</p>
+<p>long strtol(const char*s,char **endp,int base)<br>将字符串s前缀转换为long型</p>
+<p>unsinged long strtol(const char*s,char **endp,int base)<br>将字符串s前缀转换为 </p>
+<p>unsinged long型int rand(void)<br>产生一个0~RAND_MAX之间的伪随机数</p>
+<p>void srand(unsigned int seed)<br>初始化随机数发生器</p>
+<p>void *calloc(size_t nelem, size_t elsize)<br>分配主存储器</p>
+<p>void *malloc(unsigned size)<br>内存分配函数</p>
+<p>void *realloc(void *ptr, unsigned newsize)<br>重新分配主存</p>
+<p>void free(void *ptr)<br>释放已分配的块</p>
+<p>void abort(void)<br>异常终止一个进程</p>
+<p>void exit(int status)<br>终止应用程序</p>
+<p>int atexit(atexit_t func)<br>注册终止函数</p>
+<p>char *getenv(char *envvar)<br>从环境中取字符串</p>
+<p>void *bsearch(const void *key, const void *base, size_t *nelem, size_t width, int(*fcmp)(const void *, const *))<br>二分法搜索函数</p>
+<p>void qsort(void *base, int nelem, int width, int (*fcmp)())<br>使用快速排序例程进行排序</p>
+<p>int abs(int i)<br>求整数的绝对值</p>
+<p>long labs(long n)<br>取长整型绝对值</p>
+<p>div_t div(int number, int denom)<br>将两个整数相除 , 返回商和余数</p>
+<p>ldiv_t ldiv(long lnumer, long ldenom)<br>两个长整型数相除 , 返回商和余数</p>
+<h4 id="五-lt-time-h-gt-函数原型功能"><a href="#五-lt-time-h-gt-函数原型功能" class="headerlink" title="五. &lt;time.h&gt;函数原型功能"></a>五. &lt;time.h&gt;函数原型功能</h4><p>clock_t clock(void)<br>确定处理器时间函数</p>
+<p>time_t time(time_t *tp)<br>返回当前日历时间</p>
+<p>double difftime(time_t time2, time_t time1)<br>计算两个时刻之间的时间差</p>
+<p>time_t mktime(struct tm *tp)<br>将分段时间值转换为日历时间值</p>
+<p>char *asctime(const struct tm *tblock)<br>转换日期和时间为ASCII码</p>
+<p>char *ctime(const time_t *time)<br>把日期和时间转换为字符串</p>
+<p>struct tm *gmtime(const time_t *timer)<br>把日期和时间转换为格林尼治标准时间</p>
+<p>struct tm *localtime(const time_t *timer)<br>把日期和时间转变为结构</p>
+<p>size_t strftime(char *s,size_t smax,const char *fmt, const struct tm *tp)<br>根据 fmt 的格式 要求将 *tp中的日期与时间转换为指定格式</p>
+<h4 id="六-lt-string-h-gt-函数原型功能"><a href="#六-lt-string-h-gt-函数原型功能" class="headerlink" title="六. &lt;string.h&gt;函数原型功能"></a>六. &lt;string.h&gt;函数原型功能</h4><p>int bcmp(const void *s1, const void *s2, int n)<br>比较字符串s1和s2的前n个字节是否相等</p>
+<p>void bcopy(const void *src, void *dest, int n)<br>将字符串src的前n个字节复制到dest中</p>
+<p>void bzero(void *s, int n)<br>置字节字符串s的前n个字节为零</p>
+<p>void *memccpy(void *dest, void *src, unsigned char ch, unsigned int count)<br>由src所指内存区域复制不多于count个字节到dest所指内存区域，如果遇到字符ch则停止复制</p>
+<p>void *memcpy(void *dest, void *src, unsigned int count)<br>由src所指内存区域复制count个字节到dest所指内存区域</p>
+<p>void *memchr(void *buf, char ch, unsigned count)<br>从buf所指内存区域的前count个字节查找字符</p>
+<p>chint memcmp(void *buf1, void *buf2, unsigned int count)<br>比较内存区域buf1和buf2的前count个字节</p>
+<p>int memicmp(void *buf1, void *buf2, unsigned int count)<br>比较内存区域buf1和buf2的前count个字节但不区分字母的大小写</p>
+<p>void *memmove(void *dest, const void *src, unsigned int count)<br>由src所指内存区域复制count个字节到dest所指内存区域</p>
+<p>void *memset(void *buffer, int c, int count)<br>把buffer所指内存区域的前count个字节设置成字符c</p>
+<p>void setmem(void *buf, unsigned int count, char ch)<br>把buf所指内存区域前count个字节设置成字符ch</p>
+<p>void movmem(void *src, void *dest, unsigned int count)<br>由src所指内存区域复制count个字节到dest所指内存区域</p>
+<p>char *stpcpy(char *dest,char *src)<br>把src所指由NULL结束的字符串复制到dest所指的数组中</p>
+<p>char *strcpy(char *dest,char *src)<br>把src所指由NULL结束的字符串复制到dest所指的数组中</p>
+<p>char *strcat(char *dest,char *src)<br>把src所指字符串添加到dest结尾处(覆盖dest结尾处的’\0’)并添加’\0’</p>
+<p>char *strchr(char *s,char c)<br>查找字符串s中首次出现字符c的位置</p>
+<p>int strcmp(char *s1,char * s2)<br>比较字符串s1和s2</p>
+<p>int strcmp(char *s1,char * s2)<br>比较字符串s1和s2</p>
+<p>int stricmp(char *s1,char * s2)<br>比较字符串s1和s2，但不区分字母的大小写</p>
+<p>int strcspn(char *s1,char *s2)<br>在字符串s1中搜寻s2中所出现的字符</p>
+<p>char *strdup(char *s)复制字符串s</p>
+<p>int strlen(char *s)<br>计算字符串s的长度</p>
+<p>char *strlwr(char *s)<br>将字符串s转换为小写形式</p>
+<p>char *strupr(char *s)<br>将字符串s转换为大写形式</p>
+<p>char *strncat(char *dest,char *src,int n)<br>把src所指字符串的前n个字符添加到dest结尾处(覆盖dest结尾处的’\0’)并添加’\0’</p>
+<p>int strcmp(char *s1,char * s2，int n)<br>比较字符串s1和s2的前n个字符</p>
+<p>int strnicmp(char *s1,char * s2，int n)<br>比较字符串s1和s2的前n个字符但不区分大小写</p>
+<p>char *strncpy(char *dest, char *src, int n)<br>把src所指由NULL结束的字符串的前n个字节复制到dest所指的数组中</p>
+<p>char *strpbrk(char *s1, char *s2)<br>在字符串s1中寻找字符串s2中任何一个字符相匹配的第一个字符的位置，空字符NULL不包括在内</p>
+<p>char *strrev(char *s)<br>把字符串s的所有字符的顺序颠倒过来（不包括空字符NULL）</p>
+<p>char *strset(char *s, char c)<br>把字符串s中的所有字符都设置成字符c</p>
+<p>char *strstr(char *haystack, char *needle)<br>从字符串haystack中寻找needle第一次出现的位置（不比较结束符NULL)</p>
+<p>char *strtok(char *s, char *delim)<br>分解字符串为一组标记串。s为要分解的字符串，delim为分隔符字符串</p>
+<p>int strnicmp(char *s1,char * s2，int n)<br>比较字符串s1和s2的前n个字符但不区分大小写</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://1yzf2zstgiyhub.io">漂亮鬼</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://1yzf2zstgiyhub.io/post/25258312.html">http://1yzf2zstgiyhub.io/post/25258312.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://1yzf2zstgiyhub.io" target="_blank">漂亮鬼</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/c/">c++</a></div><div class="post_share"><div class="addthis_inline_share_toolbox"></div><script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-62e385ce9ecac8a4" async="async"></script></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://picx.zhimg.com/v2-6576f8c64444c40baa4602979c75d1e3_r.jpg?source=3af55fa1" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">漂亮鬼</div><div class="author-info__description">爱干饭的程序员--嘿嘿</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">67</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">28</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">18</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/1yzf2zst/1yzf2zst.github.io"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://cdn.staticaly.com/gh/1yzf2zst/images@main/20220823/IMG_4539(20220823-200421).750ofrla5w40.webp" target="_blank" title="WeChat"><i class="fab fa-weixin"></i></a><a class="social-icon" href="https://cdn.staticaly.com/gh/1yzf2zst/images@main/20220823/B8E86698E2D953CD7245DBFA591CDB59.3y2c2f2kdxy0.webp" target="_blank" title="QQ"><i class="fab fa-qq"></i></a><a class="social-icon" href="https://github.com/1yzf2zst" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:2562644984@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="xpand" style="height:200px;"><canvas class="illo" width="800" height="800" style="max-width: 200px; max-height: 200px; touch-action: none; width: 640px; height: 640px;"></canvas></div><script src="https://fastly.jsdelivr.net/gh/xiaopengand/blogCdn@latest/xzxr/twopeople1.js"></script><script src="https://fastly.jsdelivr.net/gh/xiaopengand/blogCdn@latest/xzxr/zdog.dist.js"></script><script id="rendered-js" src="https://fastly.jsdelivr.net/gh/xiaopengand/blogCdn@latest/xzxr/twopeople.js"></script><style>.card-widget.card-announcement {
+margin: 0;
+align-items: center;
+justify-content: center;
+text-align: center;
+}
+canvas {
+display: block;
+margin: 0 auto;
+cursor: move;
+}
+</style><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎各位， 各位来到xiaoyang的blog
+博主发布的博文都是博主学习笔记
+qq:2562644984</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%80-lt-ctype-h-gt-%E5%87%BD%E6%95%B0%E5%8E%9F%E5%9E%8B%E5%8A%9F%E8%83%BD"><span class="toc-number">1.</span> <span class="toc-text">一. &lt;ctype.h&gt;函数原型功能</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8C-lt-math-h-gt-%E5%87%BD%E6%95%B0%E5%8E%9F%E5%9E%8B%E5%8A%9F%E8%83%BD"><span class="toc-number">2.</span> <span class="toc-text">二. &lt;math.h&gt;函数原型功能</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%89-lt-stdio-h-gt-%E5%87%BD%E6%95%B0%E5%8E%9F%E5%9E%8B%E5%8A%9F%E8%83%BD"><span class="toc-number">3.</span> <span class="toc-text">三. &lt;stdio.h&gt;函数原型功能</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%9B-lt-stdlib-h-gt-%E5%87%BD%E6%95%B0%E5%8E%9F%E5%9E%8B%E5%8A%9F%E8%83%BD"><span class="toc-number">4.</span> <span class="toc-text">四. &lt;stdlib.h&gt;函数原型功能</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%94-lt-time-h-gt-%E5%87%BD%E6%95%B0%E5%8E%9F%E5%9E%8B%E5%8A%9F%E8%83%BD"><span class="toc-number">5.</span> <span class="toc-text">五. &lt;time.h&gt;函数原型功能</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%AD-lt-string-h-gt-%E5%87%BD%E6%95%B0%E5%8E%9F%E5%9E%8B%E5%8A%9F%E8%83%BD"><span class="toc-number">6.</span> <span class="toc-text">六. &lt;string.h&gt;函数原型功能</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/post/25258312.html" title="c语言常见函数"><img src="https://cdn.staticaly.com/gh/1yzf2zst/images@main/20220806/wallhaven-2ejm9x.4ciiqlcrsza0.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="c语言常见函数"/></a><div class="content"><a class="title" href="/post/25258312.html" title="c语言常见函数">c语言常见函数</a><time datetime="2022-10-17T05:11:14.000Z" title="发表于 2022-10-17 13:11:14">2022-10-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/80ae9ac0.html" title="numpy（七）"><img src="https://cdn.staticaly.com/gh/1yzf2zst/images@main/20220805/10001.5orx1k91xr40.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="numpy（七）"/></a><div class="content"><a class="title" href="/post/80ae9ac0.html" title="numpy（七）">numpy（七）</a><time datetime="2022-10-16T02:51:20.000Z" title="发表于 2022-10-16 10:51:20">2022-10-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/52aeed5f.html" title="numpy（六）"><img src="https://cdn.staticaly.com/gh/1yzf2zst/images@main/20220806/wallhaven-nmw9dy.up6ciobuia8.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="numpy（六）"/></a><div class="content"><a class="title" href="/post/52aeed5f.html" title="numpy（六）">numpy（六）</a><time datetime="2022-10-16T02:47:01.000Z" title="发表于 2022-10-16 10:47:01">2022-10-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/37a0a686.html" title="numpy（五）"><img src="https://pica.zhimg.com/v2-da98f106777bd7f084837841abef297b_r.jpg?source=3af55fa1" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="numpy（五）"/></a><div class="content"><a class="title" href="/post/37a0a686.html" title="numpy（五）">numpy（五）</a><time datetime="2022-10-16T02:44:53.000Z" title="发表于 2022-10-16 10:44:53">2022-10-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/583e63c1.html" title="numpy（四）"><img src="https://cdn.staticaly.com/gh/1yzf2zst/images@main/20220806/wallhaven-39v5w6.3a1mh3cv6uk0.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="numpy（四）"/></a><div class="content"><a class="title" href="/post/583e63c1.html" title="numpy（四）">numpy（四）</a><time datetime="2022-10-16T02:39:20.000Z" title="发表于 2022-10-16 10:39:20">2022-10-16</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://picx.zhimg.com/v2-d1098f823452d83e34ce0aa6b6c484ae_r.jpg?source=3af55fa1')"><div id="footer-wrap"><div class="copyright">&copy;2022 By 漂亮鬼</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Hello,  welcome  to   <a  target="_blank" rel="noopener" href="https://1yzf2zst.github.io/">小杨的blog</a>!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"></div><script src="/js/snowflake.js"></script><script src="https://cdn.jsdelivr.net/gh/caicheng918/CDN@4.0/res/mouse_snow.js"></script><script src="/js/funny.js"></script><div class="aplayer no-destroy" data-id="6686195784" data-server="netease" data-type="playlist" data-fixed="true" data-mini="true" data-listFolded="false" data-order="random" data-preload="none" data-autoplay="false" muted></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/fireworks.min.js"></script><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"superSample":2,"width":200,"height":400,"position":"left","hOffset":-30,"vOffset":-20},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.2},"log":false});</script></body></html>
