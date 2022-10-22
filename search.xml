@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>你好</title>
+      <link href="/post/50a2b841.html"/>
+      <url>/post/50a2b841.html</url>
+      
+        <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">  <script id="hbeData" type="hbeData" data-hmacdigest="5c101fbc55a4e968f5317a23ca20e8f29176b02e81aaa67d2b86c7922ab75a08">724b48b5ef2059e37b316826ce40c1b6558ea88b3d1a62890b9b3ccfe7d137056bf9f33ee9c89f706eab9062bd61b7e06a00a65b33e731175c99eb74e5c71cf824035213f46fd0e08b7adfc85caca4db937042280ec7262c3ae5825e3306d356</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-default">      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-default">请输入密码</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+      
+      
+      <categories>
+          
+          <category> 你好 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>matplotlib小项目--绘制学生成绩雷达图</title>
       <link href="/post/9026a025.html"/>
       <url>/post/9026a025.html</url>
